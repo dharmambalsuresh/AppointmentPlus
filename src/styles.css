@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~open-iconic/font/css/open-iconic-bootstrap.css';
+
+.selectordoctor {
+background-image: url("assets/doctorsbg.jpg");
+background-size: cover;
+background-position:center; 
+background-repeat: no-repeat;
+height: 100 vh;
+font-family: 'Numans', sans-serif;
+   }
+
+   .selectpatient {
+background-image: url("assets/patientbg.jpg");
+background-size: cover;
+background-position:center; 
+background-repeat: no-repeat;
+height: 100 vh;
+font-family: 'Numans', sans-serif;
+   }
