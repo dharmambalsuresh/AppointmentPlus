@@ -1,0 +1,120 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About US</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Help</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="card"></div>
+  <div class="card-header text-center"><strong>Book Appointment</strong></div>
+  <div class="card-body">
+          <form name="bookappointmentform" class="w-50 m-auto">
+                  <div class="form-group">
+                      <div class="form-row">
+                          <div class="col-md-6">
+                            <label>First Name</label>
+                            <input type="text" name="fname" id="fname" placeholder="First Name" required class="form-control">
+                            <div *ngIf="pnull" style="color:red">
+                              First Name is required
+                            </div>    
+                  </div>
+                  <div class="col-md-6">
+                      <label>Last Name</label>
+                      <input type="text" name="lname" id="lname" placeholder="Last Name" required="" class="form-control">
+                      <div *ngIf="pnull" style="color:red">
+                        Last Name is required
+                      </div>  
+                  </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="form-row">
+                          <div class="col-md-6">
+                          <label>Email</label>
+                          <input type="email" name="email" id="email" placeholder="Email" required="" class="form-control">
+                          <div *ngIf="enull" style="color:red">
+                            Email is required
+                          </div>
+                          <div *ngIf="einvalid" style="color:red">
+                            Invalid email id.
+                          </div>
+                          </div>
+                          <div class="col-md-6">
+                          <label>Phone</label>
+                          <input type="text" name="phone" id="phone" placeholder="Phone" minlength="10" maxlength="13" required="" class="form-control">
+                          <div *ngIf="pnull" style="color:red">
+                            Phone is required
+                          </div>    
+                        </div>  
+                  </div>  
+                  </div>
+              <div class="form-group">
+                  <div class="form-row">
+                      <div class="col-md-6">
+                  <label>Booking Date</label>
+                  <input type="text" name="bdate" id="bdate" placeholder="MM-DD-YYYY" required="" class="form-control">
+                  <div *ngIf="pnull" style="color:red">
+                    Booking Date is required
+                  </div>  
+              </div>
+              <div class="col-md-6">
+                  <label>Booking Time</label>
+                  <input type="text" name="btime" id="btime" placeholder="12 Hours (am/pm)" required="" class="form-control">
+                  <div *ngIf="pnull" style="color:red">
+                    Booking Time is required
+                  </div>  
+              </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="form-row">
+                      <label>Reason for Appointment</label>
+                      <textarea class="form-control" id="Areason" placeholder="Optional" rows="2"></textarea>
+              </div>
+              </div>
+                      <div class="form-group">
+                          <div class="form-row">
+                              <div class="col-md-5">
+                          <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" id="urgentbooking" value="urgentbooking">
+                              <label class="form-check-label" for="urgentbooking">Urgent Booking</label>
+                            </div>
+                            </div>
+                            <div class="col-md-7">
+                                <textarea class="form-control" id="Ureason" placeholder="Reason for Urgency (Optional)" rows="2"></textarea>
+                            </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" (click)="validate()" value="Book Appointment" class="btn btn-primary">
+                            </div>
+                        </div>
+              </form>
+              </div>
+              </div>
+
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50" style="width:100%">
+  <div class="row m-0">
+    <div class="container text-center" id="copyright">
+      <h4 class="copy">Copyright &copy; Your Website</h4>
+    </div>
+  </div>
+
+</footer>

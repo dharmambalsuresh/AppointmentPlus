@@ -5,8 +5,19 @@ import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {DoctorComponent} from './doctor/doctor.component';
 import {CreateappoinmentComponent} from './createappoinment/createappoinment.component';
+import {SignupComponent} from './signup/signup.component';
+import {BookappointmentComponent} from './bookappointment/bookappointment.component';
 
-const routes: Routes = [{ path: '',   redirectTo: '/home', pathMatch: 'full' },{path : 'home',component : HomeComponent},{path : 'login',component : LoginComponent},{path : 'doctor',component : DoctorComponent},{path : 'createappointment',component : CreateappoinmentComponent}]  ;
+const routes: Routes = 
+[
+{path: '',   redirectTo: '/home', pathMatch: 'full' },
+{path : 'home',component : HomeComponent},
+{path : 'login',component : LoginComponent},
+{path : 'doctor',component : DoctorComponent},
+{path : 'createappointment',component : CreateappoinmentComponent},
+{path : 'signup',component : SignupComponent},
+{path : 'bookappointment',component:BookappointmentComponent}
+];
 
 @NgModule({
   declarations: [],
