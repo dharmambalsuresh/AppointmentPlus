@@ -1,0 +1,107 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Appointments</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Medical Records</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="managebooking">Manage Appointments</a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav ml-auto navright">
+      <li>
+        <p class="name"> Rodrick Paul </p>
+      </li>
+      <li>
+        <div class="btn-group profile">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fa fa-user" aria-hidden="true"></i>
+  </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <button class="dropdown-item" type="button">Profile</button>
+            <button class="dropdown-item" type="button">Help</button>
+            <div class="dropdown-divider"></div>
+            <button class="dropdown-item" [routerLink]="['/home']" type="button">Logout</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="col-sm-10 outline">
+<div class="container Schedule">
+    &nbsp; &nbsp;
+  <h1 style="text-align: center;color:black">Manage Appointments</h1>
+&nbsp; &nbsp;
+  <table style="color:black;align-content: center;margin: auto" class="table  table-hover">
+      <thead>
+          <tr>
+              <th>
+                  Doctor Name
+              </th>
+              <th>
+                      Speciality
+                  </th>
+                  <th>
+                         Appointment Date
+                      </th>
+                      <th>
+                             Status
+                          </th>
+          </tr>
+      </thead>
+          <tr>
+              <td>
+                  Dr. A
+              </td>
+              <td>
+                  Cardiologist
+              </td>
+              <td>
+                  30th June 2019
+              </td>
+              <td>
+                  <a href="updateorcancelappointment" style="color: tomato">Scheduled</a>
+              </td>
+          </tr>
+          <tr>
+                  <td>
+                      Dr. B
+                  </td>
+                  <td>
+                      Dermatologist
+                  </td>
+                  <td>
+                      30th April 2019
+                  </td>
+                  <td>
+                     Completed
+                  </td>
+              </tr>
+    
+  </table>
+  </div>
+</div>
+
+
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50" style="width:100%">
+  <div class="row m-0">
+    <div class="container text-center" id="copyright">
+      <h4 class="copy">Copyright &copy; Your Website</h4>
+    </div>
+  </div>
+
+</footer>
