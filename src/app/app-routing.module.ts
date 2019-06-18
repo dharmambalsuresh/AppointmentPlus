@@ -6,7 +6,8 @@ import {HomeComponent} from './home/home.component';
 import {DoctorComponent} from './doctor/doctor.component';
 import {CreateappoinmentComponent} from './createappoinment/createappoinment.component';
 import {BlogComponent} from './blog/blog.component';
-const routes: Routes = [{ path: '',   redirectTo: '/home', pathMatch: 'full' },{path : 'home',component : HomeComponent},{path : 'login',component : LoginComponent},{path : 'doctor',component : DoctorComponent},{path : 'createappointment',component : CreateappoinmentComponent},{path : 'blogs',component : BlogComponent}]  ;
+import {MedicalRecordsComponent} from './medical-records/medical-records.component';
+const routes: Routes = [{ path: '',   redirectTo: '/home', pathMatch: 'full' },{path : 'home',component : HomeComponent},{path : 'login',component : LoginComponent},{path : 'doctor',component : DoctorComponent},{path : 'createappointment',component : CreateappoinmentComponent},{path : 'blogs',component : BlogComponent},{path : 'medicalrecords',component : MedicalRecordsComponent}]  ;
 
 @NgModule({
   declarations: [],
