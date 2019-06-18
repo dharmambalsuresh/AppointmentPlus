@@ -5,8 +5,8 @@ import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {DoctorComponent} from './doctor/doctor.component';
 import {CreateappoinmentComponent} from './createappoinment/createappoinment.component';
-
-const routes: Routes = [{ path: '',   redirectTo: '/home', pathMatch: 'full' },{path : 'home',component : HomeComponent},{path : 'login',component : LoginComponent},{path : 'doctor',component : DoctorComponent},{path : 'createappointment',component : CreateappoinmentComponent}]  ;
+import {BlogComponent} from './blog/blog.component';
+const routes: Routes = [{ path: '',   redirectTo: '/home', pathMatch: 'full' },{path : 'home',component : HomeComponent},{path : 'login',component : LoginComponent},{path : 'doctor',component : DoctorComponent},{path : 'createappointment',component : CreateappoinmentComponent},{path : 'blogs',component : BlogComponent}]  ;
 
 @NgModule({
   declarations: [],
