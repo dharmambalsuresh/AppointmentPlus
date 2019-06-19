@@ -44,6 +44,10 @@
 
 } 
 
+.navbar{
+    border-radius: 0 !important;
+}
+
 @media(max-width : 768px){
    .headdropdown{
    margin-right:0px !important;

@@ -6,17 +6,12 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
     
+     
       <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        <a [routerLink]="['/bookappointment']" class="nav-link" href="#">Book Appointment</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Appointments</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Medical Records</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="managebooking">Manage Appointments</a>
+        <a [routerLink]="['/updateorcancelappointment']" class="nav-link">Manage Appointments</a>
       </li>
     </ul>
 
@@ -43,9 +38,9 @@
 
 <div class="col-sm-10 outline">
 <div class="container Schedule">
-    &nbsp; &nbsp;
+    <!-- &nbsp; &nbsp;
   <h1 style="text-align: center;color:black">Manage Appointments</h1>
-&nbsp; &nbsp;
+&nbsp; &nbsp; -->
   <table style="color:black;align-content: center;margin: auto" class="table  table-hover">
       <thead>
           <tr>
@@ -74,7 +69,7 @@
                   30th June 2019
               </td>
               <td>
-                  <a href="updateorcancelappointment" style="color: tomato">Scheduled</a>
+                  <a [routerLink]="['/updateorcancelappointment']"  style="color: tomato">Scheduled</a>
               </td>
           </tr>
           <tr>

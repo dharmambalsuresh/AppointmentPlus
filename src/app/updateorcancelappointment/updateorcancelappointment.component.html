@@ -7,17 +7,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
       
+       
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Appointments</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Medical Records</a>
+          <a [routerLink]="['/bookappointment']" class="nav-link" href="#">Book Appointment</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="managebooking">Manage Appointments</a>
+          <a [routerLink]="['/updateorcancelappointment']" class="nav-link">Manage Appointments</a>
         </li>
       </ul>
   
@@ -42,7 +37,7 @@
     </div>
   </nav>
   <div class="container">
-      <h1 style="text-align: center;color:black">Update or Cancel Appointment</h1>
+      <!-- <h1 style="text-align: center;color:black">Update or Cancel Appointment</h1> -->
       <div class="col-md-6 col-md-offset-3">
           &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
               <div class="panel panel-default">
