@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { CreateappoinmentComponent } from './createappoinment/createappoinment.component';
+import { ManagebookingComponent } from './managebooking/managebooking.component';
+import { UpdateorcancelappointmentComponent } from './updateorcancelappointment/updateorcancelappointment.component';
 import { BlogComponent } from './blog/blog.component';
 import { MedicalRecordsComponent } from './medical-records/medical-records.component';
 
@@ -17,6 +19,8 @@ import { MedicalRecordsComponent } from './medical-records/medical-records.compo
     LoginComponent,
     DoctorComponent,
     CreateappoinmentComponent,
+    ManagebookingComponent,
+    UpdateorcancelappointmentComponent,
     BlogComponent,
     MedicalRecordsComponent
    
