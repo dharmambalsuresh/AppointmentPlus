@@ -9,6 +9,8 @@ import { DoctorComponent } from './doctor/doctor.component';
 import { CreateappoinmentComponent } from './createappoinment/createappoinment.component';
 import { ManagebookingComponent } from './managebooking/managebooking.component';
 import { UpdateorcancelappointmentComponent } from './updateorcancelappointment/updateorcancelappointment.component';
+import { BlogComponent } from './blog/blog.component';
+import { MedicalRecordsComponent } from './medical-records/medical-records.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { UpdateorcancelappointmentComponent } from './updateorcancelappointment/
     DoctorComponent,
     CreateappoinmentComponent,
     ManagebookingComponent,
-    UpdateorcancelappointmentComponent
+    UpdateorcancelappointmentComponent,
+    BlogComponent,
+    MedicalRecordsComponent
    
   ],
   imports: [
