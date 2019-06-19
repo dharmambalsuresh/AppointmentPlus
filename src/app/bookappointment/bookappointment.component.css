@@ -9,19 +9,25 @@
   #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;} */
 
   .card{
-    margin-top: auto;
+    margin-top: 6em;
     margin-bottom: auto;
     width: auto;
-    background-color: rgba(0,0,0,0.5) !important;
+    background-color: #343a40 !important;
     }
 
   .finalsubmit{
-    background-color: #343a40;
-    color:white;
-    width: 80%;
-    border-radius: 17px;
-    margin-top: 4%;
-    margin-left: 5%;
+    background-color: #FFC312;
+    color:black;
+     width: 80%; 
+    border-radius: 10px;
+    margin-top: 6%;
+    /* margin-left: 5%; */
+  }
+
+  @media(max-width:426px){
+      .finalsubmit{
+           width: 150px !important; 
+      }
   }
   .finalsubmit:hover{
       color: black;

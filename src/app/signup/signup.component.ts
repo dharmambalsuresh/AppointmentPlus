@@ -18,7 +18,7 @@ export class SignupComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    document.body.className = "selectordoctor";
+    document.body.className = "register";
     this.isdoctorchecked=false;
   }
   onPatient(){
