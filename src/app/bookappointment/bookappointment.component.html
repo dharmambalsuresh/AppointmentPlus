@@ -6,17 +6,31 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+     <li class="nav-item active" >
+        <a [routerLink]="['/bookappointment']" class="nav-link">Book Appointment</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About US</a>
+      <li class="nav-item ">
+        <a [routerLink]="['/managebooking']" class="nav-link">Manage Appointments</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+   
+    </ul>
+    
+    <ul class="nav navbar-nav ml-auto navright">
+      <li>
+        <p class="name"> Rodrick Paul </p>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Help</a>
+      <li>
+        <div class="btn-group profile">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fa fa-user" aria-hidden="true"></i>
+  </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <button class="dropdown-item" type="button">Profile</button>
+            <button class="dropdown-item" type="button">Help</button>
+            <div class="dropdown-divider"></div>
+            <button class="dropdown-item" [routerLink]="['/home']" type="button">Logout</button>
+          </div>
+        </div>
       </li>
     </ul>
   </div>

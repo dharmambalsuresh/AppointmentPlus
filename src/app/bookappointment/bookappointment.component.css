@@ -23,7 +23,17 @@
     margin-top: 6%;
     /* margin-left: 5%; */
   }
-
+.profile{
+    margin-top: 5px;
+}
+.name{
+    margin-top: 11px;
+    font-weight: bold;
+    /* padding-top: 8px; */
+    color: white;
+    font-size: 18px;
+    margin-right: -28px;
+}
   @media(max-width:426px){
       .finalsubmit{
            width: 150px !important; 

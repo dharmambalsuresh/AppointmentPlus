@@ -72,7 +72,7 @@ export class LoginComponent implements OnInit {
        this.router.navigate(['/doctor']);
     }
       else{
-         this.router.navigate(['/managebooking']);
+         this.router.navigate(['/bookappointment']);
       }
 
      

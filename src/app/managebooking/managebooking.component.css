@@ -207,10 +207,10 @@ table td{
     padding: 21px 12px;
 }
 
-.badge-success:hover{
+/* .badge-success:hover{
     color: #28a745;
     background-color: #ffffff;
-}
+} */
 
 .badge-warning{
     color: #212529;
@@ -257,12 +257,12 @@ table thead {
     padding: 5px;
 }
 
-.badge-primary:hover{
+/* .badge-primary:hover{
      background: white;
     color: #007bff;
     border: 1px solid #007bff;
     padding: 5px;
-}
+} */
 
 .tips{
         right: -15px;
