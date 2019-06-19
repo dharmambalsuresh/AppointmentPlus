@@ -9,10 +9,7 @@ import { DoctorComponent } from './doctor/doctor.component';
 import { CreateappoinmentComponent } from './createappoinment/createappoinment.component';
 import { SignupComponent } from './signup/signup.component';
 import { BookappointmentComponent } from './bookappointment/bookappointment.component';
-import {ManagebookingComponent} from './managebooking/managebooking.component';
-import {UpdateorcancelappointmentComponent} from './updateorcancelappointment/updateorcancelappointment.component';
-import {BlogComponent} from './blog/blog.component';
-import {MedicalRecordsComponent} from './medical-records/medical-records.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,10 +19,7 @@ import {MedicalRecordsComponent} from './medical-records/medical-records.compone
     CreateappoinmentComponent,
     SignupComponent,
     BookappointmentComponent,
-    ManagebookingComponent,
-    UpdateorcancelappointmentComponent,
-    BlogComponent,
-    MedicalRecordsComponent
+
    
   ],
   imports: [
