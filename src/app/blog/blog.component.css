@@ -43,6 +43,31 @@
         padding-top: 10px;
         padding-bottom: 10px;
     } */
+    .profile{
+    margin-top: 5px;
+}
+.name{
+    margin-top: 11px;
+    font-weight: bold;
+    /* padding-top: 8px; */
+    color: white;
+    font-size: 18px;
+    margin-right: -28px;
+}
+.post{
+    width: 100%;
+
+}
+.addBlog{
+    padding-left: 1em;
+}
+.blogRow{
+    margin-top: -2em;
+}
+.blogbox{
+    margin-top: 2em;
+}
+
     
     /* .login{
         float: right;

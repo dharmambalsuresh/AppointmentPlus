@@ -13,6 +13,9 @@
       <li class="nav-item active">
         <a [routerLink]="['/medicalrecords']" class="nav-link" >Medical Records</a>
       </li>
+    <li class="nav-item ">
+        <a [routerLink]="['/blogs']" [queryParams]="{ usr: 'doctor' }" class="nav-link">Blog</a>
+      </li>
     </ul>
 
     <ul class="nav navbar-nav ml-auto navright">

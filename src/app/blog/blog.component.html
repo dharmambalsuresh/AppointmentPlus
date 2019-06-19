@@ -5,7 +5,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul *ngIf="guest" class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" href="#">Home</a>
       </li>
@@ -19,11 +19,78 @@
         <a class="nav-link" href="#">Help</a>
       </li>
     </ul>
+    <ul *ngIf="doc" class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a [routerLink]="['/doctor']" class="nav-link" href="#">Appointment</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/medicalrecords']" class="nav-link" href="#">Medical Records</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+     
+      </ul>
+    <ul *ngIf="doc" class="nav navbar-nav navbar-right">
+        <li>
+          <p class="name"> Rodrick Paul </p>
+        </li>
+        <li>
+          <div class="btn-group profile">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fa fa-user" aria-hidden="true"></i>
+    </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <button class="dropdown-item" type="button">Profile</button>
+              <button class="dropdown-item" type="button">Help</button>
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item" [routerLink]="['/home']" type="button">Logout</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul *ngIf="patient" class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a  [routerLink]="['/bookappointment']" class="nav-link" href="#">Book Appointment</a>
+      </li>
+      <li class="nav-item">
+        <a  [routerLink]="['/managebooking']"  class="nav-link" href="#">Manage Appointment</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+     
+    </ul>
+    <ul *ngIf="patient" class="nav navbar-nav navbar-right">
+        <li>
+          <p class="name"> Richard Green </p>
+        </li>
+        <li>
+          <div class="btn-group profile">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fa fa-user" aria-hidden="true"></i>
+    </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <button class="dropdown-item" type="button">Profile</button>
+              <button class="dropdown-item" type="button">Help</button>
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item" [routerLink]="['/home']" type="button">Logout</button>
+            </div>
+          </div>
+        </li>
+      </ul>
   </div>
 </nav>
 <br><br><br><br>
+
 <div class="container">
-  <div class="row">
+   <div  *ngIf="doc" class="row m-0 blogRow">
+     <div class="col-sm-10"></div>
+     <div class="col-sm-2">
+  <button type="button" class="btn btn-dark post">New Blog <i class="fa fa-plus addBlog" aria-hidden="true"></i></button>
+     </div>
+   </div>
+  <div class="row blogbox">
         <div class="col">
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <img width="300" src="assets/food.PNG">
@@ -133,39 +200,12 @@
           </div>
 
           <div class="row m-0">
-            <footer id="sticky-footer" class="py-4 bg-dark text-white-50" style="width:100%">
-              <div class="row foot m-0">
-                <div class="col-md-5 abt">
-                  <h2 class="abtus">About Us</h2>
-                  <h3 class="abtdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Expedita sapiente sint, nulla, nihil repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam
-                    debitis, maxime quam recusandae harum esse fugiat. Itaque, culpa</h3>
-                </div>
-          
-                <div class="col-md-1">
-                </div>
-                <div class="col-md-3 contact">
-                  <h2 class="abtus">Contact Us</h2>
-                  <div class="address">
-                    <h3 class="add"><span><i class="fa fa-address-card"></i></span> Address</h3>
-                    <h3 class="add">Example Inc.</h3>
-                    <h3 class="add"> 1234 Example Street</h3>
-                    <h3 class="add">Antartica, Example 0987</h3>
-                  </div>
-          
-                </div>
-                <div class="col-md-3">
-                  <div class="reach">
-                    <h3 class="hcall"><span class="icons"><i class="fa fa-phone" id="call" aria-hidden="true"></i></span> (123) 456-7890 </h3>
-                    <h3 class="hmail"><span class="icons"><i class="fa fa-envelope" id="mail"  aria-hidden="true"></i></span> example@abc.com </h3>
-                  </div>
-                </div>
-              </div>
-              <div class="row m-0">
-                <div class="container text-center" id="copyright">
-                  <h4 class="copy">Copyright &copy; Your Website</h4>
-                </div>
-              </div>
-          
-            </footer>
+           <footer id="sticky-footer" class="py-4 bg-dark text-white-50" style="width:100%">
+  <div class="row m-0">
+    <div class="container text-center" id="copyright">
+      <h4 class="copy">Copyright &copy; Your Website</h4>
+    </div>
+  </div>
+
+</footer>
           </div>

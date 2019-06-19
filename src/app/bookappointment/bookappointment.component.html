@@ -12,6 +12,10 @@
       <li class="nav-item ">
         <a [routerLink]="['/managebooking']" class="nav-link">Manage Appointments</a>
       </li>
+       <li class="nav-item ">
+        <a [routerLink]="['/blogs']" [queryParams]="{ usr: 'patient' }" class="nav-link">Blog</a>
+      </li>
+   
    
     </ul>
     
@@ -98,12 +102,29 @@
               </div>
               </div>
           </div>
+             <div class="form-group">
+              <div class="form-row">
+                 <label style="color: white">Select Doctor</label>
+                
+                 <div class="btn-group selectDtr">
+                <button type="button" class="btn dropdown-toggle btnDtr" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Doctor
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="#">Rodrick Paul</a>
+                  <a class="dropdown-item" href="#">Mike Geller</a>
+                  <a class="dropdown-item" href="#">Monica Green</a>
+                                  </div>
+              </div>
+              </div>
+              </div>
           <div class="form-group">
               <div class="form-row">
                       <label style="color: white">Reason for Appointment</label>
                       <textarea class="form-control" id="Areason" placeholder="Optional" rows="2"></textarea>
               </div>
               </div>
+             
                       <div class="form-group">
                           <div class="form-row">
                               <div class="col-md-5">

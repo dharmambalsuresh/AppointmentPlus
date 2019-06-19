@@ -34,10 +34,41 @@
     font-size: 18px;
     margin-right: -28px;
 }
+.selectDtr{
+    padding-left: 3em;
+    width: 28em;
+}
+
+.btnDtr{
+    color: black;
+    border: 1px solid lightgray;
+    background: lightgray;
+}
+.btnDr:hover{
+    color: black;
+    border: 1px solid lightgray;
+    background: lightgray; 
+}
+
+
+@media(max-width:768px){
+    .btnDtr{
+        width: 16em;
+    }
+
+}
   @media(max-width:426px){
       .finalsubmit{
            width: 150px !important; 
       }
+        .btnDtr{
+            width: 10em !important;
+            padding-left: 0 !important;
+        }
+        .selectDtr{
+    padding-left: 0 !important;
+    /* width: 28em; */
+}
   }
   .finalsubmit:hover{
       color: black;
