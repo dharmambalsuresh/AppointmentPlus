@@ -1,9 +1,9 @@
 var mysql = require('mysql');
 
 exports.con = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "root",
+  host: "appointmentplus.mysql.database.azure.com",
+  user: "akhil@appointmentplus",
+  password: "Appointmentplus12",
   database: "appointmentplus"
 });
 
