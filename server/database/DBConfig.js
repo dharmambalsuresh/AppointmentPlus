@@ -1,3 +1,7 @@
+//AUTHOR
+//NAME : AISHWARYA NARAYANAN
+//STUDENT ID : B00820313
+
 var mysql = require('mysql');
 
 exports.con = mysql.createPool({
