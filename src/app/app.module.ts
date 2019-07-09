@@ -13,6 +13,8 @@ import {ManagebookingComponent} from './managebooking/managebooking.component';
 import {UpdateorcancelappointmentComponent} from './updateorcancelappointment/updateorcancelappointment.component';
 import {BlogComponent} from './blog/blog.component';
 import {MedicalRecordsComponent} from './medical-records/medical-records.component';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,8 @@ import {MedicalRecordsComponent} from './medical-records/medical-records.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-     FormsModule
+     FormsModule,
+     HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

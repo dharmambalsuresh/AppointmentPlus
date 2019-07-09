@@ -29,6 +29,7 @@
     "core-js": "^2.5.4",
     "express": "^4.17.1",
     "graceful-fs": "^4.1.15",
+    "ng2-datepicker": "^3.1.1",
     "path": "^0.12.7",
     "rxjs": "~6.3.3",
     "sweetalert2": "^8.11.7",
