@@ -9,6 +9,13 @@ import { DoctorComponent } from './doctor/doctor.component';
 import { CreateappoinmentComponent } from './createappoinment/createappoinment.component';
 import { SignupComponent } from './signup/signup.component';
 import { BookappointmentComponent } from './bookappointment/bookappointment.component';
+import {ManagebookingComponent} from './managebooking/managebooking.component';
+import {UpdateorcancelappointmentComponent} from './updateorcancelappointment/updateorcancelappointment.component';
+import {BlogComponent} from './blog/blog.component';
+import {MedicalRecordsComponent} from './medical-records/medical-records.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './profile/profile.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +25,20 @@ import { BookappointmentComponent } from './bookappointment/bookappointment.comp
     DoctorComponent,
     CreateappoinmentComponent,
     SignupComponent,
-    BookappointmentComponent
+    BookappointmentComponent,
+    ManagebookingComponent,
+    UpdateorcancelappointmentComponent,
+    BlogComponent,
+    MedicalRecordsComponent,
+    ProfileComponent,
+    EditprofileComponent
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-     FormsModule
+     FormsModule,
+     HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -52,8 +52,13 @@ color: white;
 padding-bottom: 5px;
 }
 
-.register a{
+.registerNow{
 margin-left: 4px;
 color:white;
 }
+.registerNow a{
+margin-left: 4px;
+color:white;
+}
+
 

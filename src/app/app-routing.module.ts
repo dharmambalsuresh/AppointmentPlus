@@ -7,6 +7,13 @@ import {DoctorComponent} from './doctor/doctor.component';
 import {CreateappoinmentComponent} from './createappoinment/createappoinment.component';
 import {SignupComponent} from './signup/signup.component';
 import {BookappointmentComponent} from './bookappointment/bookappointment.component';
+import {ManagebookingComponent} from './managebooking/managebooking.component';
+import {UpdateorcancelappointmentComponent} from './updateorcancelappointment/updateorcancelappointment.component';
+import {BlogComponent} from './blog/blog.component';
+import {MedicalRecordsComponent} from './medical-records/medical-records.component';
+import {ProfileComponent} from './profile/profile.component';
+import {EditprofileComponent} from './editprofile/editprofile.component'
+
 
 const routes: Routes = 
 [
@@ -16,7 +23,13 @@ const routes: Routes =
 {path : 'doctor',component : DoctorComponent},
 {path : 'createappointment',component : CreateappoinmentComponent},
 {path : 'signup',component : SignupComponent},
-{path : 'bookappointment',component:BookappointmentComponent}
+{path : 'bookappointment',component:BookappointmentComponent},
+{path : 'managebooking',component : ManagebookingComponent},
+{path : 'updateorcancelappointment',component : UpdateorcancelappointmentComponent},
+{path : 'blogs',component : BlogComponent},
+{path : 'medicalrecords',component : MedicalRecordsComponent},
+{path : 'profile', component: ProfileComponent},
+{path : 'editprofile', component : EditprofileComponent}
 ];
 
 @NgModule({

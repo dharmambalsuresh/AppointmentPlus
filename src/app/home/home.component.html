@@ -10,13 +10,13 @@
         <a class="nav-link" href="#">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About US</a>
+        <a class="nav-link" data-spy="scroll" data-target="#about">About US</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+        <a [routerLink]="['/blogs']"  [queryParams]="{ usr: 'guest' }" class="nav-link" >Blog</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Help</a>
+        <a class="nav-link" href="#contact">Support</a>
       </li>
     </ul>
   </div>
@@ -106,7 +106,7 @@
 <div class="row m-0">
   <footer id="sticky-footer" class="py-4 bg-dark text-white-50" style="width:100%">
     <div class="row foot m-0">
-      <div class="col-md-5 abt">
+      <div class="col-md-5 abt" id="about">
         <h2 class="abtus">About Us</h2>
         <h3 class="abtdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
           aliqua. Expedita sapiente sint, nulla, nihil repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam
@@ -115,7 +115,7 @@
 
       <div class="col-md-1">
       </div>
-      <div class="col-md-3 contact">
+      <div class="col-md-3 contact" id="contact">
         <h2 class="abtus">Contact Us</h2>
         <div class="address">
           <h3 class="add"><span><i class="fa fa-address-card"></i></span> Address</h3>

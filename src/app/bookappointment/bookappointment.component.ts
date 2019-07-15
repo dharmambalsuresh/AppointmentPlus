@@ -18,6 +18,7 @@ export class BookappointmentComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+    //document.body.className = "healthcare";
   }
   validate() {
     this.einvalid = false;

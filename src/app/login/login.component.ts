@@ -68,8 +68,14 @@ export class LoginComponent implements OnInit {
     }
 
     if (!this.enull && !this.pnull && !this.einvalid) {
+      if (this.user == "doctor") {
+       this.router.navigate(['/doctor']);
+    }
+      else{
+         this.router.navigate(['/bookappointment']);
+      }
 
-      this.router.navigate(['/doctor']);
+     
     }
   }
 

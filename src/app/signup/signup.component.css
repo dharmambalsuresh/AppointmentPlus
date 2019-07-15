@@ -22,12 +22,18 @@
         padding-bottom: 10px;
     }  
     .signup{
-    font-size: small;
+        width: 80%;
+        margin-left: 10%;
+        border-radius: 14px;
         padding-right: 30px;
         padding-left: 30px;
         margin-top: 40px;
         padding-top: 10px;
         padding-bottom: 10px;
+    }
+    .signup:hover{
+        background-color: white;
+        color:black;
     }
     
     .login{
@@ -59,7 +65,13 @@
         max-height: 300px;
     } */
     
-    
+
+    .card{
+        margin-top: 6em;
+        margin-bottom: auto;
+        width: auto;
+        background-color: rgba(0,0,0,0.5) !important;
+        }
     
     
     .title{

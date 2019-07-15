@@ -8,9 +8,72 @@
   #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
   #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;} */
 
+  .card{
+    margin-top: 6em;
+    margin-bottom: auto;
+    width: auto;
+    background-color: #343a40 !important;
+    }
+
+  .finalsubmit{
+    background-color: #FFC312;
+    color:black;
+     width: 80%; 
+    border-radius: 10px;
+    margin-top: 6%;
+    /* margin-left: 5%; */
+  }
+.profile{
+    margin-top: 5px;
+}
+.name{
+    margin-top: 11px;
+    font-weight: bold;
+    /* padding-top: 8px; */
+    color: white;
+    font-size: 18px;
+    margin-right: -28px;
+}
+.selectDtr{
+    padding-left: 3em;
+    width: 28em;
+}
+
+.btnDtr{
+    color: black;
+    border: 1px solid lightgray;
+    background: lightgray;
+}
+.btnDr:hover{
+    color: black;
+    border: 1px solid lightgray;
+    background: lightgray; 
+}
 
 
+@media(max-width:768px){
+    .btnDtr{
+        width: 16em;
+    }
 
+}
+  @media(max-width:426px){
+      .finalsubmit{
+           width: 150px !important; 
+      }
+        .btnDtr{
+            width: 10em !important;
+            padding-left: 0 !important;
+        }
+        .selectDtr{
+    padding-left: 0 !important;
+    /* width: 28em; */
+}
+  }
+  .finalsubmit:hover{
+      color: black;
+      background-color: white;
+  }
   
   @media (min-width:1025px){
     .navbar{
@@ -51,7 +114,6 @@
         font-size: 10px;
         padding: 3px;
     }
-    
         
     @media (min-width:480px) {
       .navbar-nav > li{

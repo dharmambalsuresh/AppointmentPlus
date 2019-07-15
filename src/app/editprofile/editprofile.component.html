@@ -1,0 +1,127 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+ 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a [routerLink]="['/bookappointment']" class="nav-link" href="#">Book Appointment</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/updateorcancelappointment']" class="nav-link">Manage Appointments</a>
+          </li>
+        <li class="nav-item ">
+            <a [routerLink]="['/blogs']" [queryParams]="{ usr: 'patient' }" class="nav-link">Blog</a>
+          </li>
+        </ul>
+  
+      <ul class="nav navbar-nav ml-auto navright">
+          <li>
+             <p class="name"> Rodrick Paul </p>
+           </li>
+           <li>
+             <div class="btn-group profile">
+               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <i class="fa fa-user" aria-hidden="true"></i>
+       </button>
+               <div class="dropdown-menu dropdown-menu-right">
+                 <button class="dropdown-item" [routerLink]="['/profile']" type="button">Profile</button>
+                 <button class="dropdown-item" type="button">Help</button>
+                 <div class="dropdown-divider"></div>
+                 <button class="dropdown-item" [routerLink]="['/home']" type="button">Logout</button>
+               </div>
+             </div>
+           </li>
+         </ul>
+  
+    </div>
+  </nav>
+  
+  <div class="container">
+    <div class="card">
+      <div class="card-body" style="color: white; text-align: center">
+        <h3>Edit Profile</h3>
+      </div>
+    <div class="card-body">
+    <form name="registerform" class="w-50 m-auto" >
+      <div class="form-group">
+          <div *ngIf="isdoctorchecked" class="form-row">
+              <label style="color: white">License Number</label>
+              <input type="text" name="licensenumber" id="licensenumber" disabled class="form-control">
+          </div>
+          <div class="form-row">
+              <div class="col-md-6">
+          <label style="color: white">First Name</label>
+          <input type="text" name="fname" id="fname"  class="form-control" disabled>               
+      </div>
+      <div class="col-md-6">
+          <label style="color: white">Last Name</label>
+          <input type="text" name="lname" id="lname"  class="form-control" disabled>
+      </div>
+      </div>
+  </div>
+  <div class="form-group">
+  <div class="form-row">
+          <div class="col-md-6">
+          <label style="color: white">Email</label>
+          <input type="email" name="email" id="email" disabled  class="form-control">
+          </div>
+          <div class="col-md-6">
+          <label style="color: white">Password</label>
+          <input type="password" name="password" id="password" placeholder="Password" minlength="8" maxlength="15" class="form-control">
+        </div>  
+  </div>  
+  </div>
+  <div class="form-group">
+    <div class="form-row">
+      <div class="col-md-6">
+                          <label style="color: white">Address</label>
+                  <textarea class="form-control" id="address" placeholder="Address" rows="3"></textarea>
+          </div> 
+          <div class="col-md-6">
+              <label style="color: white">Phone</label>
+              <input type="text" name="phone" id="phone" placeholder="Phone" minlength="10" maxlength="13" class="form-control">
+            </div> 
+      </div>
+  </div>
+  <div class="form-group">
+          <div class="form-row">
+                  <div class="col-md-6">
+                  <label style="color: white">City</label>
+                  <input type="text" name="city" id="city" placeholder="City" class="form-control">
+                  </div>
+                  <div class="col-md-6">
+                      <label style="color: white">Date of Birth</label>
+                  <input type="text" name="dob" id="dob" disabled class="form-control">
+                </div>
+          </div> 
+  </div>
+  <div class="form-group">
+          <div class="form-row">
+              <div class="col-md-6">
+          <label style="color: white">Postal Code</label>
+          <input type="text" name="postal" id="postal" placeholder="Postal Code"  class="form-control">
+      </div>
+      <div class="col-md-6">
+          <label style="color: white">Province</label>
+          <input type="text" name="province" id="province" placeholder="Province" class="form-control">
+      </div>
+      </div>
+  </div>
+  <div class="form-group">
+      <input type="submit" value="Update" (click)="validate()" class="btn btn-dark signup">
+  </div>
+</form>
+    </div>
+  </div>
+  </div>
+  <footer id="sticky-footer" class="py-4 bg-dark text-white-50" style="width:100%">
+    <div class="row m-0">
+      <div class="container text-center" id="copyright">
+        <h4 class="copy">Copyright &copy; Your Website</h4>
+      </div>
+    </div>
+  
+  </footer>

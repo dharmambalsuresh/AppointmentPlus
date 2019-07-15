@@ -13,7 +13,7 @@
         <a class="nav-link" href="#">About US</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+        <a [routerLink]="['/blogs']" [queryParams]="{ usr: 'guest'}" class="nav-link">Blog</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Help</a>
@@ -23,32 +23,41 @@
 </nav>
 
 <div class="container">
-  <div class="card"></div>
-  <div class="card-header text-center"><strong>Register</strong></div>
+  <div class="card">
+  <!-- <div style="background-color: #343a40;color: white"class="card-header text-center"><strong>Register</strong></div> -->
   <div class="card-body">
-          <form name="registerform" class="w-50 m-auto">
-                  <div class="form-check-inline">
-                          <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="usertype" required>Patient
+          <form name="registerform" class="w-50 m-auto" >
+                    <div style="margin-bottom: 3%">
+                        <div class="form-check-inline">
+                          <label  style="color: white" class="form-check-label">
+                            <input type="radio"  class="form-check-input" (click)="onPatient()" id =userPatient checked="checked" name="usertype" required>Patient
                           </label>
                         </div>
                         <div class="form-check-inline">
-                          <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="usertype">Doctor
+                          <label style="color: white" class="form-check-label">
+                            <input type="radio" class="form-check-input" (click)="onDoctor()" id =userDoctor name="usertype">Doctor
                           </label>
                         </div>
+                      </div>
                         <br>
                   <div class="form-group">
+                      <div *ngIf="isdoctorchecked" class="form-row">
+                          <label style="color: white">License Number</label>
+                          <input type="text"  name="licensenumber" id="licensenumber" placeholder="License Number" required class="form-control">
+                          <div *ngIf="pnull" style="color:red">
+                              License number is reqired
+                            </div>
+                      </div>
                       <div class="form-row">
                           <div class="col-md-6">
-                      <label>First Name</label>
+                      <label style="color: white">First Name</label>
                       <input type="text" name="fname" id="fname" placeholder="First Name" required class="form-control">
                       <div *ngIf="pnull" style="color:red">
                         First Name is required
                       </div>                       
                   </div>
                   <div class="col-md-6">
-                      <label>Last Name</label>
+                      <label style="color: white">Last Name</label>
                       <input type="text" name="lname" id="lname" placeholder="Last Name" required class="form-control">
                       <div *ngIf="pnull" style="color:red">
                         Last Name is required
@@ -59,7 +68,7 @@
               <div class="form-group">
               <div class="form-row">
                       <div class="col-md-6">
-                      <label>Email</label>
+                      <label style="color: white">Email</label>
                       <input type="email" name="email" id="email" placeholder="Email" required class="form-control">
                       <div *ngIf="enull" style="color:red">
                         Email is required
@@ -69,8 +78,8 @@
                       </div>
                       </div>
                       <div class="col-md-6">
-                      <label>Password</label>
-                      <input type="password" name="password" id="password" placeholder="Password*" minlength="8" maxlength="15" required class="form-control">
+                      <label style="color: white">Password</label>
+                      <input type="password" name="password" id="password" placeholder="Password" minlength="8" maxlength="15" required class="form-control">
                       <div *ngIf="pnull" style="color:red">
                         Password is required
                       </div>  
@@ -80,11 +89,11 @@
               <div class="form-group">
                 <div class="form-row">
                   <div class="col-md-6">
-                                      <label>Address</label>
+                                      <label style="color: white">Address</label>
                               <textarea class="form-control" id="address" placeholder="Optional" rows="3"></textarea>
                       </div> 
                       <div class="col-md-6">
-                          <label>Phone</label>
+                          <label style="color: white">Phone</label>
                           <input type="text" name="phone" id="phone" placeholder="Phone" minlength="10" maxlength="13" required="" class="form-control">
                           <div *ngIf="pnull" style="color:red">
                             Phone is required
@@ -95,11 +104,11 @@
               <div class="form-group">
                       <div class="form-row">
                               <div class="col-md-6">
-                              <label>City</label>
+                              <label style="color: white">City</label>
                               <input type="text" name="city" id="city" placeholder="City" class="form-control">
                               </div>
                               <div class="col-md-6">
-                                  <label>Date of Birth</label>
+                                  <label style="color: white">Date of Birth</label>
                               <input type="text" name="dob" id="dob" placeholder="MM-DD-YYYY" required="" class="form-control">  
                               <div *ngIf="pnull" style="color:red">
                                 Date of Birth is required
@@ -110,11 +119,11 @@
               <div class="form-group">
                       <div class="form-row">
                           <div class="col-md-6">
-                      <label>Postal Code</label>
+                      <label style="color: white">Postal Code</label>
                       <input type="text" name="postal" id="postal" placeholder="Postal Code"  class="form-control">
                   </div>
                   <div class="col-md-6">
-                      <label>Province</label>
+                      <label style="color: white">Province</label>
                       <input type="text" name="province" id="province" placeholder="Province" class="form-control">
                   </div>
                   </div>
@@ -122,14 +131,14 @@
               <div class="form-group">
               <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox" id="consentcheckbox" value="consentcheckbox" required="">
-                  <label class="form-check-label" for="consentcheckbox">I, agree the information provided is correct* &nbsp;</label>
+                  <label class="form-check-label" style="color: white" for="consentcheckbox">I, agree the information provided is correct &nbsp;</label>
                   <div *ngIf="pnull" style="color:red">
                     Please Agree
                   </div>
                 </div>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox" id="newslettercheckbox" value="newslettercheckbox">
-                  <label class="form-check-label" for="newslettercheckbox">Subscribe for Newsletter</label>
+                  <label class="form-check-label" style="color: white" for="newslettercheckbox">Subscribe for Newsletter</label>
                 </div>
               </div>
               <div class="form-group">
@@ -138,6 +147,8 @@
       </form>
   </div>
 </div>
+</div>
+
 
 <footer id="sticky-footer" class="py-4 bg-dark text-white-50" style="width:100%">
   <div class="row m-0">

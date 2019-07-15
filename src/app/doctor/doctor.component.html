@@ -6,14 +6,15 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
     
-      <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
-      </li>
+     
       <li class="nav-item active">
-        <a class="nav-link" href="#">Appointments</a>
+        <a [routerLink]="['/doctor']" class="nav-link" href="#">Appointments</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Medical Records</a>
+        <a [routerLink]="['/medicalrecords']"  class="nav-link" >Medical Records</a>
+      </li>
+      <li class="nav-item ">
+        <a [routerLink]="['/blogs']" [queryParams]="{ usr: 'doctor' }" class="nav-link">Blog</a>
       </li>
     </ul>
 
@@ -27,7 +28,7 @@
     <i class="fa fa-user" aria-hidden="true"></i>
   </button>
           <div class="dropdown-menu dropdown-menu-right">
-            <button class="dropdown-item" type="button">Profile</button>
+            <button class="dropdown-item" [routerLink]="['/profile']" type="button">Profile</button>
             <button class="dropdown-item" type="button">Help</button>
             <div class="dropdown-divider"></div>
             <button class="dropdown-item" [routerLink]="['/home']" type="button">Logout</button>
