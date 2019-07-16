@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 //AUTHOR NAME : AISHWARYA NARAYANAN STUDENT ID : B00820313
 //Contributer Name: Abhinandan Walia STUDENT ID:B00820613
 
+=======
+//AUTHOR
+//NAME : AISHWARYA NARAYANAN
+//STUDENT ID : B00820313
+>>>>>>> 30500600bf7d711a592edb3adde9b87540be5765
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -10,10 +16,16 @@ var cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var createDocSchedule = require('./routes/doctor/createSchedule');
+<<<<<<< HEAD
 var createPatientUser = require('./routes/user/registerUser'); //Abhinandan Walia STUDENT ID:B00820613
 var createDoctorUser = require('./routes/doctor/registerUser'); //Abhinandan Walia STUDENT ID:B00820613
 
 
+=======
+var cancelappointment = require('./routes/patients/canceldocAppointment');
+var manageapps = require('./routes/patients/manageappointment');
+var getDocAppointment = require('./routes/doctor/getAppointments.js');
+>>>>>>> 30500600bf7d711a592edb3adde9b87540be5765
 var app = express();
 app.use(cors());
 
@@ -26,6 +38,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//forwarding the requests to appropriate routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
@@ -33,6 +47,10 @@ app.use('/users', usersRouter);
 app.post('/createNewAppointment', createDocSchedule);
 app.post('/createPatientUser',createPatientUser); //Abhinandan Walia STUDENT ID:B00820613
 app.post('/createDoctorUser',createDoctorUser); //Abhinandan Walia STUDENT ID:B00820613
+app.post('/canceldocAppointment', cancelappointment);
+app.get('/manageappointment', manageapps);
+app.post('/getDocAppointment',getDocAppointment);
+
 
 
 // catch 404 and forward to error handler

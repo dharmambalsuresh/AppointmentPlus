@@ -1,89 +1,131 @@
-GitHub LINK: [https://git.cs.dal.ca/narayanan/a2_aishwarya_narayanan.git]
+ï»¿## **Assignment Four**
 
-# AppointmentPlus
-The primary goal of the web application is to provide an effective appointment management system with doctors and patients. It avoids the long wait time for patients in having consultations with doctors through efficient appointment booking system and email reminders.  The doctors are free to provide or change their agenda through this application which enables the patients to view their desired doctors schedule and make appointments with them. This application will be a great time saver for both doctors and patients in many ways. 
+## AppointmentPlus
+The main purpose of the web application â€œAppointmentPlusâ€ is to ease the patient experience in making appointments with doctors. The users can easily find a doctor in a particular hospital and book an appointment online at their desired time based on the specific doctor's availability. The patients are free to cancel their appointments within a stipulated time which benefits other patients to get that particular time slot. The application will provide email reminders to users before a day of their doctor appointment.
+The application facilitates the doctors by providing them with the upcoming schedule of consultations for the following week. It also enables them to create a new schedule with their available time period.  Each doctor will have a customized profile of their own along with their list of patientâ€™s medical records whom they treated. Hence the application will provide a hassle-free appointment system which will streamline the workflow for both doctors and patients in many ways.
 
-# Built with 
-* Angular 7 – MVC framework for creating single page application 
-* Bootstrap – Framework used for designing and building the responsive UI
-* TypeScript - Scripting Language used for functionalities
-* HTML and CSS - Used for basic designing of webpage
 
-# Instructions:
+## Features
 
-1.	   The application can be tested in the local machine by cloning or downloading the FCS git repository with the command: -  
-	git clone https://git.cs.dal.ca/narayanan/a2_aishwarya_narayanan.git
-2.	   After cloning the repository navigate to the folder which has the boilerplate files and run the command “npm install”. 
+1. (**Aishwarya Narayanan**  - **B00820313**)  
+The two features that are mentioned in Assingment-3 are: -
+1. Create New Appointment Schedule 
+2. Upcoming Schedule of Appointments
 
-3.	   Once all the dependencies have been installed, run the command “ng build”.
+Assignment 4 submission focuses on one of the two features for the doctor user base:- "Create New Appointment Schedule" 
 
-4.     Run “ng serve” and navigate to the url http://localhost:4200
+Feature - "Create New Appointment Schedule" [Completed fully]
+**Filenames**
+   - Server/createSchedule.js
+   - src/app/createappointment
+   - src/app/getdata.service.ts
+     
 
-5.     The first page is the home page of the application which provides the basic details about the application and has navigation to the login page by clicking the login button.
+This feature enables the doctors to create a new schedule for the specific time period mentioning their availability, location, and additional message. Once the required details are given, the form will be validated to check if the details are in the correct format, if not appropriate error messages will be displayed to the user. After successful validation, the schedule details will be stored in the database. This schedule of available slots created by doctors will be displayed to the patients when they are booking an appointment with a specific doctor.
 
-6.     The user can be logged in as either patients or doctors. By clicking the login button, the respective login page appears for that specific user (patients/doctors).
+-   A user can navigate to this page by logging in as doctor and by clicking the "plus" icon in the "Appointments" page of a doctor.  
 
-7.      After logging in as a doctor, the doctors home page will be loaded where they can see their upcoming schedule for the week. A tip “pop up” will appear in the page to help the new users for using the application.
+-   Create appointment schedule page allows the doctors to create appointment timeslots for themselves for a particular date.
 
-8.	   By clicking the add icon for creating a new schedule in the doctor’s home page, you will be redirected to a "create schedule" page where the doctors can fill in the necessary details to make a new schedule for them. After providing the required details, the form will be validated. If the form is valid, the details will be saved, and the feedback will be given to the user.
+-   The user can fill in the required details and the validation is done for every field in the page.
 
-# Web pages
-There are four pages that are developed currently in this application: -
--  Login page
--  Home page
--  Doctors schedule 
--  Create new schedule
+-   Multiple timeslots can be added by clicking the "plus" icon near the timeslot field.
 
-***Used bootstrap nav bar for creation of navigation bar on each of the pages except the login page.[2]***
+-   For every dynamic div, the validations are done to check if the time format is correct and if it is not null.
+
+-   On successfull validation, the appointment schedule will be created and the details will be stored in the database.
+
+Feature - "Upcoming Schedule of Appointments" [Completed partially]
+**Filenames**
+   - Server/getAppointments.js
+   - src/app/doctor
+   - src/app/getdata.service.ts
+
+This feature enables the doctors to view/update/cancel the list of upcoming appointments with patients for the week. It shows the appointment details such as date, location, timing and status of the appointment. The user will be allowed to filter the list of appointments based on the status of the appointment (current/upcoming/completed). On selecting the desired filter, the user can view the specific appointments according to the filtered attribute. It also helps new users with helpful tips to get familiarized with the application
+
+-   A user can navigate to this page by logging in as doctor.
+
+-  This page displays the list of upcoming appoointments for a specific doctor from the "Appointment" database in the backend
+
+-  Each record has a "Status" field which shows the status of a particular appointment.
+
+-  On clicking the specific status, a modal window appears where in a user can mark the appointment as "Cancel/Completed"
+
+-  When a appointment is marked as cancelled or completed, the status field is changed accordingly and changes are stored in database [Yet to be completed]
+
+
+
+## Frontend technologies used:
+
+-  Angular 7 â€“ MVC framework for creating single page application 
+-  Bootstrap â€“ Framework used for designing and building the responsive UI
+-  TypeScript - Scripting Language used for functionalities
+-  HTML and CSS - Used for basic designing of webpage
+
+
+## Database used:
+-  MySQL (Database)(Deployed in Cloud- Microsofr Azure) - Relational database used for storing AppointmentPlus records.
  
-## Login page
-There are two different views for doctors and patients for the login page. It allows the user to provide email id and password.  Proper form validations are done to check if the fields are empty and to the email format of the email id field. If the form is invalid appropriate feedbacks are provided to the user to input the correct details.
+## Back End Framework
 
-***For email validation, I have referred [1] using javascript and regex.***
-***Used bootstrap card views for creating a responsive card-based design in the login page. [2]***
+-   Express - Routing and Middleware framework used for retrieving data from the database to the client application. 
+-   Node.js - Open source, cross-platform runtime environment for developing server-side applications.
 
-## Home page
-The home page is the landing page of the application.   The user can view what the application is about, and it has navigation to the login page for the respective users. 
 
-## Doctors Schedule
-This page provides a weekly schedule for the doctors for each day along with the location. It has a status tag, stating if the schedule is completed/current/upcoming. The doctor can see their schedule by filtering the desired status. For the new users, the tip pop up provides useful tips on how to use the application to improve the usability of the application. This page can only be accessed by users who are logged in as doctors.
+## Setup Instructions
 
-## Create new schedule
-This page enables the users who are logged in as doctors to create a new schedule for the upcoming week. It enables users to select the date, location, timing, and additional comments.  Proper form validation is done by validating the date format and timing format. If they are incorrect appropriate error messages will be displayed for better user experience. Once all the details are given, a success message will be displayed to the user to let them know that their schedule has been created.
-The form validations which are done here are: - 
-- If the user enters incorrect date format or alphabets or invalid characters, they will be prompted with the message “Date format is invalid”. 
-- When the user provides incorrect time format like unwanted alphabets or characters, they will be prompted with “Incorrect time format”
--  If any of the input field is left blank, then they will get appropriate error message stating that those fields are required.
-- The comments field in this web page is considered optional. 
--  Once all the details are validated and the details in the form will be saved with proper feedback. 
+**Front end setup**
 
-***For date and time format validation, I have referred [3] for javascript and regex pattern***
+1. The application can be tested in the local machine by cloning or downloading the FCS git repository with the command: -  
+	   git clone https://git.cs.dal.ca/narayanan/a2_aishwarya_narayanan.git
 
-# Version control 
-Used [GitLab](https://git.cs.dal.ca/narayanan/a2_aishwarya_narayanan.git) for versioning. 
+2. After cloning the repository navigate to the folder which has the boilerplate files and run the command â€œnpm installâ€. 
 
-## Design Ideas
-> [1] Tags / webdesign. (n.d.). Retrieved from https://dribbble.com/tags/webdesign
+3. Install Angular : **npm install -g @angular/cli**	
 
-## Image Credits
-> [1] Patient Information. (n.d.). Retrieved from https://www.michigangastro.com/patients
 
-> [2] Wedia. (n.d.). General Practitioners (GPs) & Doctors in the Netherlands. Retrieved from https://www.iamexpat.nl/expat-info/dutch-healthcare-system/general-practitioners-gp-doctors-netherlands
+**Connecting to Back-end Server**
 
-> [3] (n.d.). Retrieved from https://www.fauquierhealth.org/patients-visitors
+6.  Go into the server folder in the root folder of the application : **cd server**
 
-> [4] Markets, I. I. (2019, January 08). Trends in Healthcare Workforce Management Systems Market during forecast period 2019-2024: Explore strategies. Retrieved from https://www.openpr.com/news/1477817/Trends-in-Healthcare-Workforce-Management-Systems-Market-during-forecast-period-2019-2024-Explore-strategies-of-top-players-operating-in-this-industry-such-as-Automatic-Data-Processing-Infor-Kronos-Mckesson-Corporation.html
+7.  Install all dependencies from the back-end folder where the boilerplate files are located: **npm install**
 
-> [5] Love doctors background banner poster. (n.d.). Retrieved from https://pngtree.com/freebackground/love-doctors-background-banner-poster_814348.html
+8.  Within the server folder, run the server : **npm start**
 
-> [6] Stethoscope Wallpaper. (n.d.). Retrieved from http://www.jakpost.travel/pl/stethoscope-wallpaper/
+
+**Running the Front-end**
+
+9.  Navigate to the root folder of the project.
+
+10. Start the front end by running the command "ng serve" in the command prompt
+
+12. Launch the browser and navigate to `http://localhost:4200/`
+
+## Folder Structure
+
+Back-end folder structure : -
+
+app.js 
+Bootstrap file of the server application which redirects the incoming requests to apporpriate routes
+
+Database (sub folder under server folder)
+Database configuration is made in this folder in dbconfig.js file
+
+Routes (sub folder under server folder)
+All the routes to handle the incoming requests from client, is placed here.
+
+Front-end folder structure: -
+
+
+
+
 
 ## References
 > [1] Tutorialspoint.com. (n.d.). JavaScript Form Validation. Retrieved from https://www.tutorialspoint.com/javascript/javascript_form_validations.htm
 
 > [2] Otto, M., & Thornton, J. (n.d.). Introduction. Retrieved from https://getbootstrap.com/docs/4.1/getting-started/introduction/
 
->[3] The first Regular Expression Library on the Web! (n.d.). Retrieved from http://regexlib.com/
+> [3] The first Regular Expression Library on the Web! (n.d.). Retrieved from http://regexlib.com/
 
->[4] (n.d.). Retrieved from https://angular.io/docs
+> [4] (n.d.). Retrieved from https://angular.io/docs
 

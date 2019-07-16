@@ -14,8 +14,9 @@ router.post('/createNewAppointment', function(req, res, next) {
     var docName = req.body.doctor;
     var location = req.body.loc;
     var comments = req.body.comments;
+
+//connecting with MySql database    
  con.getConnection(function(err) {
-     console.log("connected");
   if(err){
     res.send(500,"SQL Error");
   }
@@ -24,8 +25,9 @@ router.post('/createNewAppointment', function(req, res, next) {
     if(err){
     res.send(500,"Query error");
     }else{
-    console.log("connected");
     console.log(result);
+
+    //returning the success response after storing the details in the database
     return res.status(200).send({message:"success"});
     }
     
