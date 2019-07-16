@@ -3,6 +3,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
+export interface getDocAppointment{
+//-- Author NAME: Aishwarya Narayanan STUDENT ID: B00820313
+  result : [{        
+  FirstName: String,
+  LastName: String,
+  Booking_Date: String,
+  phone:String,
+  Booking_Time: String,
+  Status: String
+  }];
+  
+}
+
+
 export interface ManageAppt{
   // --AUTHOR: Varsha Sridhar STUDENT_ID: B00791643
 
@@ -19,6 +34,7 @@ export class GetdataService {
   createAppointmentURL = "http://localhost:3000/createNewAppointment";
   canceldocAppointmentURL = "http://localhost:3000/canceldocAppointment";
   manageappointmentURL = "http://localhost:3000/manageappointment";
+  getDocAppointmentURL = "http://localhost:3000/getDocAppointment";
 
   constructor(private http: HttpClient) { }
 
@@ -40,6 +56,12 @@ manageAppointment() {
 
 return this.http.get<Array<ManageAppt>>(this.manageappointmentURL)
 .pipe();
+}
+
+getDocAppointment(docId){
+  //Author NAME: Aishwarya Narayanan STUDENT ID: B00820313
+  return this.http.post<getDocAppointment>(this.getDocAppointmentURL, docId)
+    .pipe();
 }
   
 }
