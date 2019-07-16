@@ -36,8 +36,9 @@ export class CreateappoinmentComponent implements OnInit {
   popup() {
 
   }
-  validate() {
 
+  validate() {
+//validation to check if input fields are empty or in correct format
     var date = (<HTMLInputElement>document.getElementById("date")).value;
     if (date != "") {
       var re = new RegExp("^[0-3]?[0-9]((\/)|(\-))[0-3]?[0-9]((\/)|(\-))(?:[0-9]{2})?[0-9]{2}$");
@@ -81,6 +82,7 @@ export class CreateappoinmentComponent implements OnInit {
 
     }
  
+
     var loc = (<HTMLInputElement>document.getElementById("loc")).value;
     var comment = (<HTMLInputElement>document.getElementById("comment")).value;
     if (loc == "") {
@@ -93,6 +95,7 @@ export class CreateappoinmentComponent implements OnInit {
 
 
     if (!this.locnull && !this.nltime && !this.datenull && !this.invaliddate && !this.ivalidtime) {
+    //data is stored in database if all the validations are correct
       this.storeData();
     
     }
@@ -103,31 +106,29 @@ export class CreateappoinmentComponent implements OnInit {
     var max=100;  
     var appId =Math.floor(Math.random() * (+max - +min)) + +min; 
     var tsl ='';
-   console.log("entered here");
-   //console.log(this.timeslot[0][0]);
+   
    for(var i=0; i<this.timeslot.length;i++){
       tsl += this.timeslot[i][i] + ',';
    }
-    console.log(tsl);
-     console.log(this.locInput);
-      console.log(this.commentInput);
-          console.log(this.dateInput);
+
     var appointmentDetails = { "appId" :appId,
      "date" :this.dateInput,
      "timeslots" : tsl,
      "doctor" : "John",
      "loc" :this.locInput,
      "comments" : this.commentInput};
+  
+     //storing the appointment details in the database
    this.getData.createAppointment(appointmentDetails).subscribe((data)=>
    this.sucessMsg(data)
    );
 
   }
 
+  //Intimating user that schedule has been created after storing the data in the database
    sucessMsg(data){
        
-      console.log("data"+ data);
-      if(data.message == "success"){
+     if(data.message == "success"){
         Swal.fire(
         'Thank You!',
         'Your schedule has been created!',
@@ -136,14 +137,9 @@ export class CreateappoinmentComponent implements OnInit {
       }   
     }
 
+    //Adding timeslots
     dynamicDiv(){
-      console.log(this.timeslot);
-
-      // console.log("dynamic div",this.timeslot.length);
-      // var time = this.timeslot.length.toString();
-      this.timeslot.push({"nulltime":false,"invalidtime":false});
-     // this.nulltime.push({});
-      //this.time += 1;
+          this.timeslot.push({"nulltime":false,"invalidtime":false});
     }
   
 }
