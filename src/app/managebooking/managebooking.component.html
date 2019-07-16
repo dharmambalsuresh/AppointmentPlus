@@ -1,3 +1,6 @@
+<!-- Manage Booking-To View  Appointment Details -->
+<!--AUTHOR NAME: Varsha Sridhar-->
+<!-- STUDENT ID: _B00791643 -->
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -47,68 +50,31 @@
   <table style="color:black;align-content: center;margin: auto" class="table  table-hover">
       <thead>
           <tr>
-              <th>
-                  Doctor Name
-              </th>
-              <th>
-                      Speciality
-                  </th>
-                  <th>
-                         Appointment Date
-                      </th>
-                      <th>
-                             Status
-                          </th>
+              <th>Doctor Name</th>
+              <th>Appointment Date</th>
+              <th> Appointment Time</th>
+              <th>Status</th>
           </tr>
       </thead>
-          <tr>
-              <td>
-                  Dr. A
-              </td>
-              <td>
-                  Cardiologist
-              </td>
-              <td>
-                  30th June 2019
-              </td>
-              <td>
-                  <a [routerLink]="['/updateorcancelappointment']" class="badge badge-success">Scheduled</a>
-              </td>
-          </tr>
-          <tr>
-                  <td>
-                      Dr. B
-                  </td>
-                  <td>
-                      Dermatologist
-                  </td>
-                  <td>
-                      30th April 2019
-                  </td>
-                  <td>
-                      <p class="badge badge-primary">Completed</p>
-                  </td>
-              </tr>
-                 <tr>
-                  <td>
-                      Dr. C
-                  </td>
-                  <td>
-                      Pediatrician
-                  </td>
-                  <td>
-                      22nd March 2019
-                  </td>
-                  <td>
-                      <p class="badge badge-primary">Completed</p>
-                  </td>
-              </tr>
+          <!-- <tr>
+              <td><a [routerLink]="['/updateorcancelappointment']" class="badge badge-success">Scheduled</a> </td>
+             <td><p class="badge badge-primary">Completed</p></td>
+             <td><p class="badge badge-primary">Completed</p></td>
+          </tr> -->
+           <tbody>
+            <tr *ngFor="let appointment of data">
+              <td>{{ appointment.DoctorName }}</td>
+              <td>{{ appointment.Booking_Date }}</td>
+              <td>{{ appointment.Booking_Time }}</td>
+              <td><a [routerLink]="['/updateorcancelappointment']" class="badge badge-success">{{ appointment.Status }}</a></td>
+            </tr>
+          </tbody>
     
   </table>
   </div>
 </div>
 
-
+<br><br><br><br>  
 <footer id="sticky-footer" class="py-4 bg-dark text-white-50" style="width:100%">
   <div class="row m-0">
     <div class="container text-center" id="copyright">
