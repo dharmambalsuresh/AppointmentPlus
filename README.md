@@ -6,12 +6,20 @@ The application facilitates the doctors by providing them with the upcoming sche
 
 
 ## Features
-(**Aishwarya Narayanan**  - **B00820313**)  
+
+1. (**Aishwarya Narayanan**  - **B00820313**)  
 The two features that are mentioned in Assingment-3 are: -
 1. Create New Appointment Schedule 
 2. Upcoming Schedule of Appointments
 
 Assignment 4 submission focuses on one of the two features for the doctor user base:- "Create New Appointment Schedule" 
+
+Feature - "Create New Appointment Schedule" [Completed fully]
+**Filenames**
+   - Server/createSchedule.js
+   - src/app/createappointment
+   - src/app/getdata.service.ts
+     
 
 This feature enables the doctors to create a new schedule for the specific time period mentioning their availability, location, and additional message. Once the required details are given, the form will be validated to check if the details are in the correct format, if not appropriate error messages will be displayed to the user. After successful validation, the schedule details will be stored in the database. This schedule of available slots created by doctors will be displayed to the patients when they are booking an appointment with a specific doctor.
 
@@ -27,11 +35,24 @@ This feature enables the doctors to create a new schedule for the specific time 
 
 -   On successfull validation, the appointment schedule will be created and the details will be stored in the database.
 
+Feature - "Upcoming Schedule of Appointments" [Completed partially]
+**Filenames**
+   - Server/getAppointments.js
+   - src/app/doctor
+   - src/app/getdata.service.ts
 
-## Filenames
-(**Aishwarya Narayanan**  - **B00820313**)  
-   - Server/createSchedule.js
-   - src/app/createappointment/createappointment
+This feature enables the doctors to view/update/cancel the list of upcoming appointments with patients for the week. It shows the appointment details such as date, location, timing and status of the appointment. The user will be allowed to filter the list of appointments based on the status of the appointment (current/upcoming/completed). On selecting the desired filter, the user can view the specific appointments according to the filtered attribute. It also helps new users with helpful tips to get familiarized with the application
+
+-   A user can navigate to this page by logging in as doctor.
+
+-  This page displays the list of upcoming appoointments for a specific doctor from the "Appointment" database in the backend
+
+-  Each record has a "Status" field which shows the status of a particular appointment.
+
+-  On clicking the specific status, a modal window appears where in a user can mark the appointment as "Cancel/Completed"
+
+-  When a appointment is marked as cancelled or completed, the status field is changed accordingly and changes are stored in database [Yet to be completed]
+
 
 
 ## Frontend technologies used:
