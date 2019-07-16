@@ -1,5 +1,7 @@
 //AUTHOR NAME : AISHWARYA NARAYANAN STUDENT ID : B00820313
+//Contributer Name: Varsha Sridhar STUDENT ID:B00791643
 //Contributer Name: Abhinandan Walia STUDENT ID:B00820613
+
 
 
 var createError = require('http-errors');
@@ -15,8 +17,8 @@ var createPatientUser = require('./routes/user/registerUser'); //Abhinandan Wali
 var createDoctorUser = require('./routes/doctor/registerUser'); //Abhinandan Walia STUDENT ID:B00820613
 
 
-var cancelappointment = require('./routes/patients/canceldocAppointment');
-var manageapps = require('./routes/patients/manageappointment');
+var cancelappointment = require('./routes/patients/canceldocAppointment');//Varsha Sridhar STUDENT ID:B00791643
+var manageapps = require('./routes/patients/manageappointment');//Varsha Sridhar STUDENT ID:B00791643
 var getDocAppointment = require('./routes/doctor/getAppointments.js');
 var app = express();
 app.use(cors());
@@ -39,8 +41,8 @@ app.use('/users', usersRouter);
 app.post('/createNewAppointment', createDocSchedule);
 app.post('/createPatientUser',createPatientUser); //Abhinandan Walia STUDENT ID:B00820613
 app.post('/createDoctorUser',createDoctorUser); //Abhinandan Walia STUDENT ID:B00820613
-app.post('/canceldocAppointment', cancelappointment);
-app.get('/manageappointment', manageapps);
+app.post('/canceldocAppointment', cancelappointment);//Varsha Sridhar STUDENT ID:B00791643
+app.get('/manageappointment', manageapps);//Varsha Sridhar STUDENT ID:B00791643
 app.post('/getDocAppointment',getDocAppointment);
 
 
