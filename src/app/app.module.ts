@@ -14,6 +14,8 @@ import {UpdateorcancelappointmentComponent} from './updateorcancelappointment/up
 import {BlogComponent} from './blog/blog.component';
 import {MedicalRecordsComponent} from './medical-records/medical-records.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './profile/profile.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     ManagebookingComponent,
     UpdateorcancelappointmentComponent,
     BlogComponent,
-    MedicalRecordsComponent
+    MedicalRecordsComponent,
+    ProfileComponent,
+    EditprofileComponent
    
   ],
   imports: [

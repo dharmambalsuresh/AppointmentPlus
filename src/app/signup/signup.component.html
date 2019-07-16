@@ -26,16 +26,16 @@
   <div class="card">
   <!-- <div style="background-color: #343a40;color: white"class="card-header text-center"><strong>Register</strong></div> -->
   <div class="card-body">
-          <form name="registerform" class="w-50 m-auto">
+          <form name="registerform" class="w-50 m-auto" >
                     <div style="margin-bottom: 3%">
                         <div class="form-check-inline">
                           <label  style="color: white" class="form-check-label">
-                            <input type="radio"  class="form-check-input" (click)="onPatient()" checked="checked" name="usertype" required>Patient
+                            <input type="radio"  class="form-check-input" (click)="onPatient()" id =userPatient checked="checked" name="usertype" required>Patient
                           </label>
                         </div>
                         <div class="form-check-inline">
                           <label style="color: white" class="form-check-label">
-                            <input type="radio" class="form-check-input" (click)="onDoctor()" name="usertype">Doctor
+                            <input type="radio" class="form-check-input" (click)="onDoctor()" id =userDoctor name="usertype">Doctor
                           </label>
                         </div>
                       </div>
@@ -43,7 +43,7 @@
                   <div class="form-group">
                       <div *ngIf="isdoctorchecked" class="form-row">
                           <label style="color: white">License Number</label>
-                          <input type="number" maxlength="10" name="licensenumber"  placeholder="License Number" required class="form-control">
+                          <input type="text"  name="licensenumber" id="licensenumber" placeholder="License Number" required class="form-control">
                           <div *ngIf="pnull" style="color:red">
                               License number is reqired
                             </div>
@@ -79,7 +79,7 @@
                       </div>
                       <div class="col-md-6">
                       <label style="color: white">Password</label>
-                      <input type="password" name="password" id="password" placeholder="Password*" minlength="8" maxlength="15" required class="form-control">
+                      <input type="password" name="password" id="password" placeholder="Password" minlength="8" maxlength="15" required class="form-control">
                       <div *ngIf="pnull" style="color:red">
                         Password is required
                       </div>  
@@ -131,7 +131,7 @@
               <div class="form-group">
               <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox" id="consentcheckbox" value="consentcheckbox" required="">
-                  <label class="form-check-label" style="color: white" for="consentcheckbox">I, agree the information provided is correct* &nbsp;</label>
+                  <label class="form-check-label" style="color: white" for="consentcheckbox">I, agree the information provided is correct &nbsp;</label>
                   <div *ngIf="pnull" style="color:red">
                     Please Agree
                   </div>

@@ -8,8 +8,6 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-    
-     
       <li class="nav-item">
         <a [routerLink]="['/bookappointment']" class="nav-link" href="#">Book Appointment</a>
       </li>
@@ -31,7 +29,7 @@
     <i class="fa fa-user" aria-hidden="true"></i>
   </button>
           <div class="dropdown-menu dropdown-menu-right">
-            <button class="dropdown-item" type="button">Profile</button>
+            <button class="dropdown-item" [routerLink]="['/profile']" type="button">Profile</button>
             <button class="dropdown-item" type="button">Help</button>
             <div class="dropdown-divider"></div>
             <button class="dropdown-item" [routerLink]="['/home']" type="button">Logout</button>
