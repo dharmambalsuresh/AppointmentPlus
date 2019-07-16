@@ -1,7 +1,6 @@
 //AUTHOR
 //NAME : AISHWARYA NARAYANAN
 //STUDENT ID : B00820313
-
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -11,6 +10,8 @@ var cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var createDocSchedule = require('./routes/doctor/createSchedule');
+var cancelappointment = require('./routes/patients/canceldocAppointment');
+var manageapps = require('./routes/patients/manageappointment');
 
 var app = express();
 app.use(cors());
@@ -28,6 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.post('/createNewAppointment', createDocSchedule);
+app.post('/canceldocAppointment', cancelappointment);
+app.get('/manageappointment', manageapps);
 
 
 // catch 404 and forward to error handler
