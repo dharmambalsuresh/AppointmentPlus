@@ -12,7 +12,7 @@ var usersRouter = require('./routes/users');
 var createDocSchedule = require('./routes/doctor/createSchedule');
 var cancelappointment = require('./routes/patients/canceldocAppointment');
 var manageapps = require('./routes/patients/manageappointment');
-
+var getDocAppointment = require('./routes/doctor/getAppointments.js');
 var app = express();
 app.use(cors());
 
@@ -33,6 +33,8 @@ app.use('/users', usersRouter);
 app.post('/createNewAppointment', createDocSchedule);
 app.post('/canceldocAppointment', cancelappointment);
 app.get('/manageappointment', manageapps);
+app.post('/getDocAppointment',getDocAppointment);
+
 
 
 // catch 404 and forward to error handler
