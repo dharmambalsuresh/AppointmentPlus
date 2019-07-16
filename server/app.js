@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 //AUTHOR NAME : AISHWARYA NARAYANAN STUDENT ID : B00820313
 //Contributer Name: Abhinandan Walia STUDENT ID:B00820613
 
-=======
-//AUTHOR
-//NAME : AISHWARYA NARAYANAN
-//STUDENT ID : B00820313
->>>>>>> 30500600bf7d711a592edb3adde9b87540be5765
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -16,16 +11,13 @@ var cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var createDocSchedule = require('./routes/doctor/createSchedule');
-<<<<<<< HEAD
 var createPatientUser = require('./routes/user/registerUser'); //Abhinandan Walia STUDENT ID:B00820613
 var createDoctorUser = require('./routes/doctor/registerUser'); //Abhinandan Walia STUDENT ID:B00820613
 
 
-=======
 var cancelappointment = require('./routes/patients/canceldocAppointment');
 var manageapps = require('./routes/patients/manageappointment');
 var getDocAppointment = require('./routes/doctor/getAppointments.js');
->>>>>>> 30500600bf7d711a592edb3adde9b87540be5765
 var app = express();
 app.use(cors());
 
