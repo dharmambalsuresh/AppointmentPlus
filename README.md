@@ -75,6 +75,25 @@ Filenames:
 * The "Status" field  shows the status of a particular appointment, completed, scheduled or cancelled 
 *  Clicking on the status navigates the user to the cancel appointment page, where the user can cancel the appointment.
 * Once an appointment is canceled, it will automatically update the status to **cancelled** in the manage appointment page.
+#### (Dharmambal Sureshkumar - B00824492)
+The two features mentioned in Assignment 3 are
+1.Book Appointment
+2.E-mail and text notification
+
+Assignment 4 submission focuses on one of the two features for the patients' user base which is the book appointment feature. Where the patients will be able to book appointments with the doctors of their choice in the available date and time of the doctor.
+
+1. Feature - "Book Appointment" [Completed fully]
+Filenames:
+    * Server/bookappointment.js
+    * Server/dateandtime.js
+    * src/app/getdata.service.ts
+
+This feature enables the user that is the patients to book appointment with the doctors. The patients will have to specify their names,e-mail and phone number. They will have to select the doctors from the drop down. Once they select the doctor, the dates in which the particular doctor is available is populated in the date drop down. When the user selects the specific date then the time slots that are available for the day are populated in the time dropdown. The patient can also enter the reason for visit and click the book appointment button. Once the button is clicked an alert message pop's up notifiying the confirmation of appointment.
+
+* A user has to navigate to this page by logging in as a patient and navigating to Book Appointment page
+* The user can fill in the required details and the validation is done for every field on the page.
+* Once the user clicks the book appointment button an alert pop's up to notify the user about the appointment confirmation.
+
 
 #### (Abhinandan Walia - B00820613)
 The two features that are mentioned in Assignment-3 are: -
@@ -108,39 +127,6 @@ This feature is partially complete with front-end fully developed and backend in
 * A click on the edit button takes the user to an edit page where they can update the information. This page allows updated only to the non-restricted field as mentioned above.
 * Similar to the registration page on update button click will start validating the user inputs and trigger database save on successful validation.
 * On process completion user is redirect to the profile page with newly updated information.
-
-
-#### (Ashutosh Patil - B00812667)
-The features mentioned in the assignment 3 are :-
-1. Login Feature
-2. Forgot Password
-
-This assignment focuses on one of the two features. The following section focuses on each of the sections.
-
-1. "Login Feature" [Partially Completed]
-* This feature allows the user to access the application. On the home page of the application, the user has to select their respective login screens i.e User login or Doctor login.
-* Once the page is loaded, the user has to provide the credentials which they have provided during the user registration.
-* Upon successful login, the application will redirect the user to their respective pages (Book Appointment for Users, Doctor Page for Doctors)
-* Validations have been put in place to check if the user enters any email ID which is not registered, the application shows an error popup message.
-* The user login session is being created after the login, however session needs to be maintained across all the pages and the users will be restricted from accessing pages to which they are not given access . This will be implemented before the project presentation.
-
-The following are the files that I have done the coding for this feature
-
-  * Server/user/user.js
-  * src/app/signin [component]
-  * src/app/getdata.service.ts
- 
-2. "Forgot Password"  [Fully Completed with scope for enhancement before the project presentation]
-  * This feature allows the users to recover the password through the email provided during the registration. The user has to click on forgot password link on the sign in page.
-  * Once the page is loaded, the user shall provide the email provided during the registation and click on recover password button. 
-  * The application will validate if the user exists in the database. If the user exists, the recovered password will be emailed to the user.
-  * If the user dosent exist, then an error message will be poped up on the screen.
-  * The scope for improvement in the future update is creating an OTP for the user , and the user will be asked to enter this OTP along with the new password. Once the OTP matches in the database, the password will be reset.
-  
-The following are the files that I have done the coding for this feature.
-  * Server/user/forgotpassword.js
-  * src/app/forgotpassword [component]
-  * src/app/getdata.service.ts
 
 ## Frontend technologies used:
 
@@ -219,17 +205,5 @@ Launch the browser and navigate to http://localhost:4200/
 [7]./@aniansson. (2017, June 22). Connecting an API to an Angular 4 front-end application. Retrieved from https://medium.com/craft-academy/connecting-an-api-to-an-angular-4-front-end-application-e0fc9ea33202
 
 [8]. /@nickroach_50526. (2019, June 04). Sending Emails with Node.js Using SMTP, Gmail, and OAuth2. Retrieved from https://medium.com/@nickroach_50526/sending-emails-with-node-js-using-smtp-gmail-and-oauth2-316fe9c790a1
-Blog:(Feature Developed for Assignment 4)
-The blog page gives details about tips and gives some suggestions regarding the diet. Doctors are able to create blog from their end . The blogs are given view access to patients and guests.
-Database used: MYSQL.
-Steps to create blog:
-Go to Doctor Login -> Go to Blogs -> Create Blogs -> Fill the blog form and click on submit.
-npm install ngx-image2dataurl –save (used this module for base64 encoding and image resizing
-Image References:
-1)https://www.pexels.com/photo/two-person-carrying-black-inflatable-pool-float-on-brown-wooden-bridge-near-waterfalls-1020016
-2)https://www.pexels.com/photo/women-s-white-top-and-orange-floral-skirt-823694/
-3)https://www.pexels.com/search/healthy/
- References:
-1) https://www.npmjs.com/package/ngx-image2dataurl 
-The above reference is used for image resizing and is modified according to our needs by changing the parameters and its usage.
-2)https://www.w3schools.com/howto/howto_css_blog_layout.asp
+
+[9]"Lodash Documentation", Lodash.com, 2019. [Online]. Available:https://lodash.com/docs/4.17.14#uniq. [Accessed: 17- Jul- 2019].
