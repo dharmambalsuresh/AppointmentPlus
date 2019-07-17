@@ -12,9 +12,4 @@ export class EditprofileComponent implements OnInit {
   ngOnInit() {
   }
 
-  validate()
-  {
-    
-  }
-
 }

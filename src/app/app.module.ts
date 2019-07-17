@@ -16,6 +16,8 @@ import {MedicalRecordsComponent} from './medical-records/medical-records.compone
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
+import { CreateblogComponent } from './createblog/createblog.component';
+import { ImageToDataUrlModule } from "ngx-image2dataurl";
 
 @NgModule({
   declarations: [
@@ -31,14 +33,16 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
     BlogComponent,
     MedicalRecordsComponent,
     ProfileComponent,
-    EditprofileComponent
+    EditprofileComponent,
+    CreateblogComponent
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
      FormsModule,
-     HttpClientModule
+     HttpClientModule,
+     ImageToDataUrlModule
   ],
   providers: [],
   bootstrap: [AppComponent]
