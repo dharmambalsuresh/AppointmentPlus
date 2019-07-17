@@ -109,6 +109,39 @@ This feature is partially complete with front-end fully developed and backend in
 * Similar to the registration page on update button click will start validating the user inputs and trigger database save on successful validation.
 * On process completion user is redirect to the profile page with newly updated information.
 
+
+#### (Ashutosh Patil - B00812667)
+The features mentioned in the assignment 3 are :-
+1. Login Feature
+2. Forgot Password
+
+This assignment focuses on one of the two features. The following section focuses on each of the sections.
+
+1. "Login Feature" [Partially Completed]
+* This feature allows the user to access the application. On the home page of the application, the user has to select their respective login screens i.e User login or Doctor login.
+* Once the page is loaded, the user has to provide the credentials which they have provided during the user registration.
+* Upon successful login, the application will redirect the user to their respective pages (Book Appointment for Users, Doctor Page for Doctors)
+* Validations have been put in place to check if the user enters any email ID which is not registered, the application shows an error popup message.
+* The user login session is being created after the login, however session needs to be maintained across all the pages and the users will be restricted from accessing pages to which they are not given access . This will be implemented before the project presentation.
+
+The following are the files that I have done the coding for this feature
+
+  * Server/user/user.js
+  * src/app/signin [component]
+  * src/app/getdata.service.ts
+ 
+2. "Forgot Password"  [Fully Completed with scope for enhancement before the project presentation]
+  * This feature allows the users to recover the password through the email provided during the registration. The user has to click on forgot password link on the sign in page.
+  * Once the page is loaded, the user shall provide the email provided during the registation and click on recover password button. 
+  * The application will validate if the user exists in the database. If the user exists, the recovered password will be emailed to the user.
+  * If the user dosent exist, then an error message will be poped up on the screen.
+  * The scope for improvement in the future update is creating an OTP for the user , and the user will be asked to enter this OTP along with the new password. Once the OTP matches in the database, the password will be reset.
+  
+The following are the files that I have done the coding for this feature.
+  * Server/user/forgotpassword.js
+  * src/app/forgotpassword [component]
+  * src/app/getdata.service.ts
+
 ## Frontend technologies used:
 
 * Angular 7 – MVC framework for creating single page application
