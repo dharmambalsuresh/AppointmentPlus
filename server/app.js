@@ -16,7 +16,8 @@ var createDocSchedule = require('./routes/doctor/createSchedule');
 var createPatientUser = require('./routes/user/registerUser'); //Abhinandan Walia STUDENT ID:B00820613
 var createDoctorUser = require('./routes/doctor/registerUser'); //Abhinandan Walia STUDENT ID:B00820613
 
-
+var bookappointment=require('./routes/patients/bookappointment');
+var dateandtime=require('./routes/patients/dateandtime');
 var cancelappointment = require('./routes/patients/canceldocAppointment');//Varsha Sridhar STUDENT ID:B00791643
 var manageapps = require('./routes/patients/manageappointment');//Varsha Sridhar STUDENT ID:B00791643
 var getDocAppointment = require('./routes/doctor/getAppointments.js');
@@ -33,7 +34,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.post('/bookappointment',bookappointment);//Dharmambal Sureshkumar B00824492
+app.get('/dateandtime',dateandtime);//Dharmambal Sureshkumar B00824492
 //forwarding the requests to appropriate routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
