@@ -76,6 +76,26 @@ Filenames:
 *  Clicking on the status navigates the user to the cancel appointment page, where the user can cancel the appointment.
 * Once an appointment is canceled, it will automatically update the status to **cancelled** in the manage appointment page.
 
+#### (Dharmambal Sureshkumar - B00824492)
+The two features mentioned in Assignment 3 are
+1.Book Appointment
+2.E-mail and text notification
+
+Assignment 4 submission focuses on one of the two features for the patients' user base which is the book appointment feature. Where the patients will be able to book appointments with the doctors of their choice in the available date and time of the doctor.
+
+1. Feature - "Book Appointment" [Completed fully]
+Filenames:
+    * Server/bookappointment.js
+    * Server/dateandtime.js
+    * src/app/getdata.service.ts
+
+This feature enables the user that is the patients to book appointment with the doctors. The patients will have to specify their names,e-mail and phone number. They will have to select the doctors from the drop down. Once they select the doctor, the dates in which the particular doctor is available is populated in the date drop down. When the user selects the specific date then the time slots that are available for the day are populated in the time dropdown. The patient can also enter the reason for visit and click the book appointment button. Once the button is clicked an alert message pop's up notifiying the confirmation of appointment.
+
+* A user has to navigate to this page by logging in as a patient and navigating to Book Appointment page
+* The user can fill in the required details and the validation is done for every field on the page.
+* Once the user clicks the book appointment button an alert pop's up to notify the user about the appointment confirmation.
+
+
 #### (Abhinandan Walia - B00820613)
 The two features that are mentioned in Assignment-3 are: -
 1. Registration/Signup
@@ -186,3 +206,5 @@ Launch the browser and navigate to http://localhost:4200/
 [7]./@aniansson. (2017, June 22). Connecting an API to an Angular 4 front-end application. Retrieved from https://medium.com/craft-academy/connecting-an-api-to-an-angular-4-front-end-application-e0fc9ea33202
 
 [8]. /@nickroach_50526. (2019, June 04). Sending Emails with Node.js Using SMTP, Gmail, and OAuth2. Retrieved from https://medium.com/@nickroach_50526/sending-emails-with-node-js-using-smtp-gmail-and-oauth2-316fe9c790a1
+
+[9]"Lodash Documentation", Lodash.com, 2019. [Online]. Available:https://lodash.com/docs/4.17.14#uniq. [Accessed: 17- Jul- 2019].

@@ -1,7 +1,7 @@
 //AUTHOR NAME : AISHWARYA NARAYANAN STUDENT ID : B00820313
 //Contributer Name: Varsha Sridhar STUDENT ID:B00791643
 //Contributer Name: Abhinandan Walia STUDENT ID:B00820613
-
+//Contributer Name: Dharmambal Sureshkumar STUDENT ID:B00824492
 
 
 var createError = require('http-errors');
@@ -15,8 +15,8 @@ var usersRouter = require('./routes/users');
 var createDocSchedule = require('./routes/doctor/createSchedule');
 var createPatientUser = require('./routes/user/registerUser'); //Abhinandan Walia STUDENT ID:B00820613
 var createDoctorUser = require('./routes/doctor/registerUser'); //Abhinandan Walia STUDENT ID:B00820613
-
-
+var bookappointment=require('./routes/patients/bookappointment');
+var dateandtime=require('./routes/patients/dateandtime');
 var cancelappointment = require('./routes/patients/canceldocAppointment');//Varsha Sridhar STUDENT ID:B00791643
 var manageapps = require('./routes/patients/manageappointment');//Varsha Sridhar STUDENT ID:B00791643
 var getDocAppointment = require('./routes/doctor/getAppointments.js');
@@ -36,7 +36,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //forwarding the requests to appropriate routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+app.post('/bookappointment',bookappointment);
+app.get('/dateandtime',dateandtime);
 
 app.post('/createNewAppointment', createDocSchedule);
 app.post('/createPatientUser',createPatientUser); //Abhinandan Walia STUDENT ID:B00820613

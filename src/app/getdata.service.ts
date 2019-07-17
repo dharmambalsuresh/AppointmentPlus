@@ -1,6 +1,8 @@
 //Author NAME: Aishwarya Narayanan STUDENT ID: B00820313
 //Contributer Name: Varsha Sridhar STUDENT ID:B00791643
 //Contributer Name: Abhinandan Walia STUDENT ID:B00820613
+//Contributer Name: Dharmambal Sureshkumar STUDENT ID:B00824492
+
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -19,7 +21,13 @@ export interface getDocAppointment{
   
 }
 
+export interface getDateAndTime{
 
+  //Dharmambal Sureshkumar B00824492
+  "date": String;
+   "timesolts": String;
+   "doctorname": String;
+}
 export interface ManageAppt{
   // --AUTHOR: Varsha Sridhar STUDENT_ID: B00791643
 
@@ -39,6 +47,8 @@ export class GetdataService {
   canceldocAppointmentURL = "http://localhost:3000/canceldocAppointment";
   manageappointmentURL = "http://localhost:3000/manageappointment";
   getDocAppointmentURL = "http://localhost:3000/getDocAppointment";
+  bookAppointmentURL="http://localhost:3000/bookappointment";//Dharmambal Sureshkumar B00824492
+  getAppointmentTiming="http://localhost:3000/dateandtime";//Dharmambal Sureshkumar B00824492
 
   constructor(private http: HttpClient) { }
 
@@ -76,6 +86,16 @@ getDocAppointment(docId){
   //Author NAME: Aishwarya Narayanan STUDENT ID: B00820313
   return this.http.post<getDocAppointment>(this.getDocAppointmentURL, docId)
     .pipe();
+}
+
+bookAppointment(details){
+  return this.http.post<string>(this.bookAppointmentURL, details)
+  .pipe();
+}
+
+dateandtime(){
+  return this.http.get<Array<getDateAndTime>>(this.getAppointmentTiming)
+  .pipe();
 }
   
 }
