@@ -12,7 +12,8 @@ import {UpdateorcancelappointmentComponent} from './updateorcancelappointment/up
 import {BlogComponent} from './blog/blog.component';
 import {MedicalRecordsComponent} from './medical-records/medical-records.component';
 import {ProfileComponent} from './profile/profile.component';
-import {EditprofileComponent} from './editprofile/editprofile.component'
+import {EditprofileComponent} from './editprofile/editprofile.component';
+import {ForgotpasswordComponent} from './forgotpassword/forgotpassword.component';
 
 
 const routes: Routes = 
@@ -29,7 +30,8 @@ const routes: Routes =
 {path : 'blogs',component : BlogComponent},
 {path : 'medicalrecords',component : MedicalRecordsComponent},
 {path : 'profile', component: ProfileComponent},
-{path : 'editprofile', component : EditprofileComponent}
+{path : 'editprofile', component : EditprofileComponent},
+{path : 'forgotpassword',component:ForgotpasswordComponent}
 ];
 
 @NgModule({

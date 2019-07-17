@@ -16,6 +16,7 @@ import {MedicalRecordsComponent} from './medical-records/medical-records.compone
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
     BlogComponent,
     MedicalRecordsComponent,
     ProfileComponent,
-    EditprofileComponent
+    EditprofileComponent,
+    ForgotpasswordComponent
    
   ],
   imports: [

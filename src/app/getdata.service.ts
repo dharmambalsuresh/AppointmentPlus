@@ -5,6 +5,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+export interface LoginData{
+  "message":string;
+  "userType":string;
+  }
+  
+  export interface forgotpasswordData{
+    "message":string;
+    "emailID":String;
+    "password":string;
+  }
 
 export interface getDocAppointment{
 //-- Author NAME: Aishwarya Narayanan STUDENT ID: B00820313
@@ -39,6 +49,8 @@ export class GetdataService {
   canceldocAppointmentURL = "http://localhost:3000/canceldocAppointment";
   manageappointmentURL = "http://localhost:3000/manageappointment";
   getDocAppointmentURL = "http://localhost:3000/getDocAppointment";
+  loginUserURL ="http://localhost:3000/login";
+  forgotPasswordURL = "http://localhost:3000/forgotpassword";
 
   constructor(private http: HttpClient) { }
 
@@ -76,6 +88,17 @@ getDocAppointment(docId){
   //Author NAME: Aishwarya Narayanan STUDENT ID: B00820313
   return this.http.post<getDocAppointment>(this.getDocAppointmentURL, docId)
     .pipe();
+}
+
+forgotpassword(forgotpasswordDetails)
+{
+  return this.http.post<forgotpasswordData>(this.forgotPasswordURL, forgotpasswordDetails)
+  .pipe();
+}
+loginUser(details)
+{
+  return this.http.post<LoginData>(this.loginUserURL,details)
+  .pipe();
 }
   
 }
