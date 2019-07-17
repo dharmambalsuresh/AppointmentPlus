@@ -1,3 +1,4 @@
+<!-- Dharmambal Sureshkumar B00824492 -->
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -29,7 +30,7 @@
     <i class="fa fa-user" aria-hidden="true"></i>
   </button>
           <div class="dropdown-menu dropdown-menu-right">
-            <button class="dropdown-item" [routerLink]="['/profile']" type="button">Profile</button>
+            <button class="dropdown-item" type="button">Profile</button>
             <button class="dropdown-item" type="button">Help</button>
             <div class="dropdown-divider"></div>
             <button class="dropdown-item" [routerLink]="['/home']" type="button">Logout</button>
@@ -49,14 +50,14 @@
                       <div class="form-row">
                           <div class="col-md-6">
                             <label style="color: white">First Name</label>
-                            <input type="text" name="fname" id="fname" placeholder="First Name" required class="form-control">
+                            <input type="text" name="fname" id="fname" [(ngModel)]="fname" placeholder="First Name" required class="form-control">
                             <div *ngIf="pnull" style="color:red">
                               First Name is required
                             </div>    
                   </div>
                   <div class="col-md-6">
                       <label style="color: white">Last Name</label>
-                      <input type="text" name="lname" id="lname" placeholder="Last Name" required="" class="form-control">
+                      <input type="text" name="lname" id="lname"[(ngModel)]="lname" placeholder="Last Name" required="" class="form-control">
                       <div *ngIf="pnull" style="color:red">
                         Last Name is required
                       </div>  
@@ -67,7 +68,7 @@
                   <div class="form-row">
                           <div class="col-md-6">
                           <label style="color: white">Email</label>
-                          <input type="email" name="email" id="email" placeholder="Email" required="" class="form-control">
+                          <input type="email" name="email" id="email"[(ngModel)]="email" placeholder="Email" required="" class="form-control">
                           <div *ngIf="enull" style="color:red">
                             Email is required
                           </div>
@@ -77,54 +78,58 @@
                           </div>
                           <div class="col-md-6">
                           <label style="color: white">Phone</label>
-                          <input type="text" name="phone" id="phone" placeholder="Phone" minlength="10" maxlength="13" required="" class="form-control">
+                          <input type="text" name="phone" id="phone" [(ngModel)]="phone" placeholder="Phone" minlength="10" maxlength="13" required="" class="form-control">
                           <div *ngIf="pnull" style="color:red">
                             Phone is required
                           </div>    
                         </div>  
                   </div>  
                   </div>
+                  <div class="form-group">
+                    <div class="form-row">
+                       <label style="color: white">Select Doctor</label>
+                       <div class="btn-group selectDtr">
+                      <button type="button" class="btn dropdown-toggle btnDtr" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{doctor}}
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" (click)="stopReload();setDoctor(d.doctorname);" href="#" *ngFor="let d of doctorList">{{d.doctorname}}</a>
+                      </div>
+                    </div>
+                    </div>
+                    </div>
               <div class="form-group">
                   <div class="form-row">
-                      <div class="col-md-6">
-                  <label style="color: white">Booking Date</label>
-                  <input type="text" name="bdate" id="bdate" placeholder="MM-DD-YYYY" required="" class="form-control">
-                  <div *ngIf="pnull" style="color:red">
-                    Booking Date is required
-                  </div>  
+                    <label style="color: white">Booking Date</label>
+                    <div class="btn-group selectDtr">
+                   <button type="button" class="btn dropdown-toggle btnDtr" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{selectedDate}}
+                   </button>
+                   <div class="dropdown-menu dropdown-menu-right" >
+                     <a class="dropdown-item" (click)="stopReload();setDate(d.date);" href="#" *ngFor="let d of dateonly">{{d.date}}</a>
+                   </div>
+                 </div>
+                 </div>
               </div>
-              <div class="col-md-6">
-                  <label style="color: white">Booking Time</label>
-                  <input type="text" name="btime" id="btime" placeholder="12 Hours (am/pm)" required="" class="form-control">
-                  <div *ngIf="pnull" style="color:red">
-                    Booking Time is required
-                  </div>  
-              </div>
-              </div>
-          </div>
-             <div class="form-group">
-              <div class="form-row">
-                 <label style="color: white">Select Doctor</label>
-                
-                 <div class="btn-group selectDtr">
-                <button type="button" class="btn dropdown-toggle btnDtr" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Doctor
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="#">Rodrick Paul</a>
-                  <a class="dropdown-item" href="#">Mike Geller</a>
-                  <a class="dropdown-item" href="#">Monica Green</a>
-                                  </div>
-              </div>
-              </div>
+              <div class="form-group">
+                  <div class="form-row">
+                      <label style="color: white">Booking time</label>
+                      <div class="btn-group selectDtr">
+                     <button type="button" class="btn dropdown-toggle btnDtr" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       {{selectedTime}}
+                     </button>
+                     <div class="dropdown-menu dropdown-menu-right" >
+                       <a class="dropdown-item" (click)="stopReload();setTime(d.timesolts);" href="#" *ngFor="let d of timeonly">{{d.timesolts}}</a>
+                     </div>
+                   </div>
+                   </div>
               </div>
           <div class="form-group">
               <div class="form-row">
                       <label style="color: white">Reason for Appointment</label>
-                      <textarea class="form-control" id="Areason" placeholder="Optional" rows="2"></textarea>
+                      <textarea class="form-control" name="reason" id="reason" [(ngModel)]="reason" placeholder="Optional" rows="2"></textarea>
               </div>
               </div>
-             
                       <div class="form-group">
                           <div class="form-row">
                               <div class="col-md-5">
@@ -141,7 +146,7 @@
 
                                <div class="col-md-2"></div> 
                               <div class="col-md-10">
-                                <input type="submit"  (click)="validate()" value="Book Appointment"  class="btn finalsubmit">
+                                <input type="submit"  (click)="click()" value="Book Appointment"  class="btn finalsubmit">
                               </div> 
                                <div class="col-md-2"></div> 
                             </div>
