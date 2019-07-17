@@ -76,6 +76,39 @@ Filenames:
 *  Clicking on the status navigates the user to the cancel appointment page, where the user can cancel the appointment.
 * Once an appointment is canceled, it will automatically update the status to **cancelled** in the manage appointment page.
 
+#### (Abhinandan Walia - B00820613)
+The two features that are mentioned in Assignment-3 are: -
+1. Registration/Signup
+2. Edit Profile
+
+Assignment 4 submission focuses on one of the two features for the doctor and patient user base. Following section provides the details for both features.
+
+1. Feature - "Registration/SignUp" [Completed fully]
+Filenames:
+    * Server/doctor/registerUser.js
+    * Server/user/registerUser.js
+    * src/app/signup [component]
+    * src/app/getdata.service.ts
+
+This feature is one of the core features that allow users to use the application as only the registered users can access the services provided by AppointmentPlus. Any guest user can navigate to the signup page and fill out the basic details to register. On successful registration, an email notification is sent specifying that the registration was successful.
+* A new user upon landing on the home page can find the signup link on the banner section. They can also navigate to either of the login pages (for Doctor or Patient) to find a link to the signup page.
+* On the signup page, they are asked to fill in basic details like name, email, phone, etc.
+* With a click on the register button, the process begins with validation the inputs provided by the user. Any validation failure is conveyed to the user with an appropriate message.
+* Successful validation triggers a service to begin data save to the database.
+* A success prompt is provided and the user is redirected to the Login page. Along with this process, an email notification is sent to the user confirming the registration success [8].
+
+2. Feature - "Edit Profile" [Completed partially]
+Filenames:
+    * src/app/Profile [component]
+    * src/app/Edit [component]
+
+This feature is partially complete with front-end fully developed and backend in progress. This feature is the profile management section. Once a registered users login to the account they can update the information provided at the time of registration. This feature has some restrictions over the information that the user can update. Name, Email, Date of Birth and License Number are somewhat information that does not change, therefore they are resticted not to update. 
+* After login, the user can navigate to the profile section from a dropdown list on the right top corner.
+* On click to the profile section the user is directed to the profile page displaying the information provided during the registration.
+* A click on the edit button takes the user to an edit page where they can update the information. This page allows updated only to the non-restricted field as mentioned above.
+* Similar to the registration page on update button click will start validating the user inputs and trigger database save on successful validation.
+* On process completion user is redirect to the profile page with newly updated information.
+
 ## Frontend technologies used:
 
 * Angular 7 – MVC framework for creating single page application
@@ -151,3 +184,5 @@ Launch the browser and navigate to http://localhost:4200/
 [6]./@daouda.diallo.cisse. (2019, June 13). Creation of Web Application with Node JS and Angular V6 - Part 2 (FRONTEND). Retrieved from https://medium.com/code-divoire/creation-of-web-application-with-node-js-and-angular-v6-part-2-frontend-2de5eba06b5a
 
 [7]./@aniansson. (2017, June 22). Connecting an API to an Angular 4 front-end application. Retrieved from https://medium.com/craft-academy/connecting-an-api-to-an-angular-4-front-end-application-e0fc9ea33202
+
+[8]. /@nickroach_50526. (2019, June 04). Sending Emails with Node.js Using SMTP, Gmail, and OAuth2. Retrieved from https://medium.com/@nickroach_50526/sending-emails-with-node-js-using-smtp-gmail-and-oauth2-316fe9c790a1
