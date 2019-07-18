@@ -18,6 +18,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { CreateblogComponent } from './createblog/createblog.component';
 import { ImageToDataUrlModule } from "ngx-image2dataurl";
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ImageToDataUrlModule } from "ngx-image2dataurl";
     MedicalRecordsComponent,
     ProfileComponent,
     EditprofileComponent,
-    CreateblogComponent
+    CreateblogComponent,
+    ForgotpasswordComponent
    
   ],
   imports: [
