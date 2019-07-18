@@ -94,7 +94,7 @@ This feature enables the user that is the patients to book appointment with the 
 * The user can fill in the required details and the validation is done for every field on the page.
 * Once the user clicks the book appointment button an alert pop's up to notify the user about the appointment confirmation.
 
-###(AMBADIPUDI AKHIL TEJA, B00825307)
+### (AMBADIPUDI AKHIL TEJA, B00825307)
 
 The blog page gives details about tips and gives some suggestions regarding the diet. Doctors are able to create blog from their end . The blogs are given view access to patients and guests.
 
@@ -113,13 +113,14 @@ The blog page gives details about tips and gives some suggestions regarding the 
 
 **Steps to create blog:**
 
-1)	As a guest, one can be able to view blogs once he enters the home page and click on the blogs which is present in Navigation bar and get the information about the blogs.
-2)	Patient can also be able to view blogs directly after visiting the home page and after logging into the patient login patient is able to view the blog from the navigation bar.
-3)	Doctor can create blogs by clicking blogs on the Navigation bar and by clicking on create blog  button and submitting the entire form ,doctor is able to create the blog. 
-Modules Used :
+*	As a guest, one can be able to view blogs once he enters the home page and click on the blogs which is present in Navigation bar and get the information about the blogs.
+*	Patient can also be able to view blogs directly after visiting the home page and after logging into the patient login patient is able to view the blog from the navigation bar.
+*	Doctor can create blogs by clicking blogs on the Navigation bar and by clicking on create blog  button and submitting the entire form ,doctor is able to create the blog. 
+
+**Modules Used :**
 npm install ngx-image2dataurl –save (used this module for base64 encoding and image resizing
 
-###Image References:
+**Image References:
 1)https://www.pexels.com/photo/two-person-carrying-black-inflatable-pool-float-on-brown-wooden-bridge-near-waterfalls-1020016
 2)https://www.pexels.com/photo/women-s-white-top-and-orange-floral-skirt-823694/
 3)https://www.pexels.com/search/healthy/
