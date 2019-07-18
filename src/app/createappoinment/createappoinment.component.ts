@@ -68,16 +68,22 @@ export class CreateappoinmentComponent implements OnInit {
 
         this.timeslot[i]["invalidtime"] = false;
         this.timeslot[i]["nulltime"] = false;
+        this.nltime = false;
+        this.ivalidtime = false;
       }
       else {
         this.timeslot[i]["nulltime"] = false;
         this.timeslot[i]["invalidtime"] = true;
+        this.nltime = false;
+        this.ivalidtime = true;
       }
     }
     else if (time == "") {
 
       this.timeslot[i]["nulltime"] = true;
       this.timeslot[i]["invalidtime"] = false;
+      this.nltime = true;
+        this.ivalidtime = false;
     }
 
     }
