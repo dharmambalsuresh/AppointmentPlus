@@ -4,7 +4,7 @@
 			<div class="card-body">
 				<form action="/doctor" name="loginform">
 					<div class="form-group cardbody">
-						<label class="control-label">Email address</label>
+						<label class="control-label">Email Address</label>
 						<input type="email" class="form-control" id="email" required>
 						<div *ngIf="enull" style="color:red">
 							Email is required
@@ -31,8 +31,11 @@
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center registerNow">
-					Don't have an account?<a href="#" [routerLink]="['/signup']">Register Now</a>
+					Don't have an account?<a href="#">Register Now</a>
 				</div>
+				<div class="d-flex justify-content-center registerNow">
+						Forgot Password?<a [routerLink]="['/forgotpassword']">Forgot Password</a>
+					</div>
 			</div>
 		</div>
 	</div>

@@ -9,6 +9,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
 var cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -22,8 +23,18 @@ var cancelappointment = require('./routes/patients/canceldocAppointment');//Vars
 var manageapps = require('./routes/patients/manageappointment');//Varsha Sridhar STUDENT ID:B00791643
 var getDocAppointment = require('./routes/doctor/getAppointments.js');
 var blog = require('./routes/doctor/createblog');//Akhil Ambadipdi B00825307
+var userLogin = require('./routes/user/user');//Ashutosh Patil STUDENT ID : B00812667
+var forgotPassword = require('./routes/user/forgotpassword');//Ashutosh Patil STUDENT ID : B00812667
+
 var app = express();
 app.use(cors());
+
+app.use(session({
+  key: 'user_sid',
+	secret: 'secret',
+	resave: false,
+	saveUninitialized: true
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -47,6 +58,10 @@ app.post('/createDoctorUser',createDoctorUser); //Abhinandan Walia STUDENT ID:B0
 app.post('/canceldocAppointment', cancelappointment);//Varsha Sridhar STUDENT ID:B00791643
 app.get('/manageappointment', manageapps);//Varsha Sridhar STUDENT ID:B00791643
 app.post('/getDocAppointment',getDocAppointment);
+app.post('/login',userLogin);//Contributer Name: Ashutosh Patil STUDENT ID:B00812667
+app.post('/forgotpassword',forgotPassword);//Contributer Name: Ashutosh Patil STUDENT ID:B00812667
+
+
 
 
 

@@ -14,6 +14,8 @@ import {MedicalRecordsComponent} from './medical-records/medical-records.compone
 import {ProfileComponent} from './profile/profile.component';
 import {EditprofileComponent} from './editprofile/editprofile.component'
 import { CreateblogComponent } from './createblog/createblog.component';
+import {ForgotpasswordComponent} from './forgotpassword/forgotpassword.component';  
+
 
 
 const routes: Routes = 
@@ -31,7 +33,8 @@ const routes: Routes =
 {path : 'medicalrecords',component : MedicalRecordsComponent},
 {path : 'profile', component: ProfileComponent},
 {path : 'editprofile', component : EditprofileComponent},
-{path:'createblog',component:CreateblogComponent}
+{path:'createblog',component:CreateblogComponent},
+{path : 'forgotpassword',component:ForgotpasswordComponent}
 ];
 
 @NgModule({
