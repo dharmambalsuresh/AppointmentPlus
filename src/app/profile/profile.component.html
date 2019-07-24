@@ -38,128 +38,59 @@
 
   </div>
 </nav>
-
-<div class="container">
-  <div class="card">
-  <!-- <div style="background-color: #343a40;color: white"class="card-header text-center"><strong>Register</strong></div> -->
-  <div class="card-body"></div>
-    <form class="w-50 m-auto">
-        <div class="form-group">
-            <div class="form-row">
-              <!--Edit button image https://icons8.com/icon/47749/cute-outline -->
-            <a style="color: white" href="" [routerLink]="['/editprofile']"><img src="assets/edit.png" alt="edit_image" style="width:25px; height:25px ;"></a>
-              </div>
-        </div>
-        <div class="form-group">
-            <div class="form-row">
-                  <div class="col-md-6">
-                      <label style="color: white">License Number </label>
-                  </div>
-                  <div class="col-md-6">
-                      <label id = 'lnumber' style="color: white"></label>
-                  </div>
+<br>
+<br>
+            <div class="container">
+                <table class="table table-borderless table-striped">
+                  <caption style="caption-side: top; color: black; font-size:30px;">Profile</caption>
+                  <tbody *ngFor="let appData of result">
+                  <tr>
+                  <td style="padding:8px">Name</td>
+                  <td style="padding:8px">{{appData.firstName}} {{appData.lastName}}</td>
+                  </tr>
+                  <tr>
+                  <td style="padding:8px"> Date of Birth</td>
+                  <td style="padding:8px"> {{appData.dateofBirth}}</td>
+                  </tr>
+                  <tr>
+                  <td style="padding:8px">Email</td>
+                  <td style="padding:8px"> {{appData.email}}</td>
+                  </tr>
+                  <tr>
+                  <td style="padding:8px">Password</td>
+                  <td style="padding:8px"> {{appData.password}}</td>
+                  </tr>
+                  <tr>
+                  <td style="padding:8px">Phone</td>
+                  <td style="padding:8px"> {{appData.phone}}</td>
+                  </tr>
+                  <tr>
+                  <td style="padding:8px">Address</td>
+                  <td style="padding:8px"> {{appData.address}}</td>
+                  </tr>
+                  <tr>
+                  <td style="padding:8px">City</td>
+                  <td style="padding:8px"> {{appData.city}}</td>
+                  </tr>
+                  <tr>
+                  <td style="padding:8px">Province</td>
+                  <td style="padding:8px"> {{appData.province}}</td>
+                  </tr>
+                  <tr>
+                  <td style="padding:8px">Postal Code</td>
+                  <td style="padding:8px"> {{appData.postalCode}}</td>
+                  </tr>
+                  </tbody>
+                  <td></td>
+                  <td><a href="" [routerLink]="['/editprofile']" class="badge badge-success" > <img src="assets/EditButton_black.png" alt="edit_image" style="width:25px; height:25px ;"> Edit Profile</a></td> 
+                </table>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="form-row">
-                <div class="col-md-6">
-                    <label style="color: white">First Name</label>
-                </div>
-                <div class="col-md-6">
-                    <label id = 'fname' style="color: white"></label>
-                </div>
-          </div>
-        </div>
-        <div class="form-group">
-            <div class="form-row">
-                <div class="col-md-6">
-                    <label style="color: white">Last Name</label>
-                </div>
-                <div class="col-md-6">
-                    <label id = 'lname' style="color: white"></label>
-                </div>
-            </div>
-           </div>
-           <div class="form-group">
-              <div class="form-row">
-                  <div class="col-md-6">
-                      <label style="color: white"> Date of Birth</label>
-                  </div>
-                  <div class="col-md-6">
-                      <label id = 'dob' style="color: white"></label>
-                  </div>
-              </div>
-             </div>
-             <div class="form-group">
-                <div class="form-row">
-                    <div class="col-md-6">
-                        <label style="color: white">Email</label>
-                    </div>
-                    <div class="col-md-6">
-                        <label id = 'email' style="color: white"></label>
-                    </div>
-                </div>
-               </div>
-           <div class="form-group">
-              <div class="form-row">
-                      <div class="col-md-6">
-                          <label style="color: white">Phone</label>
-                      </div>
-                      <div class="col-md-6">
-                        <label id = 'phone' style="color: white"></label>
-                    </div>  
-              </div>  
-              </div>
-              <div class="form-group">
-                  <div class="form-row">
-                          <div class="col-md-6">
-                              <label style="color: white">Address</label>
-                          </div>
-                          <div class="col-md-6">
-                          <label id = 'address' style="color: white"></label>
-                        </div>  
-                  </div>  
-                  </div>
-              <div class="form-group">
-                  <div class="form-row">
-                    <div class="col-md-6">
-                        <label style="color: white">City</label>
-                          </div>
-                        <div class="col-md-6">
-                            <label id = 'city' style="color: white"></label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-row">
-                          <div class="col-md-6">
-                              <label style="color: white">Province</label>
-                                </div>
-                              <div class="col-md-6">
-                                  <label id = 'province' style="color: white"></label>
-                              </div>
-                            </div>
-                          </div>
-                    <div class="form-group">
-                        <div class="form-row">
-                          <div class="col-md-6">
-                              <label style="color: white">Postal Code</label>
-                                </div>
-                              <div class="col-md-6">
-                                  <label id = 'postal' style="color: white"></label>
-                              </div>
-                            </div>
-                          </div>
-      </form>
-  </div>
-</div>
-
 
 <footer id="sticky-footer" class="py-4 bg-dark text-white-50" style="width:100%">
-  <div class="row m-0">
-    <div class="container text-center" id="copyright">
-      <h4 class="copy">Copyright &copy; Your Website</h4>
+    <div class="row m-0">
+      <div class="container text-center" id="copyright">
+        <h4 class="copy">Copyright &copy; Your Website</h4>
+      </div>
     </div>
-  </div>
-
-</footer>
+  
+  </footer>

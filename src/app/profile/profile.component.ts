@@ -1,5 +1,8 @@
 //Author NAME: Abhinandan Walia STUDENT ID: B00820613
 import { Component, OnInit } from '@angular/core';
+import { GetdataService} from '../getdata.service';
+import {fetchProfile} from '../getdata.service';
+
 
 @Component({
   selector: 'app-profile',
@@ -7,10 +10,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  profile : fetchProfile;
+  result ;
 
-  constructor() { }
+  constructor(private getData : GetdataService) { }
 
   ngOnInit() {
+    this.getData.fetchProfileData().subscribe((info)=>
+    this.getinfo(info)
+    );
+  }
+  getinfo(info){
+     this.profile = info;
+     this.result = this.profile;
   }
 
 }

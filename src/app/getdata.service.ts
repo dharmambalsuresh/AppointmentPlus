@@ -42,6 +42,22 @@ export interface ManageAppt{
   Status: string;
 }
 
+export interface fetchProfile{ //Abhinandan Walia BID:B00820613
+  result : [{
+  licenseNumber :string;
+  firstName :string;
+  lastName :string;
+  email :string;
+  password :string;
+  address :string;
+  phone :string;
+  city :string;
+  dateofBirth :string; 
+  postalCode :string;
+  province :string;
+}];
+}
+
 export interface getDateAndTime{
 
   //Dharmambal Sureshkumar B00824492
@@ -57,6 +73,9 @@ export class GetdataService {
   createAppointmentURL = "http://localhost:3000/createNewAppointment";
   createPatientUserURL = "http://localhost:3000/createPatientUser"; //Abhinandan Walia BID:B00820613
   createDoctorUserURL = "http://localhost:3000/createDoctorUser"; //Abhinandan Walia BID:B00820613
+  fetchProfileDataURL = "http://localhost:3000/fetchProfileData"; //Abhinandan Walia BID:B00820613
+  userInfoURL = "http://localhost:3000/editprofile"; //Abhinandan Walia BID:B00820613
+  editProfileURL = "http://localhost:3000/editProfile";
   canceldocAppointmentURL = "http://localhost:3000/canceldocAppointment";
   manageappointmentURL = "http://localhost:3000/manageappointment";
   getDocAppointmentURL = "http://localhost:3000/getDocAppointment";
@@ -82,6 +101,24 @@ createPatientUser(details) {
 createDoctorUser(details) {
   return this.http.post<string>(this.createDoctorUserURL, details)
     .pipe();
+}
+//abhinandan Walia BID:B00820613
+editProfile(details)
+{
+  return this.http.post<string>(this.editProfileURL, details)
+    .pipe();
+}
+//Abhinandan Walia B00820613
+fetchProfileData()
+{
+return this.http.get<Array<fetchProfile>>(this.fetchProfileDataURL)
+  .pipe();
+}
+//Abhinandan Walia B00820613
+getUserInfo()
+{
+return this.http.get<Array<fetchProfile>>(this.userInfoURL)
+  .pipe();
 }
 cancelAppointment(appointmentDetails) {
   // --AUTHOR: Varsha Sridhar STUDENT_ID: B00791643
