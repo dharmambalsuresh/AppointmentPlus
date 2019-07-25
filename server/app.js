@@ -17,6 +17,8 @@ var createDocSchedule = require('./routes/doctor/createSchedule');
 
 var createPatientUser = require('./routes/user/registerUser'); //Abhinandan Walia STUDENT ID:B00820613
 var createDoctorUser = require('./routes/doctor/registerUser'); //Abhinandan Walia STUDENT ID:B00820613
+var updatePatientUser = require('./routes/user/updateUser'); //Abhinandan Walia STUDENT ID:B00820613
+var updateDoctorUser = require('./routes/doctor/updateUser'); //Abhinandan Walia STUDENT ID:B00820613
 var fetchProfileData = require('./routes/user/fetchProfileData'); //Abhinandan Walia STUDENT ID:B00820613
 var editprofile = require('./routes/user/editprofile');//Abhinandan Walia STUDENT ID:B00820613
 
@@ -60,10 +62,16 @@ app.use('/users', usersRouter);
 app.use('/blogs',blog);
 
 app.post('/createNewAppointment', createDocSchedule);
+
 app.post('/createPatientUser',createPatientUser); //Abhinandan Walia STUDENT ID:B00820613
 app.post('/createDoctorUser',createDoctorUser); //Abhinandan Walia STUDENT ID:B00820613
+
+app.post('/updatePatientUser',updatePatientUser); //Abhinandan Walia STUDENT ID:B00820613
+app.post('/updateDoctorUser',updateDoctorUser); //Abhinandan Walia STUDENT ID:B00820613
+
 app.get('/fetchProfileData', fetchProfileData);//Abhinandan Walia STUDENT ID:B00820613
-app.post('/editprofile',editprofile);//Abhinandan Walia STUDENT ID:B00820613
+app.get('/editprofile',editprofile);//Abhinandan Walia STUDENT ID:B00820613
+
 app.post('/canceldocAppointment', cancelappointment);//Varsha Sridhar STUDENT ID:B00791643
 app.get('/manageappointment', manageapps);//Varsha Sridhar STUDENT ID:B00791643
 app.post('/getDocAppointment',getDocAppointment);
@@ -71,12 +79,9 @@ app.post('/login',userLogin);//Contributer Name: Ashutosh Patil STUDENT ID:B0081
 app.post('/forgotpassword',forgotPassword);//Contributer Name: Ashutosh Patil STUDENT ID:B00812667
 
 
-
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  next(createError(404 + err));
 });
 
 // error handler

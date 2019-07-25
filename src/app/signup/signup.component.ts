@@ -14,6 +14,11 @@ export class SignupComponent implements OnInit {
   user: String;
   enull: boolean;
   pnull: boolean;
+  dobnull : boolean;
+  phnull : boolean;
+  lnnull : boolean;
+  fnnull : boolean;
+  licnull : boolean;
   einvalid: boolean;
   isdoctorchecked:boolean;
   indexat: any;
@@ -40,15 +45,15 @@ export class SignupComponent implements OnInit {
     {
       var licenseNumber = (<HTMLInputElement>document.getElementById("licensenumber")).value;
     }
-    var firstName = (<HTMLInputElement>document.getElementById("fname")).value;
-    var lastName = (<HTMLInputElement>document.getElementById("lname")).value;
+    var firstName = (<HTMLInputElement>document.getElementById("firstName")).value;
+    var lastName = (<HTMLInputElement>document.getElementById("lastName")).value;
     var email = (<HTMLInputElement>document.getElementById("email")).value;
     var password = (<HTMLInputElement>document.getElementById("password")).value;
     var address = (<HTMLInputElement>document.getElementById("address")).value;
     var phone = (<HTMLInputElement>document.getElementById("phone")).value;
     var city = (<HTMLInputElement>document.getElementById("city")).value;
-    var dateofBirth = (<HTMLInputElement>document.getElementById("dob")).value;
-    var postalCode = (<HTMLInputElement>document.getElementById("postal")).value;
+    var dateofBirth = (<HTMLInputElement>document.getElementById("dateofBirth")).value;
+    var postalCode = (<HTMLInputElement>document.getElementById("postalCode")).value;
     var province = (<HTMLInputElement>document.getElementById("province")).value;
 
     this.indexat = email.indexOf("@");
@@ -76,7 +81,36 @@ export class SignupComponent implements OnInit {
     else {
       this.pnull = false;
     }
-
+    if (dateofBirth == "") {
+      this.dobnull = true;
+    }
+    else {
+      this.dobnull = false;
+    }
+    if (licenseNumber == "") {
+      this.licnull = true;
+    }
+    else {
+      this.licnull = false;
+    }
+    if (phone == "") {
+      this.phnull = true;
+    }
+    else {
+      this.phnull = false;
+    }
+    if (lastName == "") {
+      this.lnnull = true;
+    }
+    else {
+      this.lnnull = false;
+    }
+    if (firstName == "") {
+      this.fnnull = true;
+    }
+    else {
+      this.fnnull = false;
+    }
     if (!this.enull && !this.pnull && !this.einvalid && !(<HTMLInputElement>document.getElementById("userDoctor")).checked) {
    var PatientDetails = { 
     "firstName" :firstName,
@@ -91,6 +125,7 @@ export class SignupComponent implements OnInit {
     "province" :province,
 };
       this.storePatientinDB(PatientDetails);
+      this.router.navigate(['/login']);
     }
     if (!this.enull && !this.pnull && !this.einvalid && (<HTMLInputElement>document.getElementById("userDoctor")).checked) {
         var DoctorDetails = { 
@@ -107,9 +142,9 @@ export class SignupComponent implements OnInit {
         "province" :province,
    };
    this.storeDoctorinDB(DoctorDetails);
+   this.router.navigate(['/login']);
     }
-      this.router.navigate(['/login']);
-    }
+   }
     
     storePatientinDB(details)
     {

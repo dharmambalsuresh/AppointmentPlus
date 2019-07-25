@@ -73,9 +73,12 @@ export class GetdataService {
   createAppointmentURL = "http://localhost:3000/createNewAppointment";
   createPatientUserURL = "http://localhost:3000/createPatientUser"; //Abhinandan Walia BID:B00820613
   createDoctorUserURL = "http://localhost:3000/createDoctorUser"; //Abhinandan Walia BID:B00820613
+
+  UpdatePatientURL = "http://localhost:3000/updatePatientUser"; //Abhinandan Walia BID:B00820613
+  UpdateDoctorURL = "http://localhost:3000/updateDoctorUser"; //Abhinandan Walia BID:B00820613
+
   fetchProfileDataURL = "http://localhost:3000/fetchProfileData"; //Abhinandan Walia BID:B00820613
   userInfoURL = "http://localhost:3000/editprofile"; //Abhinandan Walia BID:B00820613
-  editProfileURL = "http://localhost:3000/editProfile";
   canceldocAppointmentURL = "http://localhost:3000/canceldocAppointment";
   manageappointmentURL = "http://localhost:3000/manageappointment";
   getDocAppointmentURL = "http://localhost:3000/getDocAppointment";
@@ -102,12 +105,18 @@ createDoctorUser(details) {
   return this.http.post<string>(this.createDoctorUserURL, details)
     .pipe();
 }
+
 //abhinandan Walia BID:B00820613
-editProfile(details)
-{
-  return this.http.post<string>(this.editProfileURL, details)
+updatePatientDB(details) {
+  return this.http.post<string>(this.UpdatePatientURL, details)
     .pipe();
 }
+//abhinandan Walia BID:B00820613
+updateDocDB(details) {
+  return this.http.post<string>(this.UpdateDoctorURL, details)
+    .pipe();
+}
+
 //Abhinandan Walia B00820613
 fetchProfileData()
 {

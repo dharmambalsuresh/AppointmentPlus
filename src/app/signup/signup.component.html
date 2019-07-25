@@ -44,22 +44,22 @@
                       <div *ngIf="isdoctorchecked" class="form-row">
                           <label style="color: white">License Number</label>
                           <input type="text"  name="licensenumber" id="licensenumber" placeholder="License Number" required class="form-control">
-                          <div *ngIf="pnull" style="color:red">
+                          <div *ngIf="licnull" style="color:red">
                               License number is reqired
                             </div>
                       </div>
                       <div class="form-row">
                           <div class="col-md-6">
                       <label style="color: white">First Name</label>
-                      <input type="text" name="fname" id="fname" placeholder="First Name" required class="form-control">
-                      <div *ngIf="pnull" style="color:red">
+                      <input type="text" name="firstName" id="firstName" placeholder="First Name" required class="form-control">
+                      <div *ngIf="fnnull" style="color:red">
                         First Name is required
                       </div>                       
                   </div>
                   <div class="col-md-6">
                       <label style="color: white">Last Name</label>
-                      <input type="text" name="lname" id="lname" placeholder="Last Name" required class="form-control">
-                      <div *ngIf="pnull" style="color:red">
+                      <input type="text" name="lastName" id="lastName" placeholder="Last Name" required class="form-control">
+                      <div *ngIf="lnnull" style="color:red">
                         Last Name is required
                       </div>
                   </div>
@@ -94,8 +94,8 @@
                       </div> 
                       <div class="col-md-6">
                           <label style="color: white">Phone</label>
-                          <input type="text" name="phone" id="phone" placeholder="Phone" minlength="10" maxlength="13" required="" class="form-control">
-                          <div *ngIf="pnull" style="color:red">
+                          <input type="text" name="phone" id="phone" placeholder="Phone" minlength="10" maxlength="13" required class="form-control">
+                          <div *ngIf="phnull" style="color:red">
                             Phone is required
                           </div>  
                         </div> 
@@ -109,8 +109,8 @@
                               </div>
                               <div class="col-md-6">
                                   <label style="color: white">Date of Birth</label>
-                              <input type="text" name="dob" id="dob" placeholder="MM-DD-YYYY" required="" class="form-control">  
-                              <div *ngIf="pnull" style="color:red">
+                              <input type="text" name="dateofBirth" id="dateofBirth" placeholder="MM-DD-YYYY" required class="form-control">  
+                              <div *ngIf="dobnull" style="color:red">
                                 Date of Birth is required
                               </div>  
                             </div>
@@ -120,7 +120,7 @@
                       <div class="form-row">
                           <div class="col-md-6">
                       <label style="color: white">Postal Code</label>
-                      <input type="text" name="postal" id="postal" placeholder="Postal Code"  class="form-control">
+                      <input type="text" name="postalCode" id="postalCode" placeholder="Postal Code"  class="form-control">
                   </div>
                   <div class="col-md-6">
                       <label style="color: white">Province</label>
