@@ -25,7 +25,7 @@ var getDocAppointment = require('./routes/doctor/getAppointments.js');
 var blog = require('./routes/doctor/createblog');//Akhil Ambadipdi B00825307
 var userLogin = require('./routes/user/user');//Ashutosh Patil STUDENT ID : B00812667
 var forgotPassword = require('./routes/user/forgotpassword');//Ashutosh Patil STUDENT ID : B00812667
-
+var editDocAppointment = require('./routes/doctor/editAppointment');
 var app = express();
 app.use(cors());
 
@@ -60,6 +60,7 @@ app.get('/manageappointment', manageapps);//Varsha Sridhar STUDENT ID:B00791643
 app.post('/getDocAppointment',getDocAppointment);
 app.post('/login',userLogin);//Contributer Name: Ashutosh Patil STUDENT ID:B00812667
 app.post('/forgotpassword',forgotPassword);//Contributer Name: Ashutosh Patil STUDENT ID:B00812667
+app.post('/editAppointment',editDocAppointment);
 
 
 

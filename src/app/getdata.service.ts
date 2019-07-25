@@ -6,6 +6,7 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, Subject } from 'rxjs';
 
 export interface LoginData{
   //Contributer Name : Ashutosh Patil Student ID : B00812667
@@ -54,22 +55,39 @@ export interface getDateAndTime{
   providedIn: 'root'
 })
 export class GetdataService {
-  createAppointmentURL = "http://localhost:3000/createNewAppointment";
-  createPatientUserURL = "http://localhost:3000/createPatientUser"; //Abhinandan Walia BID:B00820613
-  createDoctorUserURL = "http://localhost:3000/createDoctorUser"; //Abhinandan Walia BID:B00820613
-  canceldocAppointmentURL = "http://localhost:3000/canceldocAppointment";
-  manageappointmentURL = "http://localhost:3000/manageappointment";
-  getDocAppointmentURL = "http://localhost:3000/getDocAppointment";
-  bookAppointmentURL="http://localhost:3000/bookappointment";//Dharmambal Sureshkumar B00824492
-  getAppointmentTiming="http://localhost:3000/dateandtime";//Dharmambal Sureshkumar B00824492
-  loginUserURL ="http://localhost:3000/login";
-  forgotPasswordURL = "http://localhost:3000/forgotpassword";
+  private subject = new Subject<any>();
+  createAppointmentURL = "http://129.173.22.35:23001/createNewAppointment";
+  createPatientUserURL = "http://129.173.22.35:23001/createPatientUser"; //Abhinandan Walia BID:B00820613
+  createDoctorUserURL = "http://129.173.22.35:23001/createDoctorUser"; //Abhinandan Walia BID:B00820613
+  canceldocAppointmentURL = "http://129.173.22.35:23001/canceldocAppointment";
+  manageappointmentURL = "http://129.173.22.35:23001/manageappointment";
+  getDocAppointmentURL = "http://129.173.22.35:23001/getDocAppointment";
+  bookAppointmentURL="http://129.173.22.35:23001/bookappointment";//Dharmambal Sureshkumar B00824492
+  getAppointmentTiming="http://129.173.22.35:23001/dateandtime";//Dharmambal Sureshkumar B00824492
+  loginUserURL ="http://129.173.22.35:23001/login";
+  forgotPasswordURL = "http://129.173.22.35:23001/forgotpassword";
+  editAppointmentURL = "http://localhost:3000/editAppointment";
 
   constructor(private http: HttpClient) { }
 
+  sendMessage(message: string) {
+        this.subject.next({ text: message });
+    }
+
+    getMessage(): Observable<any> {
+        return this.subject.asObservable();
+    }
+
 createAppointment(appointmentDetails) {
   //Author NAME: Aishwarya Narayanan STUDENT ID: B00820313
-  return this.http.post<string>(this.createAppointmentURL, appointmentDetails)
+  return this.http.post<string>(this.editAppointmentURL, appointmentDetails)
+    .pipe();
+}
+
+
+editAppointment(appointmentDetails) {
+  //Author NAME: Aishwarya Narayanan STUDENT ID: B00820313
+  return this.http.post<string>(this.editAppointmentURL, appointmentDetails)
     .pipe();
 }
 

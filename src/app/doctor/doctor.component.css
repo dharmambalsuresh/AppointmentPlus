@@ -191,7 +191,7 @@ width:100%;
 }
 
 
-.badge-success{
+.badge-success,.Completed{
        color: #28a745;
     border: 1px solid #28a745;
     background-color: #ffffff;
@@ -205,7 +205,7 @@ table td{
     padding: 21px 12px;
 }
 
-.badge-success:hover{
+.badge-success:hover,.Completed:hover{
     color: #28a745;
     background-color: #ffffff;
 }
@@ -215,6 +215,14 @@ table td{
     background-color: #ffc107;
     padding: 6px 14px 6px 14px;
 }
+
+/* .badge-warning,.Cancelled{
+    color: #212529;
+    background-color: #ff4444;
+    padding: 6px 14px 6px 14px;
+} */
+
+
 .fa-caret-down{
     padding-left: 17px;
 }
@@ -248,14 +256,14 @@ table thead {
     margin-right: auto;
 }
 
-.badge-primary {
-    background: white;
-    color: #007bff;
-    border: 1px solid #007bff;
+ .Cancelled {
+  
+    color: #ff4444;
+    border: 1px solid #ff4444;
     padding: 5px;
-}
+} 
 
-.badge-primary:hover{
+.badge-primary:hover,.Upcoming{
      background: white;
     color: #007bff;
     border: 1px solid #007bff;
