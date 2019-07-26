@@ -39,85 +39,66 @@
   </div>
 </nav>
 <div class="container">
-<div>
- <div class="form-group row labels searchpatient">
-          
-            <!-- <div class="col-sm-2 col-form-label">Search</div> -->
-     <div class="col-sm-4">
-              <div class="input-group mb-3">
-                <input type="text" placeholder="Patients ID"  class="form-control">
+    <!-- <h1 style="text-align: center" >Medical Records</h1> -->
+     <div *ngIf="!showforum" class="row">
+              <div class="input-group mb-3 col-sm-6">
+                <input [(ngModel)]="searchstring" (keyup)="searchpatient()" type="text" placeholder="Patients ID"  class="form-control">
                 <span class="input-group-append">
                 <button class="btn btn-outline-secondary searchbtn" type="button">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
             </span>
               </div>
-             </div>
-            <div class="col-sm-3"></div>
+              <div class="col-sm-6" >
+              <button (click)="hideOrShowForm()" type="button" style="margin-top: 1%;margin-left: 62%;" class="btn btn-dark post">Upload Prescription  <i class="fa fa-upload" aria-hidden="true"></i> </button>
+            </div>
+          </div>    
+<div *ngIf="!showforum" class="main">
+            <mat-card style="background-color:#dee2e6;color:black">
+              <div class="row">
+              <h6 class="col-sm-3">Patient Name</h6>
+              <h6 class="col-sm-3">Patient Id</h6>
+              <h6 class="col-sm-3">Description</h6>
+              <h6 class="col-sm-1">View</h6>
+              <h6 class="col-sm-1">Download</h6>
+              <!-- <a class="col-sm-1"><i class="fas fa-eye"></i></a>
+              <a class="col-sm-1"><i class="fas fa-download"></i></a> -->
+            </div>
+          </mat-card>
+          <div *ngFor="let data of patient_records" >
+              <mat-card *ngIf="data.elementshow" style="margin-top:2%">
+                  <div class="row">
+                  <p class="col-sm-3">{{data.patientname}}</p>
+                  <p class="col-sm-3">{{data.patientid}}</p>
+                  <p class="col-sm-3">{{data.description}}</p>
+                  <a (click)="showPdf(data.record)"  class="col-sm-1"><i class="fa fa-eye"></i></a>
+                  <a (click)="downloadPdf(data.record,data.patientid)" class="col-sm-1"><i class="fa fa-download"></i></a>
+                </div>
+              </mat-card>
           </div>
-    <!-- <label for="site-search" class="site-search">Search for patients</label>
-    <input type="search" class="search" id="site-search" name="q" aria-label="Search through site content">
-    <button>Search</button> -->
+          
 </div>
-<div class="main">
+<div *ngIf="showforum" class="card" style="width: 50%;margin-left: 20%;margin-top: 5%;">
+    <h2 style="text-align: center;color:black">Create Medical Record</h2>
+    <div style="margin-top: 3%;color: black;text-align: left">Enter patient name</div>
+    <input [(ngModel)]="patient_name" style="width: 70%;"type="text">
+    <p style="color: red;text-align: left" [hidden]="patient_name_validation"> please enter patient name</p>
+    <div style="margin-top: 3%;color: black;text-align: left">Enter patient id</div>
+    <input [(ngModel)]="patient_id" style="width: 70%;"type="text">
+    <p style="color: red;text-align: left" [hidden]="patient_id_validation"> please enter patient id</p>
+    <p style="color: red;text-align: left" [hidden]="patient_valid_id_validation"> please enter a valid patient id</p>
+    <div style="margin-top: 3%;color: black;text-align: left">Enter Description</div>
+    <input [(ngModel)]="patient_description" style="width: 70%;"type="text">
+    <p style="color: red;text-align: left" [hidden]="patient_description_validation"> please enter Description</p>
+    <div style="margin-top: 3%;color: black;text-align: left">Upload Medical Record</div>
+    <!-- <label style="margin-top: 3%;margin-left: 5%;">Upload Medical Record</label> -->
+    <input style="margin-top: 1%;" type="file" (change)="handleInputChange($event)" accept="pdf/*">
+    <p style="color: red;text-align: left" [hidden]="patient_record_validation"> please upload medical record</p>
     <div class="row">
-        <a href="#">
-            <div class="column">
-                <div class="card">
-                    <h2 style="text-align:center">Patient ID #123ABC345</h2>
-
-                    <div class="card_1">
-                        <img src="assets/document.jpg" alt="documents" style="width:100%">
-                        <button class="btn btn-primary view-report-button">View Report</button>
-                        <label class="btn btn-primary" for="upload-file">Upload Prescription</label>
-                        <input type="file" name="photo" id="upload-file" />
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="#">
-            <div class="column">
-                <div class="card">
-                    <h2 style="text-align:center">Patient ID #145DEF678</h2>
-
-                    <div class="card_1">
-                        <img src="assets/document.jpg" alt="Denim Jeans" style="width:100%">
-                        <button class="btn btn-primary view-report-button">View Report</button>
-                        <label class="btn btn-primary" for="upload-file">Upload Prescription</label>
-                        <input type="file" name="photo" id="upload-file" />
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="#">
-            <div class="column">
-                <div class="card">
-                    <h2 style="text-align:center">Patient ID #178BFG954</h2>
-                    <div class="card_1">
-                        <img src="assets/document.jpg" alt="Denim Jeans" style="width:100%">
-                        <button class="btn btn-primary view-report-button">View Report</button>
-                        <label class="btn btn-primary" for="upload-file">Upload Prescription</label>
-                        <input type="file" name="photo" id="upload-file" />
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="#">
-            <div class="column">
-                <div class="card">
-                    <h2 style="text-align:center">Patient ID #176HJK734</h2>
-
-                    <div class="card_1">
-                        <img src="assets/document.jpg" alt="Denim Jeans" style="width:100%">
-                        <button class="btn btn-primary view-report-button">View Report</button>
-                        <label class="btn btn-primary" for="upload-file">Upload Prescription</label>
-                        <input type="file" name="photo" id="upload-file" />
-                    </div>
-                </div>
-            </div>
-        </a>
+    <input style="width: 30%;margin-top: 3%;margin-left: 5%;background-color: black;color: white"type="submit" (click)="submit_record()" value="Submit">
+    <input style="width: 30%;margin-top: 3%;margin-left: 5%;background-color: black;color: white"type="submit" (click)="hideOrShowForm()" value="Cancel">
     </div>
-</div>
+    </div>
 </div>
 <footer id="sticky-footer" class="py-4 bg-dark text-white-50" style="width:100%">
   <div class="row m-0">

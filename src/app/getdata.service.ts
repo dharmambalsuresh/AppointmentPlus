@@ -6,6 +6,7 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, Subject } from 'rxjs';
 
 export interface LoginData{
   //Contributer Name : Ashutosh Patil Student ID : B00812667
@@ -70,6 +71,7 @@ export interface getDateAndTime{
   providedIn: 'root'
 })
 export class GetdataService {
+  private subject = new Subject<any>();
   createAppointmentURL = "http://localhost:3000/createNewAppointment";
   createPatientUserURL = "http://localhost:3000/createPatientUser"; //Abhinandan Walia BID:B00820613
   createDoctorUserURL = "http://localhost:3000/createDoctorUser"; //Abhinandan Walia BID:B00820613
@@ -87,11 +89,30 @@ export class GetdataService {
   loginUserURL ="http://localhost:3000/login";
   forgotPasswordURL = "http://localhost:3000/forgotpassword";
 
+  
+  editAppointmentURL = "http://localhost:3000/editAppointment";
+  medicalRecordsURL="http://localhost:3000/medicalrecords/";
+  getMedicalRecordsURL="http://localhost:3000/medicalrecords/getrecords/"
   constructor(private http: HttpClient) { }
+
+  sendMessage(message: string) {
+        this.subject.next({ text: message });
+    }
+
+    getMessage(): Observable<any> {
+        return this.subject.asObservable();
+    }
 
 createAppointment(appointmentDetails) {
   //Author NAME: Aishwarya Narayanan STUDENT ID: B00820313
-  return this.http.post<string>(this.createAppointmentURL, appointmentDetails)
+  return this.http.post<string>(this.editAppointmentURL, appointmentDetails)
+    .pipe();
+}
+
+
+editAppointment(appointmentDetails) {
+  //Author NAME: Aishwarya Narayanan STUDENT ID: B00820313
+  return this.http.post<string>(this.editAppointmentURL, appointmentDetails)
     .pipe();
 }
 
@@ -169,6 +190,16 @@ loginUser(details)
 {//Contributer Name : Ashutosh Patil Student ID : B00812667
   return this.http.post<LoginData>(this.loginUserURL,details)
   .pipe();
+}
+createNewMedicalRecord(record:any){
+  this.http.post(this.medicalRecordsURL,record)
+     .subscribe(responseData =>{
+        console.log(responseData);
+     });
+}
+
+getMedicalRecords(){
+  return this.http.get(this.getMedicalRecordsURL);
 }
   
 }

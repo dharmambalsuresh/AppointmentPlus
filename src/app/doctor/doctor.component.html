@@ -53,9 +53,10 @@
     Show only <i class="fa fa-caret-down"></i>
   </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#">Current</a>
-              <a class="dropdown-item" href="#">Completed</a>
-              <a class="dropdown-item" href="#">Upcoming</a>
+              <a class="dropdown-item" (click)="filter(cancel)" href="#">Cancelled</a>
+              <a class="dropdown-item" (click)="filter(completed)" href="#">Completed</a>
+              <a class="dropdown-item" (click)="filter(upcoming)" href="#">Upcoming</a>
+               <a class="dropdown-item" (click)="filter(all)" href="#">All</a>
             </div>
           </div>
         </div>
@@ -82,35 +83,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let appData of result">
+          <tr *ngFor="let appData of result;let i=index">
           <th scope="row">{{appData.FirstName}} {{appData.LastName}}</th>
          <td> {{appData.phone }} 
           <td>{{appData.Booking_Date}}</td>
           <td>{{appData.Booking_Time}}</td>
-          <td><a href="#" class="badge badge-success" data-toggle="modal" data-target="#exampleModal"> Upcoming</a></td> 
+          <td><a href="#" class="badge {{appData.Status}}" (click)="open(content,appData)"> {{appData.Status}}</a></td> 
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Update Appointment Status</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-     
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" (click)="updateAppointment(cancel)" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-success" (click)="updateAppointment(completed)">Completed</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+  
   <div class="col-md-3">
     <div class="card tips">
       <div class="card-body">
