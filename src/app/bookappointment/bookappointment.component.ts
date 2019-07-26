@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GetdataService, getDateAndTime } from '../getdata.service';
 import * as _ from 'lodash'
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-bookappointment',
   templateUrl: './bookappointment.component.html',
@@ -98,18 +98,23 @@ export class BookappointmentComponent implements OnInit {
       "status": "booked"
     };
     this.getData.bookAppointment(details).subscribe((data) =>
-      this.bookValidate(data)
+    this.bookValidate(data)
     );
-    window.alert("Appointment confirmed");
+
   }
   ngOnDestroy() {
     document.body.className = "";
   }
 
   bookValidate(data) {
-    console.log(data);
+      Swal.fire(
+        'Thank You!',
+        'Your appointment has confirmed!'
+      );
+      }
+    
 
-  }
+
 
   dispDateAndTime(data) {
     this.dateandtime = data;

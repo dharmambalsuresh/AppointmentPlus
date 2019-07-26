@@ -105,7 +105,7 @@ export class GetdataService {
 
 createAppointment(appointmentDetails) {
   //Author NAME: Aishwarya Narayanan STUDENT ID: B00820313
-  return this.http.post<string>(this.editAppointmentURL, appointmentDetails)
+  return this.http.post<string>(this.createAppointmentURL, appointmentDetails)
     .pipe();
 }
 

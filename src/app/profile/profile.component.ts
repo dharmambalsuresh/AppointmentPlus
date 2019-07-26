@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
     );
   }
   getinfo(info){
+    console.log(info);
      this.profile = info;
      this.result = this.profile;
   }

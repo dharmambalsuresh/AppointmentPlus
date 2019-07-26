@@ -28,11 +28,11 @@ background-repeat: no-repeat;
 height: 100 vh;
 font-family: 'Numans', sans-serif;
    }
-.register{
+.registerNew{
 background-image: url("assets/register2.jpg");
 background-size: cover;
 background-position:center; 
-background-repeat: no-repeat;
+background-repeat: repeat;
 height: 100 vh;
 font-family: 'Numans', sans-serif;
    

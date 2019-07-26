@@ -28,7 +28,7 @@ export class SignupComponent implements OnInit {
 
     
   ngOnInit() {
-    document.body.className = "register";
+    document.body.className = "registerNew";
     this.isdoctorchecked=false;
   }
   onPatient(){

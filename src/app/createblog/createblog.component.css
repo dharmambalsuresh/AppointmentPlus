@@ -130,6 +130,18 @@
   #sticky-footer{
     margin-top:150px;
   }
+  .profile{
+    margin-top: 5px;
+}
+
+  .name{
+    margin-top: 11px;
+    font-weight: bold;
+    /* padding-top: 8px; */
+    color: white;
+    font-size: 18px;
+    margin-right: -28px;
+}
   
   #copyright{
     margin-top: 20px;

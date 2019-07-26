@@ -121,7 +121,7 @@ submit_record(){
  else{
    this.patient_description_validation=true;
  }
- if( this.patient_name_validation && this.patient_valid_id_validation && this.patient_record_validation && this.patient_description_validation){
+ if( this.patient_name_validation && this.patient_record_validation && this.patient_description_validation){
   var newrecord={
     patientid:this.patient_id,
     patientname:this.patient_name,

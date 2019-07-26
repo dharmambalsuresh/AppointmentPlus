@@ -14,13 +14,7 @@
             min-height:0px !important;
         }
     }
-    #sticky-footer{
-        /* margin-top:150px; */
-        height:60px;
-        /* bottom:0;
-        position: absolute; */
-    }
-    
+   
     @media (min-width:1025px){
     .navbar{
         height:60px;
@@ -133,8 +127,8 @@
       padding-top:30px;
     } 
     
-    #copyright{
-        
+     #copyright{
+        margin-top: 20px;
         font-size:10px;
     }
     
@@ -553,12 +547,7 @@
         }
         
     }
-    #sticky-footer{
-        /* margin-top:150px; */
-        height:60px;
-        /* bottom:0;
-        position: absolute; */
-    }
+  
     
     @media (min-width:1025px){
     .navbar{

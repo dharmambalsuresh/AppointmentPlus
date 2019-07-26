@@ -2,9 +2,13 @@
      margin-top:150px;
     height:60px;
      bottom:0;
-    position: absolute; 
+   
 }
-
+ #sticky-footer{
+        margin-top:150px;
+    }
+ 
+    
 @media (min-width:1025px){
 .navbar{
     height:60px;
