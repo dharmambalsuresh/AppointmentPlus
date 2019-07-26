@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
@@ -21,6 +22,7 @@ import { ImageToDataUrlModule } from "ngx-image2dataurl";
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ModalwindowComponent } from './modalwindow/modalwindow.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { ModalwindowComponent } from './modalwindow/modalwindow.component';
      ImageToDataUrlModule,
       NgbModule.forRoot(),
 
+     MatCardModule,
+     BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

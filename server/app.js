@@ -26,6 +26,8 @@ var blog = require('./routes/doctor/createblog');//Akhil Ambadipdi B00825307
 var userLogin = require('./routes/user/user');//Ashutosh Patil STUDENT ID : B00812667
 var forgotPassword = require('./routes/user/forgotpassword');//Ashutosh Patil STUDENT ID : B00812667
 var editDocAppointment = require('./routes/doctor/editAppointment');
+var medicalrecords= require('./routes/doctor/medicalrecords');
+
 var app = express();
 app.use(cors());
 
@@ -41,7 +43,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+var bodyParser = require('body-parser');
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+app.use(bodyParser.json());
+// app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -51,7 +57,8 @@ app.get('/dateandtime',dateandtime);//Dharmambal Sureshkumar B00824492
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/blogs',blog);
-
+app.use('/medicalrecords',medicalrecords);
+app.use('/medicalrecords/getrecords',medicalrecords);
 app.post('/createNewAppointment', createDocSchedule);
 app.post('/createPatientUser',createPatientUser); //Abhinandan Walia STUDENT ID:B00820613
 app.post('/createDoctorUser',createDoctorUser); //Abhinandan Walia STUDENT ID:B00820613

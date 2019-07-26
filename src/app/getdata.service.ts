@@ -67,7 +67,8 @@ export class GetdataService {
   loginUserURL ="http://129.173.22.35:23001/login";
   forgotPasswordURL = "http://129.173.22.35:23001/forgotpassword";
   editAppointmentURL = "http://localhost:3000/editAppointment";
-
+  medicalRecordsURL="http://localhost:3000/medicalrecords/";
+  getMedicalRecordsURL="http://localhost:3000/medicalrecords/getrecords/"
   constructor(private http: HttpClient) { }
 
   sendMessage(message: string) {
@@ -141,6 +142,16 @@ loginUser(details)
 {//Contributer Name : Ashutosh Patil Student ID : B00812667
   return this.http.post<LoginData>(this.loginUserURL,details)
   .pipe();
+}
+createNewMedicalRecord(record:any){
+  this.http.post(this.medicalRecordsURL,record)
+     .subscribe(responseData =>{
+        console.log(responseData);
+     });
+}
+
+getMedicalRecords(){
+  return this.http.get(this.getMedicalRecordsURL);
 }
   
 }
