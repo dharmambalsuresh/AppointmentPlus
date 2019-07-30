@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {BlogsService} from '../blog.service';
+import {Location} from '@angular/common';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -20,7 +21,7 @@ blog_title:string="";
 blog_description:string="";
 blog_image:string="";
 
-  constructor(private route: ActivatedRoute,
+  constructor( private location: Location,private route: ActivatedRoute,
     private router: Router,private blogService: BlogsService) { }
 
   ngOnInit() {
@@ -33,13 +34,64 @@ blog_image:string="";
       .subscribe(params => {
         this.users = params['usr'];
         if(this.users == "guest"){
-          this.guest = true
+          var usertype =sessionStorage.getItem("userType");
+          if(usertype == "patient")
+          {
+            this.location.replaceState("/blogs?usr=patient");
+            this.patient = true
+          }
+          else if(usertype ==null)
+          {
+            this.location.replaceState("/blogs?usr=guest");
+            this.guest = true
+      
+          }
+          else if(usertype=="doctor")
+          {
+            this.location.replaceState("/blogs?usr=doctor");
+            this.doc = true
+          }
+          
+          
         }
          if(this.users == "doctor"){
-          this.doc = true
+          var usertype =sessionStorage.getItem("userType");
+          if(usertype == "patient")
+          {
+            this.location.replaceState("/blogs?usr=patient");
+            this.patient = true
+          }
+          else if(usertype ==null)
+          {
+            this.location.replaceState("/blogs?usr=guest");
+            this.guest = true
+      
+          }
+          else if(usertype=="doctor")
+          {
+            this.location.replaceState("/blogs?usr=doctor");
+            this.doc = true
+          }
+          
         }
          if(this.users == "patient"){
-          this.patient = true
+          var usertype =sessionStorage.getItem("userType");
+          if(usertype == "patient")
+          {
+            this.location.replaceState("/blogs?usr=patient");
+            this.patient = true
+          }
+          else if(usertype ==null)
+          {
+            this.location.replaceState("/blogs?usr=guest");
+            this.guest = true
+      
+          }
+          else if(usertype=="doctor")
+          {
+            this.location.replaceState("/blogs?usr=doctor");
+            this.doc = true
+          }
         }
 
       });
@@ -78,6 +130,12 @@ blog_image:string="";
   }
   onBlogHome(){
     this.show_blog_data =false;
+  }
+
+  logout()
+  {
+    sessionStorage.clear();
+    this.router.navigate(['/home'])
   }
 
   getOneblog(blogId){

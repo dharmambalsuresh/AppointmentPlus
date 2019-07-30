@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostListener } from '@angular/core';
 import {BlogsService} from '../blog.service';
 import { ActivatedRoute,Router } from "@angular/router";
 import { Options, ImageResult } from "ngx-image2dataurl";
@@ -22,7 +22,10 @@ patient : boolean;
   public blogData:any ={};
   
   constructor(private blogService: BlogsService,private router: Router,private route: ActivatedRoute,private getdataservice:GetdataService ) { }
-  
+  @HostListener("window:onbeforeunload",["$event"])
+  clearLocalStorage(event){
+    sessionStorage.clear();
+  }
   options: Options = {
     resize: {
       maxHeight: 500,
@@ -40,6 +43,20 @@ patient : boolean;
       debugger;
   }
   ngOnInit() {
+    var usertype =sessionStorage.getItem("userType");
+    if(usertype == "patient")
+    {
+      this.router.navigate(['/bookappointment']);
+    }
+    else if(usertype ==null)
+    {
+      this.router.navigate(['/home']);
+
+    }
+    else if(usertype=="doctor")
+    {
+      
+    }
     this.imageUrl="";
     this.blog_title="";
     this.blog_description="";
@@ -65,6 +82,12 @@ patient : boolean;
 
   cancel_blog(){
     this.router.navigate(['/blogs'], { queryParams:  {usr:"doctor"}});
+  }
+
+  logout()
+  {
+    sessionStorage.clear();
+    this.router.navigate(['/home'])
   }
  
   submit_blog(){

@@ -20,9 +20,25 @@ export class UpdateorcancelappointmentComponent implements OnInit {
   aptime: boolean;
   timeslot = [{"nulltime":false,"invalidtime":false}];
   
-  constructor(private getData : GetdataService) { }
+  constructor(private route: ActivatedRoute,
+    private router: Router,private getData : GetdataService) { }
   
-  ngOnInit() { }
+  ngOnInit() { 
+    var usertype =sessionStorage.getItem("userType");
+    if(usertype == "patient")
+    {
+      console.log("Correct");
+    }
+    else if(usertype ==null)
+    {
+      this.router.navigate(['/home']);
+
+    }
+    else if(usertype=="doctor")
+    {
+      this.router.navigate(['/doctor']);
+    }
+  }
 
   popup() {}
 
@@ -118,6 +134,12 @@ export class UpdateorcancelappointmentComponent implements OnInit {
     this.cancelalert(data)
     );
  
+   }
+
+   logout()
+   {
+     sessionStorage.clear();
+     this.router.navigate(['/home'])
    }
 
    cancelalert(data){

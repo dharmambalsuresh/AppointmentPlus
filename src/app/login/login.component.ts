@@ -28,6 +28,16 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
 
+    var usertype =sessionStorage.getItem("userType");
+    if(usertype == "patient")
+    {
+      this.router.navigate(['/bookappointment']);
+    }
+    else if(usertype=="doctor")
+    {
+      this.router.navigate(['/doctor']);
+    }
+
     this.route.queryParams
       .subscribe(params => {
         this.user = params['usr'];
@@ -116,6 +126,8 @@ export class LoginComponent implements OnInit {
     
       if(data.usertype=="patient" && data.message =="Correct Users Credentials")
       {
+        sessionStorage.setItem("userType",'patient');
+        sessionStorage.setItem("username",data.username);
         var username = data.username;
         Swal.fire(
           'Login Success!',
@@ -135,6 +147,8 @@ export class LoginComponent implements OnInit {
       }
       else if(data.usertype=="doctor" && data.message =="Correct Users Credentials")
       {
+        sessionStorage.setItem("userType",'doctor');
+        sessionStorage.setItem("username",data.username);
         var username = data.username;
         Swal.fire(
           'Login Success!',
