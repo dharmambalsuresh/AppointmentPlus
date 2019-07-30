@@ -1,5 +1,5 @@
 //Author NAME: Abhinandan Walia STUDENT ID: B00820613
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostListener } from '@angular/core';
 import { GetdataService} from '../getdata.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {fetchProfile} from '../getdata.service';
@@ -11,6 +11,11 @@ import Swal from 'sweetalert2';
   styleUrls: ['./editprofile.component.css']
 })
 export class EditprofileComponent implements OnInit {
+
+  @HostListener("window:onbeforeunload",["$event"])
+  clearLocalStorage(event){
+    sessionStorage.clear();
+  }
   phnull: boolean;
   pnull: boolean; 
   profile : fetchProfile;
@@ -21,10 +26,31 @@ export class EditprofileComponent implements OnInit {
 
   
   ngOnInit() {
+    var usertype =sessionStorage.getItem("userType");
+    if(usertype == "patient")
+    {
+      
+    }
+    else if(usertype ==null)
+    {
+      this.router.navigate(['/home']);
+
+    }
+    else if(usertype=="doctor")
+    {
+      this.router.navigate(['/doctor']);
+    }
+
     this.getData.getUserInfo().subscribe((data)=>
     this.getinfo(data)
     );
 
+  }
+
+  logout()
+  {
+    sessionStorage.clear();
+    this.router.navigate(['/home'])
   }
   getinfo(info){
       this.profile = info;

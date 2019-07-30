@@ -4,6 +4,7 @@ import {getDocAppointment } from '../getdata.service';
 import { ModalwindowComponent} from '../modalwindow/modalwindow.component';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-doctor',
@@ -19,7 +20,8 @@ export class DoctorComponent implements OnInit {
   upcoming = "Upcoming";
   appointments ;
   result ;
-  constructor(private getData : GetdataService,private modalService: NgbModal) {
+  constructor(private route: ActivatedRoute,private router: Router,
+   private getData : GetdataService,private modalService: NgbModal) {
      this.subscription = this.getData.getMessage().subscribe(message => {
        console.log(message);
          this.getData.getDocAppointment({docId : 101}).subscribe((data)=>
@@ -29,6 +31,22 @@ export class DoctorComponent implements OnInit {
    }
 
   ngOnInit() {
+
+    var usertype =sessionStorage.getItem("userType");
+    if(usertype == "patient")
+    {
+      
+      this.router.navigate(['/bookappointment']);
+    }
+    else if(usertype ==null)
+    {
+      this.router.navigate(['/home']);
+
+    }
+    else if(usertype=="doctor")
+    {
+      
+    }
    var docId ={docId : 101}; 
     this.getData.getDocAppointment(docId).subscribe((data)=>
    this.check(data)
@@ -51,6 +69,12 @@ export class DoctorComponent implements OnInit {
     }
      this.result = this.appointments;
 
+  }
+
+  logout()
+  {
+    sessionStorage.clear();
+    this.router.navigate(['/home'])
   }
 
   filter(data){

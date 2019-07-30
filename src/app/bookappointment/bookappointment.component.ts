@@ -1,9 +1,10 @@
 //Dharmambal Sureshkumar B00824492
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GetdataService, getDateAndTime } from '../getdata.service';
+
 import * as _ from 'lodash'
 import Swal from 'sweetalert2';
 @Component({
@@ -12,7 +13,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./bookappointment.component.css']
 })
 export class BookappointmentComponent implements OnInit {
-
+  @HostListener("window:onbeforeunload",["$event"])
+  clearLocalStorage(event){
+    sessionStorage.clear();
+  }
   user: String;
   enull: boolean;
   pnull: boolean;
@@ -42,6 +46,20 @@ export class BookappointmentComponent implements OnInit {
   }
 
   ngOnInit() {
+    var usertype =sessionStorage.getItem("userType");
+    if(usertype == "patient")
+    {
+      console.log("Correct");
+    }
+    else if(usertype ==null)
+    {
+      this.router.navigate(['/home']);
+
+    }
+    else if(usertype=="doctor")
+    {
+      this.router.navigate(['/doctor']);
+    }
     this.getData.dateandtime().subscribe((data) =>
       this.dispDateAndTime(data)
     );
@@ -82,6 +100,13 @@ export class BookappointmentComponent implements OnInit {
       this.router.navigate(['/login']);
     }
   }
+  
+  logout()
+  {
+    sessionStorage.clear();
+    this.router.navigate(['/home'])
+  }
+
   click() {
 
     var details = {

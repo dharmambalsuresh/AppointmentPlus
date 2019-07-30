@@ -1,13 +1,16 @@
 //Author NAME: Aishwarya Narayanan STUDENT ID: B00820313
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostListener } from '@angular/core';
 import { GetdataService} from '../getdata.service';
 import Swal from 'sweetalert2';
+import { ActivatedRoute, Router } from '@angular/router';
 
 //  export interface timeslot{
 //    "nulltime":boolean;
 //    "invalidtime":boolean;
 //  }
+
+
 
 @Component({
   selector: 'app-createappoinment',
@@ -15,6 +18,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./createappoinment.component.css']
 })
 export class CreateappoinmentComponent implements OnInit {
+  @HostListener("window:onbeforeunload",["$event"])
+  clearLocalStorage(event){
+    sessionStorage.clear();
+  }
   invaliddate: boolean;
   datenull: boolean;
   dateInput : string;
@@ -27,14 +34,37 @@ export class CreateappoinmentComponent implements OnInit {
   result : string;
   timeslot = [{"nulltime":false,"invalidtime":false}];
 
-  constructor(private getData : GetdataService) { }
+  constructor(private route: ActivatedRoute,private router: Router,
+    private getData: GetdataService) { }
+
+  
 
   ngOnInit() {
-    
+    var usertype =sessionStorage.getItem("userType");
+    if(usertype == "patient")
+    {
+      console.log("Correct");
+    }
+    else if(usertype ==null)
+    {
+      this.router.navigate(['/home']);
+
+    }
+    else if(usertype=="doctor")
+    {
+      this.router.navigate(['/doctor']);
+    }
   }
 
   popup() {
 
+  }
+
+  
+  logout()
+  {
+    sessionStorage.clear();
+    this.router.navigate(['/home'])
   }
 
   validate() {

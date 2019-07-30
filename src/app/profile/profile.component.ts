@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetdataService} from '../getdata.service';
 import {fetchProfile} from '../getdata.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -13,9 +14,24 @@ export class ProfileComponent implements OnInit {
   profile : fetchProfile;
   result ;
 
-  constructor(private getData : GetdataService) { }
+  constructor(private route: ActivatedRoute,
+    private router: Router,private getData : GetdataService) { }
 
   ngOnInit() {
+    var usertype =sessionStorage.getItem("userType");
+    if(usertype == "patient")
+    {
+      console.log("Correct");
+    }
+    else if(usertype ==null)
+    {
+      this.router.navigate(['/home']);
+
+    }
+    else if(usertype=="doctor")
+    {
+      this.router.navigate(['/doctor']);
+    }
     this.getData.fetchProfileData().subscribe((info)=>
     this.getinfo(info)
     );
@@ -24,6 +40,12 @@ export class ProfileComponent implements OnInit {
     console.log(info);
      this.profile = info;
      this.result = this.profile;
+  }
+
+  logout()
+  {
+    sessionStorage.clear();
+    this.router.navigate(['/home'])
   }
 
 }

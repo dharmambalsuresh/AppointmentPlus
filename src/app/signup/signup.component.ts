@@ -28,6 +28,20 @@ export class SignupComponent implements OnInit {
 
     
   ngOnInit() {
+    var usertype =sessionStorage.getItem("userType");
+    if(usertype == "patient")
+    {
+      this.router.navigate(['/bookappointment']);
+    }
+    else if(usertype ==null)
+    {
+      this.router.navigate(['/home']);
+
+    }
+    else if(usertype=="doctor")
+    {
+      this.router.navigate(['/doctor']);
+    }
     document.body.className = "registerNew";
     this.isdoctorchecked=false;
   }

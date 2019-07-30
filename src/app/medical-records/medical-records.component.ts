@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { GetdataService } from '../getdata.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -22,9 +23,25 @@ export class MedicalRecordsComponent implements OnInit {
   patient_records:any;
   
   searchstring:String="";
-  constructor(private getdataService: GetdataService) { }
+  constructor(private route: ActivatedRoute,
+    private router: Router,private getdataService: GetdataService) { }
 
   ngOnInit() {
+    var usertype =sessionStorage.getItem("userType");
+    if(usertype == "patient")
+    {
+      
+      this.router.navigate(['/bookappointment']);
+    }
+    else if(usertype ==null)
+    {
+      this.router.navigate(['/home']);
+
+    }
+    else if(usertype=="doctor")
+    {
+      
+    }
     this.imageSrc="";
     this.showforum=false;
     this.patient_name="";
@@ -67,6 +84,12 @@ export class MedicalRecordsComponent implements OnInit {
     // window.open("data:application/pdf," +resultpdf); 
     
     // console.log(this.imageSrc);
+  }
+
+  logout()
+  {
+    sessionStorage.clear();
+    this.router.navigate(['/home'])
   }
   downloadPdf(pdfbase64,patientid){
     const downloadelement = document.createElement("a");
