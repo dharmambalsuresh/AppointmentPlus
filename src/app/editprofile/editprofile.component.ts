@@ -29,10 +29,11 @@ export class EditprofileComponent implements OnInit {
   
   ngOnInit() {
     var usertype =sessionStorage.getItem("userType");
+    var email =sessionStorage.getItem("email");
     if(usertype == "patient")
     {
       this.patient=true;
-      this.getData.getUserInfo().subscribe((data)=>
+      this.getData.getUserInfo({email:email}).subscribe((data)=>
       this.getinfo(data)
       );
     }
@@ -44,7 +45,7 @@ export class EditprofileComponent implements OnInit {
     else if(usertype=="doctor")
     {
       this.doc=true;
-    this.getData.getDocUserInfo().subscribe((data)=>
+    this.getData.getDocUserInfo({email:email}).subscribe((data)=>
     this.getinfo(data));
     }
 

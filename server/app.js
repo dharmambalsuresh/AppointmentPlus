@@ -81,11 +81,11 @@ app.post('/createDoctorUser',createDoctorUser); //Abhinandan Walia STUDENT ID:B0
 app.post('/updatePatientUser',updatePatientUser); //Abhinandan Walia STUDENT ID:B00820613
 app.post('/updateDoctorUser',updateDoctorUser); //Abhinandan Walia STUDENT ID:B00820613
 
-app.get('/fetchProfileData', fetchProfileData);//Abhinandan Walia STUDENT ID:B00820613
-app.get('/fetchProfileDataDoc',fetchProfileDocData);//Abhinandan Walia STUDENT ID:B00820613
+app.post('/fetchProfileData', fetchProfileData);//Abhinandan Walia STUDENT ID:B00820613
+app.post('/fetchProfileDataDoc',fetchProfileDocData);//Abhinandan Walia STUDENT ID:B00820613
 
-app.get('/editprofile',editprofile);//Abhinandan Walia STUDENT ID:B00820613
-app.get('/editprofiledoc',editprofiledoc);//Abhinandan Walia STUDENT ID:B00820613
+app.post('/editprofile',editprofile);//Abhinandan Walia STUDENT ID:B00820613
+app.post('/editprofiledoc',editprofiledoc);//Abhinandan Walia STUDENT ID:B00820613
 
 app.post('/canceldocAppointment', cancelappointment);//Varsha Sridhar STUDENT ID:B00791643
 app.get('/manageappointment', manageapps);//Varsha Sridhar STUDENT ID:B00791643
