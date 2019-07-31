@@ -73,31 +73,31 @@ export interface getDateAndTime{
 })
 export class GetdataService {
   private subject = new Subject<any>();
-  createAppointmentURL = "http://localhost:3000/createNewAppointment";
-  createPatientUserURL = "http://localhost:3000/createPatientUser"; //Abhinandan Walia BID:B00820613
-  createDoctorUserURL = "http://localhost:3000/createDoctorUser"; //Abhinandan Walia BID:B00820613
+  createAppointmentURL = "http://129.173.22.35:12345/createNewAppointment";//Aishwarya Narayanan B00820313
+  createPatientUserURL = "http://129.173.22.35:12345/createPatientUser"; //Abhinandan Walia BID:B00820613
+  createDoctorUserURL = "http://129.173.22.35:12345/createDoctorUser"; //Abhinandan Walia BID:B00820613
 
-  UpdatePatientURL = "http://localhost:3000/updatePatientUser"; //Abhinandan Walia BID:B00820613
-  UpdateDoctorURL = "http://localhost:3000/updateDoctorUser"; //Abhinandan Walia BID:B00820613
+  UpdatePatientURL = "http://129.173.22.35:12345/updatePatientUser"; //Abhinandan Walia BID:B00820613
+  UpdateDoctorURL = "http://129.173.22.35:12345/updateDoctorUser"; //Abhinandan Walia BID:B00820613
 
-  fetchProfileDataURL = "http://localhost:3000/fetchProfileData"; //Abhinandan Walia BID:B00820613
-  fetchProfileDataDocURL = "http://localhost:3000/fetchProfileDataDoc"; //Abhinandan Walia BID:B00820613
+  fetchProfileDataURL = "http://129.173.22.35:12345/fetchProfileData"; //Abhinandan Walia BID:B00820613
+  fetchProfileDataDocURL = "http://129.173.22.35:12345/fetchProfileDataDoc"; //Abhinandan Walia BID:B00820613
 
-  userInfoURL = "http://localhost:3000/editprofile"; //Abhinandan Walia BID:B00820613
-  DocUserInfoURL = "http://localhost:3000/editprofiledoc"; //Abhinandan Walia BID:B00820613
+  userInfoURL = "http://129.173.22.35:12345/editprofile"; //Abhinandan Walia BID:B00820613
+  DocUserInfoURL = "http://129.173.22.35:12345/editprofiledoc"; //Abhinandan Walia BID:B00820613
   
-  canceldocAppointmentURL = "http://localhost:3000/canceldocAppointment";
-  manageappointmentURL = "http://localhost:3000/manageappointment";
-  getDocAppointmentURL = "http://localhost:3000/getDocAppointment";
-  bookAppointmentURL="http://localhost:3000/bookappointment";//Dharmambal Sureshkumar B00824492
-  getAppointmentTiming="http://localhost:3000/dateandtime";//Dharmambal Sureshkumar B00824492
-  loginUserURL ="http://localhost:3000/login";
-  forgotPasswordURL = "http://localhost:3000/forgotpassword";
+  canceldocAppointmentURL = "http://129.173.22.35:12345/canceldocAppointment";
+  manageappointmentURL = "http://129.173.22.35:12345/manageappointment";
+  getDocAppointmentURL = "http://129.173.22.35:12345/getDocAppointment";//Aishwarya Narayanan B00820313
+  bookAppointmentURL="http://129.173.22.35:12345/bookappointment";//Dharmambal Sureshkumar B00824492
+  getAppointmentTiming="http://129.173.22.35:12345/dateandtime";//Dharmambal Sureshkumar B00824492
+  loginUserURL ="http://129.173.22.35:12345/login";
+  forgotPasswordURL = "http://129.173.22.35:12345/forgotpassword";
 
   
-  editAppointmentURL = "http://localhost:3000/editAppointment";
-  medicalRecordsURL="http://localhost:3000/medicalrecords/";
-  getMedicalRecordsURL="http://localhost:3000/medicalrecords/getrecords/"
+  editAppointmentURL = "http://129.173.22.35:12345/editAppointment";//Aishwarya Narayanan B00820313
+  medicalRecordsURL="http://129.173.22.35:12345/medicalrecords/";
+  getMedicalRecordsURL="http://129.173.22.35:12345/medicalrecords/getrecords/"
   constructor(private http: HttpClient) { }
 
   sendMessage(message: string) {

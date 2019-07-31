@@ -13,7 +13,7 @@ var session = require('express-session');
 var cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var createDocSchedule = require('./routes/doctor/createSchedule');
+var createDocSchedule = require('./routes/doctor/createSchedule');//Aishwarya Narayanan B00820313
 
 var createPatientUser = require('./routes/user/registerUser'); //Abhinandan Walia STUDENT ID:B00820613
 var createDoctorUser = require('./routes/doctor/registerUser'); //Abhinandan Walia STUDENT ID:B00820613
@@ -39,7 +39,7 @@ var blog = require('./routes/doctor/createblog');//Akhil Ambadipdi B00825307
 
 var userLogin = require('./routes/user/user');//Ashutosh Patil STUDENT ID : B00812667
 var forgotPassword = require('./routes/user/forgotpassword');//Ashutosh Patil STUDENT ID : B00812667
-var editDocAppointment = require('./routes/doctor/editAppointment');
+var editDocAppointment = require('./routes/doctor/editAppointment');//Aishwarya Narayanan B00820313
 var medicalrecords= require('./routes/doctor/medicalrecords');
 
 var app = express();
@@ -73,7 +73,7 @@ app.use('/users', usersRouter);
 app.use('/blogs',blog);
 app.use('/medicalrecords',medicalrecords);
 app.use('/medicalrecords/getrecords',medicalrecords);
-app.post('/createNewAppointment', createDocSchedule);
+app.post('/createNewAppointment', createDocSchedule);//Aishwarya Narayanan B00820313
 
 app.post('/createPatientUser',createPatientUser); //Abhinandan Walia STUDENT ID:B00820613
 app.post('/createDoctorUser',createDoctorUser); //Abhinandan Walia STUDENT ID:B00820613
@@ -89,10 +89,10 @@ app.post('/editprofiledoc',editprofiledoc);//Abhinandan Walia STUDENT ID:B008206
 
 app.post('/canceldocAppointment', cancelappointment);//Varsha Sridhar STUDENT ID:B00791643
 app.get('/manageappointment', manageapps);//Varsha Sridhar STUDENT ID:B00791643
-app.post('/getDocAppointment',getDocAppointment);
+app.post('/getDocAppointment',getDocAppointment);//Aishwarya Narayanan B00820313
 app.post('/login',userLogin);//Contributer Name: Ashutosh Patil STUDENT ID:B00812667
 app.post('/forgotpassword',forgotPassword);//Contributer Name: Ashutosh Patil STUDENT ID:B00812667
-app.post('/editAppointment',editDocAppointment);
+app.post('/editAppointment',editDocAppointment);//Aishwarya Narayanan B00820313
 
 
 // catch 404 and forward to error handler

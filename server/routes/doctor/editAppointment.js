@@ -1,10 +1,12 @@
 //AUTHOR
-//NAME : Dharmambal Sureshkumar
-//STUDENT ID : B00824492
+//NAME : AISHWARYA NARAYANAN
+//STUDENT ID : B00820313
 var con = require('../../database/DBConfig').con;
 var express = require('express');
 var router = express.Router();
 
+
+/* Editing upcoming appointment*/
 router.post('/editappointment', function(req, res, next)
 {
     console.log(req.body);

@@ -1,4 +1,4 @@
-# Assignment Four
+﻿# Assignment Four
 
 
 ## AppointmentPlus
@@ -29,13 +29,14 @@ Filenames:
 * On successful validation, the appointment schedule will be created and the details will be stored in the database.
 
 
-2. Feature - "Upcoming Schedule of Appointments" [Completed partially]
+2. Feature - "Upcoming Schedule of Appointments" [Completed]
 Filenames:
     * Server/getAppointments.js
+    * Server/editAppointments.js
     * src/app/doctor
     * src/app/getdata.service.ts
 
-    This feature enables the doctors to view/update/cancel the list of upcoming appointments with patients for the week. It shows the appointment details such as date, location, timing and status of the appointment. The user will be allowed to filter the list of appointments based on the status of the appointment (current/upcoming/completed). On selecting the desired filter, the user can view the specific appointments according to the filtered attribute. It also helps new users with helpful tips to get familiarized with the application
+    This feature enables the doctors to view/complete/cancel the list of upcoming appointments with patients for the week. It shows the appointment details such as date, location, timing and status of the appointment. The user will be allowed to filter the list of appointments based on the status of the appointment (current/upcoming/completed). On selecting the desired filter, the user can view the specific appointments according to the filtered attribute. It also helps new users with helpful tips to get familiarized with the application
 
   * A user can navigate to this page by logging in as doctor.
   * This page displays the list of upcoming appointments for a specific doctor from the "Appointment" database in the backend
