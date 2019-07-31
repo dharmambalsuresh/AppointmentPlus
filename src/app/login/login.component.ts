@@ -128,6 +128,7 @@ export class LoginComponent implements OnInit {
       {
         sessionStorage.setItem("userType",'patient');
         sessionStorage.setItem("username",data.username);
+        sessionStorage.setItem("email",data.email);
         var username = data.username;
         Swal.fire(
           'Login Success!',
@@ -149,6 +150,7 @@ export class LoginComponent implements OnInit {
       {
         sessionStorage.setItem("userType",'doctor');
         sessionStorage.setItem("username",data.username);
+        sessionStorage.setItem("email",data.email);
         var username = data.username;
         Swal.fire(
           'Login Success!',

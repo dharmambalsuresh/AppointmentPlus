@@ -13,6 +13,7 @@ export interface LoginData{
   "message":string;
   "userType":string;
   "username":string;
+  "email":string;
   }
   
   export interface forgotpasswordData{
@@ -80,7 +81,11 @@ export class GetdataService {
   UpdateDoctorURL = "http://localhost:3000/updateDoctorUser"; //Abhinandan Walia BID:B00820613
 
   fetchProfileDataURL = "http://localhost:3000/fetchProfileData"; //Abhinandan Walia BID:B00820613
+  fetchProfileDataDocURL = "http://localhost:3000/fetchProfileDataDoc"; //Abhinandan Walia BID:B00820613
+
   userInfoURL = "http://localhost:3000/editprofile"; //Abhinandan Walia BID:B00820613
+  DocUserInfoURL = "http://localhost:3000/editprofiledoc"; //Abhinandan Walia BID:B00820613
+  
   canceldocAppointmentURL = "http://localhost:3000/canceldocAppointment";
   manageappointmentURL = "http://localhost:3000/manageappointment";
   getDocAppointmentURL = "http://localhost:3000/getDocAppointment";
@@ -145,9 +150,20 @@ return this.http.get<Array<fetchProfile>>(this.fetchProfileDataURL)
   .pipe();
 }
 //Abhinandan Walia B00820613
+fetchProfileDataDoc()
+{
+return this.http.get<Array<fetchProfile>>(this.fetchProfileDataDocURL)
+  .pipe();
+}
+//Abhinandan Walia B00820613
 getUserInfo()
 {
 return this.http.get<Array<fetchProfile>>(this.userInfoURL)
+  .pipe();
+}
+getDocUserInfo()
+{
+  return this.http.get<Array<fetchProfile>>(this.DocUserInfoURL)
   .pipe();
 }
 cancelAppointment(appointmentDetails) {
