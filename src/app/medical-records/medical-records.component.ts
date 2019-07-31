@@ -23,7 +23,10 @@ export class MedicalRecordsComponent implements OnInit {
   patient_records:any;
   
   searchstring:String="";
-  constructor(private getdataService: GetdataService,private router: Router) { }
+  
+  constructor(private route: ActivatedRoute,
+    private router: Router,private getdataService: GetdataService) { }
+
 
   ngOnInit() {
     this.imageSrc="";

@@ -84,7 +84,6 @@ patient : boolean;
   cancel_blog(){
     this.router.navigate(['/blogs'], { queryParams:  {usr:"doctor"}});
   }
-
   logout()
   {
     sessionStorage.clear();
