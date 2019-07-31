@@ -44,20 +44,20 @@ patient : boolean;
       debugger;
   }
   ngOnInit() {
-    // var usertype =sessionStorage.getItem("userType");
-    // if(usertype == "patient")
-    // {
-    //   this.router.navigate(['/bookappointment']);
-    // }
-    // else if(usertype ==null)
-    // {
-    //   this.router.navigate(['/home']);
+    var usertype =sessionStorage.getItem("userType");
+    if(usertype == "patient")
+    {
+      this.router.navigate(['/bookappointment']);
+    }
+    else if(usertype ==null)
+    {
+      this.router.navigate(['/home']);
 
-    // }
-    // else if(usertype=="doctor")
-    // {
+    }
+    else if(usertype=="doctor")
+    {
       
-    // }
+    }
     this.imageUrl="";
     this.blog_title="";
     this.blog_description="";
