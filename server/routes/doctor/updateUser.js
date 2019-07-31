@@ -22,7 +22,7 @@ router.post('/updateDoctorUser', function(req, res, next) {
       res.send(500,"SQL Error");
     }
     else{
-     con.query("update appointmentplus.doctor set password='"+ password+"', address='"+ address+"',phone='"+ phone+"',city='"+ city+"',province='"+ province+"',postalCode='"+ postalCode +"' where email='abhinandan.walia@dal.ca'", function (err, result, fields) {
+     con.query("update appointmentplus.doctor set password='"+ password+"', address='"+ address+"',phone='"+ phone+"',city='"+ city+"',province='"+ province+"',postalCode='"+ postalCode +"' where email='abhinandan_walia@yahoo.com'", function (err, result, fields) {
       if(err){
       res.send(500,"Querry Error "+err);
       }

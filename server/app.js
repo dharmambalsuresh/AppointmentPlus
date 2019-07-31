@@ -17,10 +17,15 @@ var createDocSchedule = require('./routes/doctor/createSchedule');
 
 var createPatientUser = require('./routes/user/registerUser'); //Abhinandan Walia STUDENT ID:B00820613
 var createDoctorUser = require('./routes/doctor/registerUser'); //Abhinandan Walia STUDENT ID:B00820613
+
 var updatePatientUser = require('./routes/user/updateUser'); //Abhinandan Walia STUDENT ID:B00820613
 var updateDoctorUser = require('./routes/doctor/updateUser'); //Abhinandan Walia STUDENT ID:B00820613
+
 var fetchProfileData = require('./routes/user/fetchProfileData'); //Abhinandan Walia STUDENT ID:B00820613
+var fetchProfileDocData = require('./routes/doctor/fetchProfileDataDoc'); //Abhinandan Walia STUDENT ID:B00820613
+
 var editprofile = require('./routes/user/editprofile');//Abhinandan Walia STUDENT ID:B00820613
+var editprofiledoc = require('./routes/doctor/editprofiledoc');//Abhinandan Walia STUDENT ID:B00820613
 
 var bookappointment=require('./routes/patients/bookappointment');
 var dateandtime=require('./routes/patients/dateandtime');
@@ -77,7 +82,10 @@ app.post('/updatePatientUser',updatePatientUser); //Abhinandan Walia STUDENT ID:
 app.post('/updateDoctorUser',updateDoctorUser); //Abhinandan Walia STUDENT ID:B00820613
 
 app.get('/fetchProfileData', fetchProfileData);//Abhinandan Walia STUDENT ID:B00820613
+app.get('/fetchProfileDataDoc',fetchProfileDocData);//Abhinandan Walia STUDENT ID:B00820613
+
 app.get('/editprofile',editprofile);//Abhinandan Walia STUDENT ID:B00820613
+app.get('/editprofiledoc',editprofiledoc);//Abhinandan Walia STUDENT ID:B00820613
 
 app.post('/canceldocAppointment', cancelappointment);//Varsha Sridhar STUDENT ID:B00791643
 app.get('/manageappointment', manageapps);//Varsha Sridhar STUDENT ID:B00791643

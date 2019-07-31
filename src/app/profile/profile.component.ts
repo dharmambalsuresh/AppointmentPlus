@@ -11,6 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  patient:boolean;
+  doc : boolean;
   profile : fetchProfile;
   result ;
 
@@ -19,9 +21,13 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     var usertype =sessionStorage.getItem("userType");
+    var email =sessionStorage.getItem("email");
     if(usertype == "patient")
     {
-      console.log("Correct");
+      this.patient=true;
+      this.getData.fetchProfileData().subscribe((info)=>
+      this.getinfo(info)
+      );
     }
     else if(usertype ==null)
     {
@@ -30,11 +36,11 @@ export class ProfileComponent implements OnInit {
     }
     else if(usertype=="doctor")
     {
-      this.router.navigate(['/doctor']);
+      this.doc = true;
+    this.getData.fetchProfileDataDoc().subscribe((info)=>
+    this.getinfo(info));
     }
-    this.getData.fetchProfileData().subscribe((info)=>
-    this.getinfo(info)
-    );
+   
   }
   getinfo(info){
     console.log(info);

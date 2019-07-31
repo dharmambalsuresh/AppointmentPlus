@@ -16,6 +16,8 @@ export class EditprofileComponent implements OnInit {
   clearLocalStorage(event){
     sessionStorage.clear();
   }
+  patient:boolean;
+  doc : boolean;
   phnull: boolean;
   pnull: boolean; 
   profile : fetchProfile;
@@ -29,7 +31,10 @@ export class EditprofileComponent implements OnInit {
     var usertype =sessionStorage.getItem("userType");
     if(usertype == "patient")
     {
-      
+      this.patient=true;
+      this.getData.getUserInfo().subscribe((data)=>
+      this.getinfo(data)
+      );
     }
     else if(usertype ==null)
     {
@@ -38,12 +43,10 @@ export class EditprofileComponent implements OnInit {
     }
     else if(usertype=="doctor")
     {
-      this.router.navigate(['/doctor']);
+      this.doc=true;
+    this.getData.getDocUserInfo().subscribe((data)=>
+    this.getinfo(data));
     }
-
-    this.getData.getUserInfo().subscribe((data)=>
-    this.getinfo(data)
-    );
 
   }
 
@@ -58,9 +61,9 @@ export class EditprofileComponent implements OnInit {
    }
    validate()
    {
-    if((<HTMLInputElement>document.getElementById("licensenumber")).hidden)
+    if(this.doc)
     {
-      var licenseNumber = (<HTMLInputElement>document.getElementById("licensenumber")).value;
+      var licenseNumber = (<HTMLInputElement>document.getElementById("licenseNumber")).value;
     }
     var firstName = (<HTMLInputElement>document.getElementById("firstName")).value;
     var lastName = (<HTMLInputElement>document.getElementById("lastName")).value;
@@ -86,7 +89,7 @@ export class EditprofileComponent implements OnInit {
       this.phnull = false;
     }
     
-    if(!this.phnull && !this.pnull)
+    if(!this.phnull && !this.pnull && this.patient)
     {
       var PatientDetails = { 
         "firstName" :firstName,
@@ -103,7 +106,7 @@ export class EditprofileComponent implements OnInit {
     this.updatePatient(PatientDetails);
     this.router.navigate(['/profile']);
     }
-    if(!this.phnull && !this.pnull && !(<HTMLInputElement>document.getElementById("licensenumber")).hidden)
+    if(!this.phnull && !this.pnull && this.doc)
     {
       var DoctorDetails = { 
         "licenseNumber" :licenseNumber,
