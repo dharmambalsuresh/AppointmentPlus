@@ -1,10 +1,10 @@
-//AUTHOR NAME : Abhinandan Walia STUDENT ID : B00820613
+//Author NAME: Abhinandan Walia STUDENT ID: B00820613
 
 var con = require('../../database/DBConfig').con;
 var express = require('express');
 var router = express.Router();
 
-router.post('/fetchProfileData', function(req, res, next) 
+router.post('/editprofiledoc', function(req, res, next) 
 {
   var email = req.body.email;
  con.getConnection (function(err) 
@@ -16,7 +16,7 @@ router.post('/fetchProfileData', function(req, res, next)
           }
         else
          {
-           con.query("Select firstName, lastName, email, password, address, phone, city, dateofBirth, postalCode, province from appointmentplus.user where email = '"+email+"'" , function (err,result,fields) 
+           con.query("Select licenseNumber,firstName, lastName, email, password, address, phone, city, dateofBirth, postalCode, province from appointmentplus.doctor where email = '"+email+"'" , function (err,result,fields) 
             {
              if(err)
               {
@@ -33,6 +33,5 @@ router.post('/fetchProfileData', function(req, res, next)
     });
 
 });
-
 module.exports = router;
 

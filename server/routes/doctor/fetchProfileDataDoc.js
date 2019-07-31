@@ -4,9 +4,10 @@ var con = require('../../database/DBConfig').con;
 var express = require('express');
 var router = express.Router();
 
-router.post('/fetchProfileData', function(req, res, next) 
+router.post('/fetchProfileDataDoc', function(req, res, next) 
 {
   var email = req.body.email;
+  console.log(email);
  con.getConnection (function(err) 
     {
      console.log("connected");
@@ -16,7 +17,7 @@ router.post('/fetchProfileData', function(req, res, next)
           }
         else
          {
-           con.query("Select firstName, lastName, email, password, address, phone, city, dateofBirth, postalCode, province from appointmentplus.user where email = '"+email+"'" , function (err,result,fields) 
+           con.query("Select licenseNumber,firstName, lastName, email, password, address, phone, city, dateofBirth, postalCode, province from appointmentplus.doctor where email = '"+email+"'" , function (err,result,fields) 
             {
              if(err)
               {

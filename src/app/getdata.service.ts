@@ -13,6 +13,7 @@ export interface LoginData{
   "message":string;
   "userType":string;
   "username":string;
+  "email":string;
   }
   
   export interface forgotpasswordData{
@@ -80,7 +81,11 @@ export class GetdataService {
   UpdateDoctorURL = "http://localhost:3000/updateDoctorUser"; //Abhinandan Walia BID:B00820613
 
   fetchProfileDataURL = "http://localhost:3000/fetchProfileData"; //Abhinandan Walia BID:B00820613
+  fetchProfileDataDocURL = "http://localhost:3000/fetchProfileDataDoc"; //Abhinandan Walia BID:B00820613
+
   userInfoURL = "http://localhost:3000/editprofile"; //Abhinandan Walia BID:B00820613
+  DocUserInfoURL = "http://localhost:3000/editprofiledoc"; //Abhinandan Walia BID:B00820613
+  
   canceldocAppointmentURL = "http://localhost:3000/canceldocAppointment";
   manageappointmentURL = "http://localhost:3000/manageappointment";
   getDocAppointmentURL = "http://localhost:3000/getDocAppointment";
@@ -139,15 +144,27 @@ updateDocDB(details) {
 }
 
 //Abhinandan Walia B00820613
-fetchProfileData()
+fetchProfileData(email)
 {
-return this.http.get<Array<fetchProfile>>(this.fetchProfileDataURL)
+return this.http.post<fetchProfile>(this.fetchProfileDataURL,email)
   .pipe();
 }
 //Abhinandan Walia B00820613
-getUserInfo()
+fetchProfileDataDoc(email)
 {
-return this.http.get<Array<fetchProfile>>(this.userInfoURL)
+return this.http.post<fetchProfile>(this.fetchProfileDataDocURL,email)
+  .pipe();
+}
+//Abhinandan Walia B00820613
+getUserInfo(email)
+{
+return this.http.post<fetchProfile>(this.userInfoURL,email)
+  .pipe();
+}
+//Abhinandan Walia B00820613
+getDocUserInfo(email)
+{
+  return this.http.post<fetchProfile>(this.DocUserInfoURL,email)
   .pipe();
 }
 cancelAppointment(appointmentDetails) {

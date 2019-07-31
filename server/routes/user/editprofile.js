@@ -4,8 +4,9 @@ var con = require('../../database/DBConfig').con;
 var express = require('express');
 var router = express.Router();
 
-router.get('/editprofile', function(req, res, next) 
+router.post('/editprofile', function(req, res, next) 
 {
+  var email = req.body.email;
  con.getConnection (function(err) 
     {
      console.log("connected");
@@ -15,7 +16,7 @@ router.get('/editprofile', function(req, res, next)
           }
         else
          {
-           con.query("Select firstName, lastName, email, password, address, phone, city, dateofBirth, postalCode, province from appointmentplus.user where email = 'abhinandan.walia@dal.ca'" , function (err,result,fields) 
+           con.query("Select firstName, lastName, email, password, address, phone, city, dateofBirth, postalCode, province from appointmentplus.user where email = '"+email+"'" , function (err,result,fields) 
             {
              if(err)
               {

@@ -36,11 +36,11 @@ router.post('/login', function(req, res, next) {
       req.session.usertype=usertype;
       req.session.username=results[0].firstName;
       var firstName = results[0].firstName;
-      
+      var email = results[0].email;
       console.log(req.session.success);
       console.log(req.session.username);
      
-      res.send({"message":"Correct Users Credentials","usertype":"patient","username":firstName});
+      res.send({"message":"Correct Users Credentials","usertype":"patient","username":firstName,"email":email});
      
    }
    else{
@@ -69,9 +69,11 @@ else if(usertype=="doctor")
          req.session.usertype=usertype;
          req.session.username= results[0].firstName;
          req.session.id = results[0].docid;
+         
          var firstName = results[0].firstName;
          var id=results[0].docid;
          var lastName = results[0].lastName;
+         var email = results[0].email;
          console.log(req.session.success);
          console.log(req.session.username);
          console.log(req.session.docid);

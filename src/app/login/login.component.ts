@@ -130,6 +130,7 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem("username",data.username);
        
 
+        sessionStorage.setItem("email",data.email);
         var username = data.username;
         Swal.fire(
           'Login Success!',
@@ -153,6 +154,7 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem("docfirstname",data.username);
          sessionStorage.setItem("id",data.docid);
         sessionStorage.setItem("doclastname",data.lastname);
+        sessionStorage.setItem("email",data.email);
         var username = data.username;
         Swal.fire(
           'Login Success!',
