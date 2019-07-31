@@ -1,3 +1,4 @@
+// Developed by AkhilTeja Ambadipdi B00825307
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { GetdataService } from '../getdata.service';
