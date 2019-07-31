@@ -22,10 +22,11 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     var usertype =sessionStorage.getItem("userType");
     var email =sessionStorage.getItem("email");
+    console.log(email);
     if(usertype == "patient")
     {
       this.patient=true;
-      this.getData.fetchProfileData().subscribe((info)=>
+      this.getData.fetchProfileData({email : email}).subscribe((info)=>
       this.getinfo(info)
       );
     }
@@ -36,8 +37,8 @@ export class ProfileComponent implements OnInit {
     }
     else if(usertype=="doctor")
     {
-      this.doc = true;
-    this.getData.fetchProfileDataDoc().subscribe((info)=>
+    this.doc = true;
+    this.getData.fetchProfileDataDoc({email : email}).subscribe((info)=>
     this.getinfo(info));
     }
    

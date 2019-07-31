@@ -144,26 +144,27 @@ updateDocDB(details) {
 }
 
 //Abhinandan Walia B00820613
-fetchProfileData()
+fetchProfileData(email)
 {
-return this.http.get<Array<fetchProfile>>(this.fetchProfileDataURL)
+return this.http.post<fetchProfile>(this.fetchProfileDataURL,email)
   .pipe();
 }
 //Abhinandan Walia B00820613
-fetchProfileDataDoc()
+fetchProfileDataDoc(email)
 {
-return this.http.get<Array<fetchProfile>>(this.fetchProfileDataDocURL)
+return this.http.post<fetchProfile>(this.fetchProfileDataDocURL,email)
   .pipe();
 }
 //Abhinandan Walia B00820613
-getUserInfo()
+getUserInfo(email)
 {
-return this.http.get<Array<fetchProfile>>(this.userInfoURL)
+return this.http.post<fetchProfile>(this.userInfoURL,email)
   .pipe();
 }
-getDocUserInfo()
+//Abhinandan Walia B00820613
+getDocUserInfo(email)
 {
-  return this.http.get<Array<fetchProfile>>(this.DocUserInfoURL)
+  return this.http.post<fetchProfile>(this.DocUserInfoURL,email)
   .pipe();
 }
 cancelAppointment(appointmentDetails) {

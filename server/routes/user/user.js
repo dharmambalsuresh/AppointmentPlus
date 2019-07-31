@@ -36,7 +36,7 @@ router.post('/login', function(req, res, next) {
       req.session.usertype=usertype;
       req.session.username=results[0].firstName;
       var firstName = results[0].firstName;
-      var email = email;
+      var email = results[0].email;
       console.log(req.session.success);
       console.log(req.session.username);
      
@@ -68,7 +68,7 @@ else if(usertype=="doctor")
          req.session.usertype=usertype;
          req.session.username= results[0].firstName;
          var firstName = results[0].firstName;
-         var email = email;
+         var email = results[0].email;
          console.log(req.session.success);
          console.log(req.session.username);
 
