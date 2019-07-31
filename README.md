@@ -152,7 +152,7 @@ The blog page gives details about tips and gives some suggestions regarding the 
 **Modules Used :**
 npm install ngx-image2dataurl –save (used this module for base64 encoding and image resizing
 
-**Image References:
+###Image References:
 1)https://www.pexels.com/photo/two-person-carrying-black-inflatable-pool-float-on-brown-wooden-bridge-near-waterfalls-1020016
 2)https://www.pexels.com/photo/women-s-white-top-and-orange-floral-skirt-823694/
 3)https://www.pexels.com/search/healthy/
@@ -160,6 +160,35 @@ npm install ngx-image2dataurl –save (used this module for base64 encoding and 
 1) https://www.npmjs.com/package/ngx-image2dataurl 
 The above reference is used for image resizing and is modified according to our needs by changing the parameters and its usage.
 2)https://www.w3schools.com/howto/howto_css_blog_layout.asp
+
+### (AMBADIPUDI AKHIL TEJA, B00825307)
+Git Link: 
+https://git.cs.dal.ca/narayanan/webprojectgroup12/tree/akhil_medicalrecords
+
+#(Uploading Medical Records(Second Feature) 
+#(AMBADIPUDI AKHIL TEJA, B00825307)
+The upload medical records page facilitates the doctors to upload medical records of the patient by providing Patient Id , Patient Name , Pdf which contains the details of patient.
+> MYSQL: Database.
+> HTML and CSS: For designing Web page.
+> Angular7: Front-end 
+> Nodejs: Back-end.
+> Express: Routing and Middleware framework for getting data from the database.
+   File Names :
+o Server/routes/doctor/medicalrecordss.js 
+o src/app/medicalrecords[component] 
+o src/app/medicalrecord.ts
+Steps to Upload Medical Record :
+1) After entering the home page , Click on Doctor login and after the correct credentials are entered by the doctor, Doctor is able to upload medical records by clicking on Upload Medical Records in the navigation bar at the top.
+2)On clicking Upload Prescription button at the top right corner , Doctor is asked to provide Name , Id and Pdf containing the medicalrecord of the patient.
+3) Once the prescription for a patient is created , Doctor is able to search the patient by giving input as 'Patient ID'.
+
+###References:
+1) https://medium.com/@kainikhil/nodejs-how-to-generate-and-properly-serve-pdf-6835737d118e
+2)https://stackoverflow.com/questions/51997848/angular-6-unable-to-convert-base64-to-pdf.(Used this code for generating the pdf).
+3)https://stackoverflow.com/questions/55904420/how-to-convert-string-base64-to-pdf-in-angular-7
+4)https://filipmolcik.com/error-unsafe-value-used-in-a-resource-url-context/
+5)https://stackoverflow.com/questions/52269555/angular-6-input-file-how-to-display-preview-of-pdf-file
+
 
 
 

@@ -22,7 +22,15 @@ patient : boolean;
   public blogData:any ={};
   
   constructor(private blogService: BlogsService,private router: Router,private route: ActivatedRoute,private getdataservice:GetdataService ) { }
+<<<<<<< Updated upstream
   
+=======
+  @HostListener("window:onbeforeunload",["$event"])
+  clearLocalStorage(event){
+    sessionStorage.clear();
+  }
+  //Resize Image
+>>>>>>> Stashed changes
   options: Options = {
     resize: {
       maxHeight: 500,

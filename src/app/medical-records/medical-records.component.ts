@@ -1,3 +1,4 @@
+// Developed by AkhilTeja Ambadipdi B00825307
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { GetdataService } from '../getdata.service';
@@ -40,6 +41,7 @@ export class MedicalRecordsComponent implements OnInit {
     this.searchstring="";
    
   }
+  //Taking image as innpt
   handleInputChange(e) {
     var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
     var pattern = /pdf-*/;
@@ -58,6 +60,7 @@ export class MedicalRecordsComponent implements OnInit {
     reader.readAsDataURL(file);
   }
   }
+  //Converting the image to base 64
   _handleReaderLoaded(e) {
     let reader = e.target;
     this.imageSrc = reader.result;
@@ -68,6 +71,17 @@ export class MedicalRecordsComponent implements OnInit {
     
     // console.log(this.imageSrc);
   }
+<<<<<<< Updated upstream
+=======
+
+  logout()
+  {
+    sessionStorage.clear();
+    this.router.navigate(['/home'])
+  }
+  // https://stackoverflow.com/questions/51997848/angular-6-unable-to-convert-base64-to-pdf.
+  // Used this code to generate the pdf
+>>>>>>> Stashed changes
   downloadPdf(pdfbase64,patientid){
     const downloadelement = document.createElement("a");
     downloadelement.href=pdfbase64;
