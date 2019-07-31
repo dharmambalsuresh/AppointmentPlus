@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { GetdataService } from '../getdata.service';
-
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-medical-records',
@@ -23,7 +23,7 @@ export class MedicalRecordsComponent implements OnInit {
   patient_records:any;
   
   searchstring:String="";
-  constructor(private getdataService: GetdataService) { }
+  constructor(private getdataService: GetdataService,private router: Router) { }
 
   ngOnInit() {
     this.imageSrc="";
@@ -71,8 +71,6 @@ export class MedicalRecordsComponent implements OnInit {
     
     // console.log(this.imageSrc);
   }
-<<<<<<< Updated upstream
-=======
 
   logout()
   {
@@ -81,7 +79,6 @@ export class MedicalRecordsComponent implements OnInit {
   }
   // https://stackoverflow.com/questions/51997848/angular-6-unable-to-convert-base64-to-pdf.
   // Used this code to generate the pdf
->>>>>>> Stashed changes
   downloadPdf(pdfbase64,patientid){
     const downloadelement = document.createElement("a");
     downloadelement.href=pdfbase64;
