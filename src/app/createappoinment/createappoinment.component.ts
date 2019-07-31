@@ -33,27 +33,34 @@ export class CreateappoinmentComponent implements OnInit {
   locnull: boolean;
   result : string;
   timeslot = [{"nulltime":false,"invalidtime":false}];
-
+firstname;
+lastname;
+docid;
   constructor(private route: ActivatedRoute,private router: Router,
     private getData: GetdataService) { }
 
   
 
   ngOnInit() {
+
     var usertype =sessionStorage.getItem("userType");
-    if(usertype == "patient")
-    {
-      console.log("Correct");
-    }
-    else if(usertype ==null)
+    // if(usertype == "patient")
+    // {
+    //   console.log("Correct");
+    // }
+     if(usertype ==null)
     {
       this.router.navigate(['/home']);
 
     }
-    else if(usertype=="doctor")
-    {
-      this.router.navigate(['/doctor']);
-    }
+    // else if(usertype=="doctor")
+    // {
+    //   this.router.navigate(['/doctor']);
+    // }
+ this.docid = sessionStorage.getItem("id");
+      this.firstname = sessionStorage.getItem("docfirstname");
+     this.lastname = sessionStorage.getItem("doclastname");
+     
   }
 
   popup() {
@@ -147,10 +154,12 @@ export class CreateappoinmentComponent implements OnInit {
       tsl += this.timeslot[i][i] + ',';
    }
 
+   var name = this.firstname+" "+this.lastname;
     var appointmentDetails = { "appId" :appId,
      "date" :this.dateInput,
      "timeslots" : tsl,
-     "doctor" : "John",
+     "docid" : this.docid,
+     "docname":this.firstname+" "+this.lastname,
      "loc" :this.locInput,
      "comments" : this.commentInput};
   

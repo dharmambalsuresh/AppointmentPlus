@@ -20,7 +20,7 @@
 
     <ul class="nav navbar-nav ml-auto navright">
       <li>
-        <p class="name"> Rodrick Paul </p>
+        <p class="name">{{firstname}} {{lastname}} </p>
       </li>
       <li>
         <div class="btn-group profile">
@@ -44,7 +44,7 @@
       <div class="row m-0 ">
         <div class="col-md-6">
         
-          <a [routerLink]="['/createappointment']" class="btn add">Weekly Schedule  <i class="fa fa-plus-circle text-primary" data-toggle="tooltip" data-placement="bottom"  title="Create new schedule"></i> </a>
+          <a (click)="navigate()" class="btn add">Weekly Schedule  <i class="fa fa-plus-circle text-primary" data-toggle="tooltip" data-placement="bottom"  title="Create new schedule"></i> </a>
          
         </div>
         <div class="col-md-6">

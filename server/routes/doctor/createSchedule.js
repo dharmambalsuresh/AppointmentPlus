@@ -11,9 +11,12 @@ router.post('/createNewAppointment', function(req, res, next) {
     var appointmentId = req.body.appId;
     var date = req.body.date;
     var timeslots = req.body.timeslots;
-    var docName = req.body.doctor;
+    var docName = req.body.docname;
     var location = req.body.loc;
     var comments = req.body.comments;
+    var docId = req.body.docid;
+
+    console.log("********************",req.body);
 
 //connecting with MySql database    
  con.getConnection(function(err) {
@@ -21,7 +24,7 @@ router.post('/createNewAppointment', function(req, res, next) {
     res.send(500,"SQL Error");
   }
   else{
- con.query("insert into appointmentplus.newappointmentdoctor values("+appointmentId+",'"+ date+"','"+timeslots +"','"+ docName+"','"+location+"','"+comments +"')", function (err, result, fields) {
+ con.query("insert into appointmentplus.newappointmentdoctor values("+appointmentId+",'"+ date+"','"+timeslots +"','"+ docName+"','"+ docId+"','"+location+"','"+comments +"')", function (err, result, fields) {
     if(err){
     res.send(500,"Query error");
     }else{

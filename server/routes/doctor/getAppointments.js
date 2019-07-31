@@ -5,7 +5,7 @@ var router = express.Router();
 
 /* Fetching specific doctor appointment*/
 router.post('/getDocAppointment', function(req, res, next) {
-    
+    console.log(req.body);
     var docName = req.body.docName;
     var docId = req.body.docId;
    

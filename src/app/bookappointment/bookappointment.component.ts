@@ -115,7 +115,7 @@ export class BookappointmentComponent implements OnInit {
       "LastName": this.lname,
       "Email": this.email,
       "number": this.phone,
-      "Doctorname": "Rodrick Paul",
+      "Doctorname":this.doctor,
       "docId": 101,
       "Bookdate": this.selectedDate,
       "Booktime": this.selectedTime,
@@ -151,7 +151,7 @@ export class BookappointmentComponent implements OnInit {
   }
 
   setDoctor(doctorName) {
-    // console.log(d);
+     console.log(doctorName);
     this.doctor = doctorName;
     this.dateonly = _.uniqBy(this.dateandtime.filter(item => item.doctorname === this.doctor), 'date');
     this.dateandtime.forEach(item => {

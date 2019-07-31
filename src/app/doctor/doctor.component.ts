@@ -20,11 +20,15 @@ export class DoctorComponent implements OnInit {
   upcoming = "Upcoming";
   appointments ;
   result ;
+  firstname;
+  lastname;
+  docid;
   constructor(private route: ActivatedRoute,private router: Router,
    private getData : GetdataService,private modalService: NgbModal) {
+     var docid = sessionStorage.getItem("id");
      this.subscription = this.getData.getMessage().subscribe(message => {
        console.log(message);
-         this.getData.getDocAppointment({docId : 101}).subscribe((data)=>
+         this.getData.getDocAppointment({docId : docid}).subscribe((data)=>
         this.check(data));
      
         });
@@ -32,25 +36,34 @@ export class DoctorComponent implements OnInit {
 
   ngOnInit() {
 
-    var usertype =sessionStorage.getItem("userType");
-    if(usertype == "patient")
-    {
+     var usertype =sessionStorage.getItem("userType");
+     this.firstname = sessionStorage.getItem("docfirstname");
+     this.lastname = sessionStorage.getItem("doclastname");
+      this.docid = sessionStorage.getItem("id");
+     console.log(sessionStorage);
+    // if(usertype == "patient")
+    // {
       
-      this.router.navigate(['/bookappointment']);
-    }
-    else if(usertype ==null)
+    //   this.router.navigate(['/bookappointment']);
+    // }
+    if(usertype ==null)
     {
       this.router.navigate(['/home']);
 
     }
-    else if(usertype=="doctor")
-    {
+    // else if(usertype=="doctor")
+    // {
       
-    }
-   var docId ={docId : 101}; 
+    // }
+
+   var docId ={docId : this.docid}; 
     this.getData.getDocAppointment(docId).subscribe((data)=>
    this.check(data)
    );
+  }
+
+  navigate(){
+    this.router.navigate(['/createappointment']);
   }
 
     open(content,appData) {

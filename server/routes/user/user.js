@@ -55,23 +55,29 @@ else if(usertype=="doctor")
 {
    console.log("Going to doc");
    
-   con.query("SELECT email,firstName FROM appointmentplus.doctor WHERE email='"+email+"' and password = '"+pass+"'", function (err, results, fields) {
+   con.query("SELECT email,firstName,lastName,docid FROM appointmentplus.doctor WHERE email='"+email+"' and password = '"+pass+"'", function (err, results, fields) {
  
       if (err) 
       {
          return res.json(err);
       }
       if(results.length >0){
+        console.log(results[0]);
         
          req.session.success =true;
          req.session.email = email;
          req.session.usertype=usertype;
          req.session.username= results[0].firstName;
+         req.session.id = results[0].docid;
          var firstName = results[0].firstName;
+         var id=results[0].docid;
+         var lastName = results[0].lastName;
          console.log(req.session.success);
          console.log(req.session.username);
+         console.log(req.session.docid);
+         console.log(req.session.lastName);
 
-         res.send({"message":"Correct Users Credentials","usertype":"doctor","username":firstName});
+         res.send({"message":"Correct Users Credentials","usertype":"doctor","username":firstName,"lastname":lastName,"docid":id});
         
       }
       else{
